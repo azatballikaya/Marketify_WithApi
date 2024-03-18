@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "GO9IRutVDA/Qk1vTUZDNY2kUcdYwpPKM35bOKDdCFoM=",
+  "Source": "Marketify.Api",
+  "BasePath": "_content/Marketify.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
