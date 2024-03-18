@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "r7x3NH7lRqGZ/SIqPn+XuOcXYesBHKgzdAiCpYXGGSt4NjiXjFnE6kTmI7iwCFbx/Y/iiAJdtZXGPlEmgUW5Ng==",
+  "dgSpecHash": "bXQ/P9F9XNBA5sR2C9zUKUxEaa7ZftyRp1ey5GIcbUN7GHkRP5Qxx6q/0vJyktr5Lcu9j9Zc+djLJeAd5IIklg==",
   "success": true,
   "projectFilePath": "C:\\Users\\azatb\\Documents\\GitHub\\Marketify_WithApi\\Api\\Marketify.Api\\Marketify.Api.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\azatb\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
+    "C:\\Users\\azatb\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "C:\\Users\\azatb\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\azatb\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
     "C:\\Users\\azatb\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
@@ -77,5 +79,16 @@
     "C:\\Users\\azatb\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Users\\azatb\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1608",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Bağımlılık kısıtlaması dışında algılanan paket sürümü: AutoMapper.Extensions.Microsoft.DependencyInjection 12.0.1, AutoMapper (= 12.0.1) gerektiriyor ancak sürüm AutoMapper 13.0.1 çözümlenmiş.",
+      "libraryId": "AutoMapper",
+      "targetGraphs": [
+        "net7.0"
+      ]
+    }
+  ]
 }

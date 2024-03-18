@@ -1,3 +1,4 @@
+using Marketify.Api.Mapping;
 using Marketify.Api.SeedData;
 using Marketify.Business.Abstract;
 using Marketify.Business.Concrete;
@@ -6,6 +7,7 @@ using Marketify.DataAccess.Concrete.EntityFramework;
 using Marketify.Entity.Identity;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,6 +22,7 @@ builder.Services.AddDbContext<IdentityContext>(options =>
 options.UseSqlServer("Server=DESKTOP-4LLD460;Database=MarketifyDb;Trusted_Connection=True; TrustServerCertificate=true;")
 
 );
+builder.Services.AddAutoMapper(GetType(typeof(Program)).Assembly);
 builder.Services.AddIdentity<User, Role>().AddEntityFrameworkStores<IdentityContext>().AddDefaultTokenProviders();
 builder.Services.AddScoped<IPostDal, EfPostRepository>();
 builder.Services.AddScoped<IPostService,PostManager>();

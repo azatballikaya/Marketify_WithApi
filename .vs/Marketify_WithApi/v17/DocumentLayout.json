@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\azatb\\Documents\\GitHub\\Marketify_WithApi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{68A96453-FF90-46DD-BFED-84702A914C22}|Api\\Marketify.Api\\Marketify.Api.csproj|c:\\users\\azatb\\documents\\github\\marketify_withapi\\api\\marketify.api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{68A96453-FF90-46DD-BFED-84702A914C22}|Api\\Marketify.Api\\Marketify.Api.csproj|solutionrelative:api\\marketify.api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{68A96453-FF90-46DD-BFED-84702A914C22}|Api\\Marketify.Api\\Marketify.Api.csproj|c:\\users\\azatb\\documents\\github\\marketify_withapi\\api\\marketify.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{68A96453-FF90-46DD-BFED-84702A914C22}|Api\\Marketify.Api\\Marketify.Api.csproj|solutionrelative:api\\marketify.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68A96453-FF90-46DD-BFED-84702A914C22}|Api\\Marketify.Api\\Marketify.Api.csproj|c:\\users\\azatb\\documents\\github\\marketify_withapi\\api\\marketify.api\\mapping\\mapping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{68A96453-FF90-46DD-BFED-84702A914C22}|Api\\Marketify.Api\\Marketify.Api.csproj|solutionrelative:api\\marketify.api\\mapping\\mapping.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68A96453-FF90-46DD-BFED-84702A914C22}|Api\\Marketify.Api\\Marketify.Api.csproj|c:\\users\\azatb\\documents\\github\\marketify_withapi\\api\\marketify.api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{68A96453-FF90-46DD-BFED-84702A914C22}|Api\\Marketify.Api\\Marketify.Api.csproj|solutionrelative:api\\marketify.api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C38241D4-2426-468C-BDF2-C708FD33319E}|Api\\Marketify.Business\\Marketify.Business.csproj|c:\\users\\azatb\\documents\\github\\marketify_withapi\\api\\marketify.business\\dtos\\userdtos\\createuserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -22,24 +26,36 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Mapping.cs",
+              "DocumentMoniker": "C:\\Users\\azatb\\Documents\\GitHub\\Marketify_WithApi\\Api\\Marketify.Api\\Mapping\\Mapping.cs",
+              "RelativeDocumentMoniker": "Api\\Marketify.Api\\Mapping\\Mapping.cs",
+              "ToolTip": "C:\\Users\\azatb\\Documents\\GitHub\\Marketify_WithApi\\Api\\Marketify.Api\\Mapping\\Mapping.cs",
+              "RelativeToolTip": "Api\\Marketify.Api\\Mapping\\Mapping.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-18T19:44:01.784Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\azatb\\Documents\\GitHub\\Marketify_WithApi\\Api\\Marketify.Api\\Program.cs",
               "RelativeDocumentMoniker": "Api\\Marketify.Api\\Program.cs",
               "ToolTip": "C:\\Users\\azatb\\Documents\\GitHub\\Marketify_WithApi\\Api\\Marketify.Api\\Program.cs",
               "RelativeToolTip": "Api\\Marketify.Api\\Program.cs",
-              "ViewState": "AQIAAA0AAABgMzMzMzMrwBYAAAByAAAA",
+              "ViewState": "AQIAAAgAAADgMzMzMzMLwBgAAAA2AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-18T18:32:11.018Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "CreateUserDTO.cs",
               "DocumentMoniker": "C:\\Users\\azatb\\Documents\\GitHub\\Marketify_WithApi\\Api\\Marketify.Business\\DTOs\\UserDTOs\\CreateUserDTO.cs",
               "RelativeDocumentMoniker": "Api\\Marketify.Business\\DTOs\\UserDTOs\\CreateUserDTO.cs",
@@ -47,21 +63,19 @@
               "RelativeToolTip": "Api\\Marketify.Business\\DTOs\\UserDTOs\\CreateUserDTO.cs",
               "ViewState": "AQIAAAkAAAAgAAAAAAAgwA8AAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-18T18:24:23.954Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-18T18:24:23.954Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "UserController.cs",
               "DocumentMoniker": "C:\\Users\\azatb\\Documents\\GitHub\\Marketify_WithApi\\Api\\Marketify.Api\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "Api\\Marketify.Api\\Controllers\\UserController.cs",
               "ToolTip": "C:\\Users\\azatb\\Documents\\GitHub\\Marketify_WithApi\\Api\\Marketify.Api\\Controllers\\UserController.cs",
               "RelativeToolTip": "Api\\Marketify.Api\\Controllers\\UserController.cs",
-              "ViewState": "AQIAACIAAAAAMzMzMzP7vz0AAAA+AAAA",
+              "ViewState": "AQIAADIAAAAAAAAAAAAlwDcAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-18T17:54:46.161Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-18T17:54:46.161Z"
             }
           ]
         }
