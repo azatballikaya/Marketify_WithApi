@@ -9,21 +9,13 @@ namespace Marketify.Api.SeedData
     public class SeedData
     {
       
-            public static void Initialize(IServiceProvider serviceProvider)
+            public static void Initialize(IServiceProvider service)
             {
-                var context = serviceProvider.GetService<IdentityContext>();
+            var context = service.GetService<IdentityContext>();
 
                 string[] roles = new string[] { "Admin","Customer" };
 
-                foreach (string role in roles)
-                {
-                    var roleStore = new RoleStore<IdentityRole>(context);
-
-                    if (!context.Roles.Any(r => r.Name == role))
-                    {
-                        roleStore.CreateAsync(new IdentityRole(role));
-                    }
-                }
+               
 
 
                 var user1 = new User
@@ -52,28 +44,18 @@ namespace Marketify.Api.SeedData
             };
 
 
-            if (!context.Users.Any(u => u.UserName == user1.UserName))
-                {
-                    var password = new PasswordHasher<User>();
-                    var hashed = password.HashPassword(user1, "secret");
-                    user1.PasswordHash = hashed;
 
-                    var userStore = new UserStore<User>(context);
-                    var result = userStore.CreateAsync(user1);
-
-                }
-
-                AssignRoles(serviceProvider, user1.Email, roles);
+                AssignRoles(service, user1.Email, roles[0]);
+                AssignRoles(service, user2.Email, roles[1]);
 
                 context.SaveChangesAsync();
             }
 
-            public static async Task<IdentityResult> AssignRoles(IServiceProvider services, string email, string[] roles)
+            public static async Task<IdentityResult> AssignRoles(IServiceProvider services, string email, string role)
             {
-                UserManager<User> _userManager = services.GetService<UserManager<User>>();
-                User user = await _userManager.FindByNameAsync(email);
-                var result = await _userManager.AddToRoleAsync(user, roles[0]);
-                 var result2 = await _userManager.AddToRoleAsync(user, roles[1]);
+            UserManager<User> _userManager = services.GetService<UserManager<User>>();
+            User user = await _userManager.FindByEmailAsync(email);
+                var result = await _userManager.AddToRoleAsync(user, role);
                 return result;
             }
 

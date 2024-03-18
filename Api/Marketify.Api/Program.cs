@@ -1,4 +1,7 @@
 using Marketify.Api.SeedData;
+using Marketify.Business.Abstract;
+using Marketify.Business.Concrete;
+using Marketify.DataAccess.Abstract;
 using Marketify.DataAccess.Concrete.EntityFramework;
 using Marketify.Entity.Identity;
 using Microsoft.AspNetCore.Identity;
@@ -14,10 +17,15 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<IdentityContext>(options =>
-options.UseSqlServer("Server=DESKTOP-NOPPPVL\\SQLEXPRESS;Database=MarketifyDb;Trusted_Connection=True; TrustServerCertificate=true;")
+options.UseSqlServer("Server=DESKTOP-4LLD460;Database=MarketifyDb;Trusted_Connection=True; TrustServerCertificate=true;")
 
 );
+builder.Services.AddIdentity<User, Role>().AddEntityFrameworkStores<IdentityContext>().AddDefaultTokenProviders();
+builder.Services.AddScoped<IPostDal, EfPostRepository>();
+builder.Services.AddScoped<IPostService,PostManager>();
 
+builder.Services.AddScoped<ICommentDal,EfCommentRepository>();
+builder.Services.AddScoped<ICommentService,CommentManager>();
 
 var app = builder.Build();
 
@@ -27,7 +35,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-//SeedData.Initialize(app.Services);
+
 app.UseHttpsRedirection();
 
 app.UseAuthorization();

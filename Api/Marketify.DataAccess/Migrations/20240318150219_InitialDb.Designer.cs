@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Marketify.DataAccess.Migrations
 {
     [DbContext(typeof(IdentityContext))]
-    [Migration("20240318133630_InitialDb")]
+    [Migration("20240318150219_InitialDb")]
     partial class InitialDb
     {
         /// <inheritdoc />
