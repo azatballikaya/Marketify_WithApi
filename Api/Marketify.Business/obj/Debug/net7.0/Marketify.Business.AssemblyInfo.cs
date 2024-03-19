@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Marketify.Business")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b5f8858eeef52fc6be6e40b3b450c73ac34f8a0c")]
 [assembly: System.Reflection.AssemblyProductAttribute("Marketify.Business")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Marketify.Business")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

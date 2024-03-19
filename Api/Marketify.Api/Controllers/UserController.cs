@@ -15,26 +15,32 @@ namespace Marketify.Api.Controllers
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
         private readonly RoleManager<Role> _roleManager;
+        private readonly IPasswordHasher<User> _passwordHasher;
         private readonly IMapper _mapper;
 
-        public UserController(UserManager<User> userManager, SignInManager<User> signInManager, IMapper mapper, RoleManager<Role> roleManager)
+        public UserController(UserManager<User> userManager, SignInManager<User> signInManager, IMapper mapper, RoleManager<Role> roleManager, IPasswordHasher<User> passwordHasher)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _mapper = mapper;
             _roleManager = roleManager;
+            _passwordHasher = passwordHasher;
         }
         [HttpPost("Login")]
         public async Task<IActionResult> Login(LoginUserDTO loginUserDTO)
         {
               User user=await  _userManager.FindByEmailAsync(loginUserDTO.Email);
+
             if (user != null)
             {
-               var result= _signInManager.PasswordSignInAsync(user, loginUserDTO.Password,isPersistent:false,lockoutOnFailure:false);
-                if(result.IsCompletedSuccessfully)
+                var result=await _signInManager.CheckPasswordSignInAsync(user, loginUserDTO.Password,false);
+                var roles=await _userManager.GetRolesAsync(user);
+                
+                if(result.Succeeded)
                 {
-                    return Ok(result);
+                    return Ok(new {user,RoleName=roles});
                 }
+                return BadRequest();
             }
             return BadRequest();
         }

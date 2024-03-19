@@ -5,6 +5,9 @@ using Marketify.Business.DTOs.PostDTOs;
 using Marketify.Entity;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace Marketify.Api.Controllers
 {
@@ -24,15 +27,29 @@ namespace Marketify.Api.Controllers
         public async Task<IActionResult> GetAllPosts()
         {
             var response=await _postService.GetAllPostsAsync();
-            IActionResult result = response.IsSuccess ? Ok(response.Data) : BadRequest();
-            return result;
+            if (response.IsSuccess)
+            {
+                var jsonData = JsonConvert.SerializeObject(response.Data, new JsonSerializerSettings
+                {
+                    ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
+                });
+                return Ok(jsonData);
+            }
+            return BadRequest();
         }
         [HttpGet("{id}")]
         public async Task<IActionResult> GetPostById(int id)
         {
             var response = await _postService.GetPostByIdAsync(id);
-            IActionResult result = response.IsSuccess ? Ok(response.Data) : BadRequest();
-            return result;
+            if (response.IsSuccess)
+            {
+                var jsonData = JsonConvert.SerializeObject(response.Data, new JsonSerializerSettings
+                {
+                    ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
+                });
+                return Ok(jsonData);
+            }
+            return BadRequest();
         }
         [HttpPost]
         public async Task<IActionResult> CreatePost(CreatePostDTO createPostDTO)
@@ -57,7 +74,7 @@ namespace Marketify.Api.Controllers
             IActionResult result=response.IsSuccess ? Ok() : NotFound();
             return result;
         }
-        [HttpPost]
+        [HttpPost("AddLikeToPost")]
         public async Task<IActionResult> AddLikeToPost(AddLikeDTO addLikeDTO)
         {
             var like = _mapper.Map<Like>(addLikeDTO);
