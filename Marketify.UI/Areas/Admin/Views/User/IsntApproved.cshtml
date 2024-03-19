@@ -1,0 +1,38 @@
+﻿@model List<ResultUserViewModel>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>UserName</th>
+            <th>Meslek</th>
+            <th>Email</th>
+            <th>Telefon Numarası</th>
+            <th>Onay</th>
+            <th>#</th>
+            <th>#</th>
+           
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+           
+               
+            
+           
+            <tr>
+                <td>@item.id</td>
+                <td>@item.userName</td>
+                <td>@item.job</td>
+                <td>@item.email</td>
+                <td>@item.phoneNumber</td>
+                <td class="text-danger"><b>Onaylanmamış</b></td>
+             
+                <td><a class="btn btn-success" href="/Admin/User/ApproveUser/@item.id">Onayla</a></td>
+                
+            </tr>
+            
+        }
+    </tbody>
+</table>

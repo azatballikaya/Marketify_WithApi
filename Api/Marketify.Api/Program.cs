@@ -19,7 +19,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<IdentityContext>(options =>
-options.UseSqlServer("Server=DESKTOP-NOPPPVL\\SQLEXPRESS;Database=MarketifyDb;Trusted_Connection=True; TrustServerCertificate=true;")
+options.UseSqlServer("Server=DESKTOP-4LLD460;Database=MarketifyDb;Trusted_Connection=True; TrustServerCertificate=true;")
 
 );
 builder.Services.AddAutoMapper(typeof(Program));

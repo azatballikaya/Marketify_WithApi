@@ -21,14 +21,14 @@ namespace Marketify.Api.Controllers
         [HttpPost("{id}")]
         public async Task<IActionResult> CreateRole(string id)
         {
-            var response=await _roleManager.CreateAsync(new Role { Id=Guid.NewGuid().ToString(),Name=id });
-            IActionResult result=response.Succeeded ? Ok() : BadRequest();
+            var response = await _roleManager.CreateAsync(new Role { Id = Guid.NewGuid().ToString(), Name = id });
+            IActionResult result = response.Succeeded ? Ok() : BadRequest();
             return result;
         }
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteRole(string id)
         {
-            var role=await _roleManager.FindByNameAsync(id);
+            var role = await _roleManager.FindByNameAsync(id);
             var response = await _roleManager.DeleteAsync(role);
             IActionResult result = response.Succeeded ? Ok() : BadRequest();
             return result;
@@ -38,15 +38,17 @@ namespace Marketify.Api.Controllers
         {
             var user = await _userManager.FindByIdAsync(identityUserRole.UserId);
             var role = await _roleManager.FindByIdAsync(identityUserRole.RoleId);
-           IdentityResult result= await _userManager.AddToRoleAsync(user, role.Name);
-           IActionResult value=result.Succeeded ? Ok() : BadRequest();
+            IdentityResult result = await _userManager.AddToRoleAsync(user, role.Name);
+            IActionResult value = result.Succeeded ? Ok() : BadRequest();
             return value;
         }
         [HttpPost("AddUserToRoleByName")]
         public async Task<IActionResult> AddUserToRole(AddUserToRoleDTO addUserToRoleDTO)
         {
             var user = await _userManager.FindByIdAsync(addUserToRoleDTO.UserId);
-           
+            var roles = await _userManager.GetRolesAsync(user);
+            roles = roles.Where(x => x != addUserToRoleDTO.RoleName).ToList();
+            await _userManager.RemoveFromRolesAsync(user, roles);
             IdentityResult result = await _userManager.AddToRoleAsync(user, addUserToRoleDTO.RoleName);
             IActionResult value = result.Succeeded ? Ok() : BadRequest();
             return value;

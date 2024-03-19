@@ -9,6 +9,7 @@
             <th>Telefon Numarası</th>
             <th>Onay</th>
             <th>#</th>
+            <th>#</th>
            
         </tr>
     </thead>
@@ -27,6 +28,8 @@
                 <td>@item.phoneNumber</td>
                 <td class="text-@textColor"><b>@(item.isApproved ? "Onaylandı" : "Onaylanmamış")</b></td>
                 <td><a class="btn btn-danger" href="/Admin/User/Delete/@item.id">Sil</a></td>
+                <td><a class="btn btn-info" href="/Admin/User/AddUserToAdminRole/@item.id">Admin Yap</a></td>
+                
             </tr>
             
         }

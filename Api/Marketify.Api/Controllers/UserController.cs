@@ -42,18 +42,18 @@ namespace Marketify.Api.Controllers
         public async Task<IActionResult> CreateUser(CreateUserDTO createUserDTO)
         {
             User user=_mapper.Map<User>(createUserDTO);
-           var result= await _userManager.CreateAsync(user,createUserDTO.Password);
-         await   _userManager.AddToRoleAsync(user, "Customer");
+              var result= await _userManager.CreateAsync(user,createUserDTO.Password);
+         
             if(result.Succeeded)
             {
                 return Ok();
             }
             return BadRequest();
         }
-        [HttpGet]
-        public async Task<IActionResult> GetAllUsers()
+        [HttpGet("GetAllUsers/{id?}")]
+        public async Task<IActionResult> GetAllUsers(bool id=true)
         {
-            var users= await _userManager.Users.ToListAsync();
+            var users= await _userManager.Users.Where(x=>x.IsApproved==id).ToListAsync();
             if (users != null)
             {
                 return Ok(users);
@@ -94,5 +94,18 @@ namespace Marketify.Api.Controllers
             }
             return BadRequest();
         }
+        [HttpGet("ApproveUser/{id}")]
+        public async Task<IActionResult> ApproveUser(string id)
+        {
+            var user=await _userManager.FindByIdAsync(id);
+            if (user != null)
+            {
+                user.IsApproved = true;
+                await _userManager.UpdateAsync(user);
+                return Ok();
+            }
+            return BadRequest();
+        }
+        
     }
 }

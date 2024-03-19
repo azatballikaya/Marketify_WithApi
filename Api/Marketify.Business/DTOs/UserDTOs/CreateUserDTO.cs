@@ -23,7 +23,7 @@ namespace Marketify.Business.DTOs.UserDTOs
             public bool lockoutEnabled { get; set; }
             public int accessFailedCount { get; set; }
             public string job { get; set; }
-            public bool isApproved { get; set; }
+        public bool isApproved { get; set; } = false;
         
 
 

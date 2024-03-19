@@ -3143,19 +3143,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Azat\\.nuget\\packages\\": {}
+    "C:\\Users\\azatb\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Azat\\Documents\\GitHub\\AspNetCore_Works\\Marketify_WithApi\\Api\\Marketify.Business\\Marketify.Business.csproj",
+      "projectUniqueName": "C:\\Users\\azatb\\Documents\\GitHub\\Marketify_WithApi\\Api\\Marketify.Business\\Marketify.Business.csproj",
       "projectName": "Marketify.Business",
-      "projectPath": "C:\\Users\\Azat\\Documents\\GitHub\\AspNetCore_Works\\Marketify_WithApi\\Api\\Marketify.Business\\Marketify.Business.csproj",
-      "packagesPath": "C:\\Users\\Azat\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Azat\\Documents\\GitHub\\AspNetCore_Works\\Marketify_WithApi\\Api\\Marketify.Business\\obj\\",
+      "projectPath": "C:\\Users\\azatb\\Documents\\GitHub\\Marketify_WithApi\\Api\\Marketify.Business\\Marketify.Business.csproj",
+      "packagesPath": "C:\\Users\\azatb\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\azatb\\Documents\\GitHub\\Marketify_WithApi\\Api\\Marketify.Business\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Azat\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\azatb\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3169,8 +3169,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\Azat\\Documents\\GitHub\\AspNetCore_Works\\Marketify_WithApi\\Api\\Marketify.DataAccess\\Marketify.DataAccess.csproj": {
-              "projectPath": "C:\\Users\\Azat\\Documents\\GitHub\\AspNetCore_Works\\Marketify_WithApi\\Api\\Marketify.DataAccess\\Marketify.DataAccess.csproj"
+            "C:\\Users\\azatb\\Documents\\GitHub\\Marketify_WithApi\\Api\\Marketify.DataAccess\\Marketify.DataAccess.csproj": {
+              "projectPath": "C:\\Users\\azatb\\Documents\\GitHub\\Marketify_WithApi\\Api\\Marketify.DataAccess\\Marketify.DataAccess.csproj"
             }
           }
         }
@@ -3179,6 +3179,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -3212,7 +3217,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "c:\\program files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200\\RuntimeIdentifierGraph.json"
       }
     }
   }
