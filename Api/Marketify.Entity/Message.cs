@@ -9,10 +9,10 @@ namespace Marketify.Entity
 {
     public class Message
     {
-        public int MessageId { get; set; }
+        public int Id { get; set; }
         public string MessageContent { get; set; }
-        public string SenderId { get; set; }
-        public User Sender { get; set; }
+        public string UserId { get; set; }
+        public User User { get; set; }
         public int MyProperty { get; set; }
     }
 }

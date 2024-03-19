@@ -5,16 +5,18 @@ VisualStudioVersion = 17.8.34309.116
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{C8B3214D-E807-4A29-B3F6-CA4B1D125FB9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marketify.Entity", "Api\Marketify.Entity\Marketify.Entity.csproj", "{01B8B7D0-27B2-4324-9A72-A35382A12D2C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Marketify.Entity", "Api\Marketify.Entity\Marketify.Entity.csproj", "{01B8B7D0-27B2-4324-9A72-A35382A12D2C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marketify.DataAccess", "Api\Marketify.DataAccess\Marketify.DataAccess.csproj", "{341BA11F-E4C4-45D8-AE04-B9C122EF7561}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Marketify.DataAccess", "Api\Marketify.DataAccess\Marketify.DataAccess.csproj", "{341BA11F-E4C4-45D8-AE04-B9C122EF7561}"
 	ProjectSection(ProjectDependencies) = postProject
 		{01B8B7D0-27B2-4324-9A72-A35382A12D2C} = {01B8B7D0-27B2-4324-9A72-A35382A12D2C}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marketify.Business", "Api\Marketify.Business\Marketify.Business.csproj", "{C38241D4-2426-468C-BDF2-C708FD33319E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Marketify.Business", "Api\Marketify.Business\Marketify.Business.csproj", "{C38241D4-2426-468C-BDF2-C708FD33319E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marketify.Api", "Api\Marketify.Api\Marketify.Api.csproj", "{68A96453-FF90-46DD-BFED-84702A914C22}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Marketify.Api", "Api\Marketify.Api\Marketify.Api.csproj", "{68A96453-FF90-46DD-BFED-84702A914C22}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marketify.UI", "Marketify.UI\Marketify.UI.csproj", "{2109FAF2-296D-42B9-9832-D1D10A7FBDE2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,6 +40,10 @@ Global
 		{68A96453-FF90-46DD-BFED-84702A914C22}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{68A96453-FF90-46DD-BFED-84702A914C22}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{68A96453-FF90-46DD-BFED-84702A914C22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2109FAF2-296D-42B9-9832-D1D10A7FBDE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2109FAF2-296D-42B9-9832-D1D10A7FBDE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2109FAF2-296D-42B9-9832-D1D10A7FBDE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2109FAF2-296D-42B9-9832-D1D10A7FBDE2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

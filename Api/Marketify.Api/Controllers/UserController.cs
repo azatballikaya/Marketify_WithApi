@@ -14,13 +14,15 @@ namespace Marketify.Api.Controllers
     {
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
+        private readonly RoleManager<Role> _roleManager;
         private readonly IMapper _mapper;
 
-        public UserController(UserManager<User> userManager, SignInManager<User> signInManager, IMapper mapper)
+        public UserController(UserManager<User> userManager, SignInManager<User> signInManager, IMapper mapper, RoleManager<Role> roleManager)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _mapper = mapper;
+            _roleManager = roleManager;
         }
         [HttpPost("Login")]
         public async Task<IActionResult> Login(LoginUserDTO loginUserDTO)
@@ -41,7 +43,7 @@ namespace Marketify.Api.Controllers
         {
             User user=_mapper.Map<User>(createUserDTO);
            var result= await _userManager.CreateAsync(user,createUserDTO.Password);
-
+         await   _userManager.AddToRoleAsync(user, "Customer");
             if(result.Succeeded)
             {
                 return Ok();
@@ -59,6 +61,17 @@ namespace Marketify.Api.Controllers
             }
             return BadRequest();
         }
+        [HttpGet("WithoutAdmin")]
+        public async Task<IActionResult> GetAllUsersWithoutAdmin()
+        {
+
+          var users= await _userManager.GetUsersInRoleAsync("Customer");
+            if(users != null)
+            {
+                return Ok(users);
+            }
+            return BadRequest();
+        }
         [HttpGet("{id}")]
         public async Task<IActionResult> GetUserById(string id)
         {
@@ -69,6 +82,17 @@ namespace Marketify.Api.Controllers
             }
             return BadRequest();
 
+        }
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteUser(string id)
+        {
+            var user = await _userManager.FindByIdAsync(id);
+            if(user != null)
+            {
+                await _userManager.DeleteAsync(user);
+                return Ok();
+            }
+            return BadRequest();
         }
     }
 }
