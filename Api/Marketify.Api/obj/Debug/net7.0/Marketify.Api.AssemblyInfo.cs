@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Marketify.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+52907b7ea173c7898b9fbac8017cadffe1a82ddc")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+502c7e106bad31145c0ac6578e2e9a7fb748c77b")]
 [assembly: System.Reflection.AssemblyProductAttribute("Marketify.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Marketify.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

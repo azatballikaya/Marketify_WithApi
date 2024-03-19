@@ -1,4 +1,5 @@
-﻿using Marketify.Business.DTOs.UserDTOs;
+﻿using AutoMapper;
+using Marketify.Business.DTOs.UserDTOs;
 using Marketify.Entity.Identity;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
@@ -13,11 +14,13 @@ namespace Marketify.Api.Controllers
     {
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
+        private readonly IMapper _mapper;
 
-        public UserController(UserManager<User> userManager, SignInManager<User> signInManager)
+        public UserController(UserManager<User> userManager, SignInManager<User> signInManager, IMapper mapper)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _mapper = mapper;
         }
         [HttpPost("Login")]
         public async Task<IActionResult> Login(LoginUserDTO loginUserDTO)
@@ -36,18 +39,7 @@ namespace Marketify.Api.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateUser(CreateUserDTO createUserDTO)
         {
-            User user = new User
-            {
-                AccessFailedCount = createUserDTO.accessFailedCount,
-                ConcurrencyStamp = createUserDTO.concurrencyStamp,
-                Email = createUserDTO.email,
-                EmailConfirmed = createUserDTO.emailConfirmed,
-                IsApproved = createUserDTO.isApproved,
-                Job = createUserDTO.job,
-                LockoutEnabled = createUserDTO.lockoutEnabled,
-                LockoutEnd = createUserDTO.lockoutEnd,
-                UserName = createUserDTO.userName
-            };
+            User user=_mapper.Map<User>(createUserDTO);
            var result= await _userManager.CreateAsync(user,createUserDTO.Password);
 
             if(result.Succeeded)
@@ -70,7 +62,7 @@ namespace Marketify.Api.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetUserById(string id)
         {
-            var user=_userManager.FindByIdAsync(id);
+            var user=await _userManager.FindByIdAsync(id);
             if (user != null)
             {
                 return Ok(user);

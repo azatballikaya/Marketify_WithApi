@@ -176,3 +176,4 @@ C:\Users\azatb\Documents\GitHub\Marketify_WithApi\Api\Marketify.Api\obj\Debug\ne
 C:\Users\azatb\Documents\GitHub\Marketify_WithApi\Api\Marketify.Api\obj\Debug\net7.0\Marketify.Api.pdb
 C:\Users\azatb\Documents\GitHub\Marketify_WithApi\Api\Marketify.Api\obj\Debug\net7.0\Marketify.Api.genruntimeconfig.cache
 C:\Users\azatb\Documents\GitHub\Marketify_WithApi\Api\Marketify.Api\obj\Debug\net7.0\ref\Marketify.Api.dll
+C:\Users\Azat\Documents\GitHub\AspNetCore_Works\Marketify_WithApi\Api\Marketify.Api\bin\Debug\net7.0\AutoMapper.dll

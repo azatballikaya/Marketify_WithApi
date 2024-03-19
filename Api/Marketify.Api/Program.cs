@@ -19,10 +19,10 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<IdentityContext>(options =>
-options.UseSqlServer("Server=DESKTOP-4LLD460;Database=MarketifyDb;Trusted_Connection=True; TrustServerCertificate=true;")
+options.UseSqlServer("Server=DESKTOP-NOPPPVL\\SQLEXPRESS;Database=MarketifyDb;Trusted_Connection=True; TrustServerCertificate=true;")
 
 );
-builder.Services.AddAutoMapper(GetType(typeof(Program)).Assembly);
+builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.AddIdentity<User, Role>().AddEntityFrameworkStores<IdentityContext>().AddDefaultTokenProviders();
 builder.Services.AddScoped<IPostDal, EfPostRepository>();
 builder.Services.AddScoped<IPostService,PostManager>();

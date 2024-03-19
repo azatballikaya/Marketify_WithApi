@@ -23,7 +23,7 @@ namespace Marketify.Business.Concrete
 
         public async Task<Response> CreatePostAsync(Post post)
         {
-             await  _postDal.InsertAsync(post);
+         await _postDal.InsertAsync(post);
             return Response.Success();
         }
 
