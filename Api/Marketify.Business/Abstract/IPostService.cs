@@ -16,5 +16,6 @@ namespace Marketify.Business.Abstract
         Task<Response> CreatePostAsync(Post post);
         Task<Response> UpdatePostAsync(Post post);
         Task<Response> DeletePostAsync(int id);   
+        Task<Response> AddLikeToPostAsync(Like like)
     }
 }

@@ -15,10 +15,18 @@ namespace Marketify.Business.Concrete
     public class PostManager : IPostService
     {
         private readonly IPostDal _postDal;
+        private readonly ILikeDal _likeDal;
 
-        public PostManager(IPostDal postDal)
+        public PostManager(IPostDal postDal, ILikeDal likeDal)
         {
             _postDal = postDal;
+            _likeDal = likeDal;
+        }
+
+        public async Task<Response> AddLikeToPostAsync(Like like)
+        {
+          await _likeDal.InsertAsync(like);
+            return Response.Success();
         }
 
         public async Task<Response> CreatePostAsync(Post post)

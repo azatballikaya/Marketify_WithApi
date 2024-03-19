@@ -19,7 +19,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<IdentityContext>(options =>
-options.UseSqlServer("Server=DESKTOP-4LLD460;Database=MarketifyDb;Trusted_Connection=True; TrustServerCertificate=true;")
+options.UseSqlite("Data Source=Marketify.db")
 
 );
 builder.Services.AddAutoMapper(typeof(Program));
@@ -29,6 +29,8 @@ builder.Services.AddScoped<IPostService,PostManager>();
 
 builder.Services.AddScoped<ICommentDal,EfCommentRepository>();
 builder.Services.AddScoped<ICommentService,CommentManager>();
+
+builder.Services.AddScoped<ILikeDal,EfLikeRepository>();
 
 var app = builder.Build();
 

@@ -1,0 +1,15 @@
+﻿@model ResultPostViewModel
+@* <h1>Deneme</h1>
+<h1 class="text-primary">@Model.Title</h1>
+<img style="width:500px;height:500px" src="~/img/@Model.ImageUrl"/> *@
+<div class="card mb-3">
+    <h1 class="card-text  ml-5 mt-2">@Model.User.userName</p>
+    <img src="~/img/@Model.ImageUrl" style="height:400px; width:400px" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">@Model.Title</h5>
+        
+        <p class="card-text">@Model.Description</p>
+        <p class="card-text"><small class="text-body-secondary">@Model.CreatedDate</small></p>
+    </div>
+</div>
+<a class="btn btn-danger" href="/Admin/Post/Delete/@Model.Id">Gönderiyi Sil</a>

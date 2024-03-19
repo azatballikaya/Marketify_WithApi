@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Marketify.Business.Abstract;
+using Marketify.Business.DTOs.LikeDTOs;
 using Marketify.Business.DTOs.PostDTOs;
 using Marketify.Entity;
 using Microsoft.AspNetCore.Http;
@@ -54,6 +55,14 @@ namespace Marketify.Api.Controllers
         {
             var response=await _postService.DeletePostAsync(id);
             IActionResult result=response.IsSuccess ? Ok() : NotFound();
+            return result;
+        }
+        [HttpPost]
+        public async Task<IActionResult> AddLikeToPost(AddLikeDTO addLikeDTO)
+        {
+            var like = _mapper.Map<Like>(addLikeDTO);
+             var response=  await _postService.AddLikeToPostAsync(like);
+            IActionResult result = response.IsSuccess ? Ok() : NotFound();
             return result;
         }
     }

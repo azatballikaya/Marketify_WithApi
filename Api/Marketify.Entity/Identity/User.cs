@@ -10,7 +10,7 @@ namespace Marketify.Entity.Identity
     public class User:IdentityUser
     {
         public string Job { get; set; }
-        public bool IsApproved { get; set; }
+        public bool IsApproved { get; set; } = false;
      
     }
 }
