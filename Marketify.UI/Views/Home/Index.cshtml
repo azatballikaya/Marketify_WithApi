@@ -51,7 +51,7 @@
                
                 <div class="card-body">
                     <h5 class="card-title">Yorumlar</h5>
-                        <ul class="list-group">
+                        <ul class="list-group" id="ul_comment_@item.Id">
                             @foreach (var comment in item.Comments)
                             {
                                 
@@ -70,13 +70,13 @@
                 {
                     
                 <div class="card-body">
-                    <form>
+                    
                         <div class="form-group">
-                            <label for="commentInput">Bir Yorum Paylaş...</label>
-                            <textarea class="form-control" id="commentInput" ></textarea>
+                            <label for="txtarea_comment_@item.Id">Bir Yorum Paylaş...</label>
+                            <textarea class="form-control" id="txtarea_comment_@item.Id" ></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary">Gönder</button>
-                    </form>
+                        <button type="submit" id="btn_comment_@item.Id" onclick="CreateComment(@item.Id)" class="btn btn-primary">Gönder</button>
+                   
                 </div>
                 }
                
@@ -108,6 +108,48 @@
             }
         })
         }
+
+
+    function CreateComment(id) {
+
+        var comment = $(`#txtarea_comment_${id}`).val();
+
+        
+        $.ajax({
+            dataType: 'json',
+            url: '@Url.Action("CreateComment","Post")',
+            type: 'POST',
+            data: {
+                Message: comment,
+                CreatedDate: Date.now(),
+                UserId: '1',
+                PostId: id
+            },
+            success: function (response) {
+                var createdDate = (response.createdDate);
+                var userName = response.userName;
+                var message = response.message;
+                $(`#ul_comment_${id}`).append(`
+                          <li class="list-group-item">
+                                    <strong>${userName}</strong>
+                                    <small class="text-muted">-${createdDate} </small>
+                                    <p>${message}</p>
+                                </li>
+                
+                
+                `);
+                $(`#txtarea_comment_${id}`).val('');
+            },
+              
+         error: function (err) {
+                console.log(err);
+            },
+           
+            
+        });
+ 
+    
+    };
     
 </script>
         

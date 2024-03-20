@@ -30,6 +30,9 @@ builder.Services.AddScoped<IPostService,PostManager>();
 builder.Services.AddScoped<ICommentDal,EfCommentRepository>();
 builder.Services.AddScoped<ICommentService,CommentManager>();
 
+builder.Services.AddScoped<IOfferDal,EfOfferRepository>();
+builder.Services.AddScoped<IOfferService,OfferManager>();
+
 builder.Services.AddScoped<ILikeDal,EfLikeRepository>();
 
 var app = builder.Build();

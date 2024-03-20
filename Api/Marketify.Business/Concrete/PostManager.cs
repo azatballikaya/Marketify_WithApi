@@ -26,10 +26,11 @@ namespace Marketify.Business.Concrete
         public async Task<Response> AddLikeToPostAsync(Like like)
         {
             var post=await _postDal.GetAsync(x=>x.Id==like.PostId,include:x=>x.Include(y=>y.Likes));
-            bool isLiked=post.Likes.Any(x=>x.UserId==like.UserId);
+            var isLiked= post.Likes.FirstOrDefault(x=>x.UserId==like.UserId && x.PostId==like.PostId);
             
-            if(isLiked)
+            if(isLiked!=null)
             {
+                await _likeDal.DeleteAsync(isLiked);
                 return Response.Success();
             }
           await _likeDal.InsertAsync(like);

@@ -1,4 +1,5 @@
-﻿using Marketify.UI.Models.Like;
+﻿using Marketify.UI.Models.Comment;
+using Marketify.UI.Models.Like;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Security.Claims;
@@ -42,6 +43,30 @@ namespace Marketify.UI.Controllers
 
             return Json(jsonData);
 
+        }
+        [HttpPost]
+        public async Task<JsonResult> CreateComment(CreateCommentViewModel createCommentViewModel)
+        {
+            createCommentViewModel.UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            createCommentViewModel.CreatedDate= DateTime.Now;
+            StringContent content = new StringContent(JsonConvert.SerializeObject(createCommentViewModel), Encoding.UTF8, "application/json");
+
+            var responseMessage = await client.PostAsync(apiUrl + "Comment",content);
+
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                JsonResult result = Json(new
+                {
+                    UserName = User.Identity.Name,
+                    Message = createCommentViewModel.Message,
+                    CreatedDate = DateTime.Now
+                });
+                return Json(new {UserName=User.Identity.Name,
+                    Message=createCommentViewModel.Message,
+                    CreatedDate= DateTime.Now,
+                });
+            }
+            return Json(null);
         }
     }
 }

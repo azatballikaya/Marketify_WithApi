@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Marketify.Business.DTOs;
 using Marketify.Business.DTOs.CommentDTOs;
 using Marketify.Business.DTOs.LikeDTOs;
 using Marketify.Business.DTOs.PostDTOs;
@@ -21,6 +22,8 @@ namespace Marketify.Api.Mapping
             CreateMap<Comment,CreateCommentDTO>().ReverseMap();
 
             CreateMap<Like,AddLikeDTO>().ReverseMap();  
+            
+            CreateMap<Offer,CreateOfferDTO>().ReverseMap();   
         }
     }
 }

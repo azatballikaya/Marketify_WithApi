@@ -165,6 +165,31 @@ namespace Marketify.DataAccess.Migrations
                     b.ToTable("Likes");
                 });
 
+            modelBuilder.Entity("Marketify.Entity.Offer", b =>
+                {
+                    b.Property<int>("OfferId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("PostId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<double>("Price")
+                        .HasColumnType("REAL");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("OfferId");
+
+                    b.HasIndex("PostId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Offers");
+                });
+
             modelBuilder.Entity("Marketify.Entity.Post", b =>
                 {
                     b.Property<int>("Id")
@@ -329,6 +354,25 @@ namespace Marketify.DataAccess.Migrations
                 {
                     b.HasOne("Marketify.Entity.Post", "Post")
                         .WithMany("Likes")
+                        .HasForeignKey("PostId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Marketify.Entity.Identity.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Post");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("Marketify.Entity.Offer", b =>
+                {
+                    b.HasOne("Marketify.Entity.Post", "Post")
+                        .WithMany()
                         .HasForeignKey("PostId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
