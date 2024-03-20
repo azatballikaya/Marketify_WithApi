@@ -1,0 +1,32 @@
+﻿@model ResultOfferViewModel
+<div class="container">
+    <div class="offer-details" style="margin-top: 30px;">
+        <h2 style="margin-bottom: 20px;">Product Offer Details</h2>
+
+        <div class="card mb-3 border-bottom">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="/img/@Model.Post.ImageUrl" class="card-img" alt="">
+                </div>
+                <div class="col-md-6">
+                    <div class="card-body">
+                        <h5 class="card-title">@Model.Post.Title</h5>
+                        <p class="card-text">@Model.Post.Description</p>
+                        <p class="card-text"><h3 class="text-muted">@Model.Post.Price ₺</h3></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+ 
+
+        <!-- Add more card elements as needed -->
+
+        <div class="offer-info" style="background-color: #f9f9f9; padding: 20px; border-radius: 5px;">
+            <h3 class="text-info">Teklif Detayları</h3>
+            <p><strong>Teklif Veren:</strong> @Model.User.userName</p>
+            <p><strong>Meslek:</strong> @Model.User.job</p>
+            <p class="text-primary"><strong>Teklif edilen tutar:</strong> @Model.Price ₺</p>
+        </div>
+    </div>
+</div>

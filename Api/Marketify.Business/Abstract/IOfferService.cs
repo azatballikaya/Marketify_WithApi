@@ -13,6 +13,7 @@ namespace Marketify.Business.Abstract
         Task<Response> CreateOfferAsync(Offer offer);
         Task<Response<List<Offer>>> GetIncomingOffersAsync(string userId);
         Task<Response<List<Offer>>> GetMadeOffersAsync(string userId);
+        Task<Response<Offer>> GetOfferAsync(int id);
         
     }
 }

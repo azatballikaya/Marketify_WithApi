@@ -1,4 +1,5 @@
 ﻿using Marketify.UI.Models.User;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Runtime.ConstrainedExecution;
@@ -7,6 +8,7 @@ using System.Text;
 namespace Marketify.UI.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles ="Admin")]
     public class UserController : Controller
     {
        

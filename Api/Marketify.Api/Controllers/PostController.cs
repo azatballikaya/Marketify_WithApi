@@ -3,6 +3,7 @@ using Marketify.Business.Abstract;
 using Marketify.Business.DTOs.LikeDTOs;
 using Marketify.Business.DTOs.PostDTOs;
 using Marketify.Entity;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -13,6 +14,7 @@ namespace Marketify.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+   
     public class PostController : ControllerBase
     {
         private readonly IPostService _postService;

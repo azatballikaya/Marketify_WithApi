@@ -54,5 +54,14 @@ namespace Marketify.Business.Concrete
             return Response<List<Offer>>.Fail();
 
         }
+        public async Task<Response<Offer>> GetOfferAsync(int id)
+        {
+            var offer=await _offerDal.GetAsync(x=>x.OfferId==id,x=>x.Include(z=>z.User).Include(y=>y.Post));
+            if(offer != null)
+            {
+                return Response<Offer>.Success(offer);
+            }
+            return Response<Offer>.Fail();
+        }
     }
 }

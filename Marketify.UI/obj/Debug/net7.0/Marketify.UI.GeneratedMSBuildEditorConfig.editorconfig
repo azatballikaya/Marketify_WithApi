@@ -18,6 +18,18 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\azatb\Documents\GitHub\Marketify_WithApi\Marketify.UI
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/azatb/Documents/GitHub/Marketify_WithApi/Marketify.UI/Areas/Admin/Views/Offer/GetOffer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcT2ZmZXJcR2V0T2ZmZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/azatb/Documents/GitHub/Marketify_WithApi/Marketify.UI/Areas/Admin/Views/Offer/IncomingOffers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcT2ZmZXJcSW5jb21pbmdPZmZlcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/azatb/Documents/GitHub/Marketify_WithApi/Marketify.UI/Areas/Admin/Views/Offer/MadeOffers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcT2ZmZXJcTWFkZU9mZmVycy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/azatb/Documents/GitHub/Marketify_WithApi/Marketify.UI/Areas/Admin/Views/Post/GetPost.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUG9zdFxHZXRQb3N0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

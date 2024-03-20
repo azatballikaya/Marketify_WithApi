@@ -2,6 +2,7 @@
 using Marketify.Business.Abstract;
 using Marketify.Business.DTOs.CommentDTOs;
 using Marketify.Entity;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,6 +10,7 @@ namespace Marketify.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    
     public class CommentController : ControllerBase
     {
         private readonly ICommentService _commentService;

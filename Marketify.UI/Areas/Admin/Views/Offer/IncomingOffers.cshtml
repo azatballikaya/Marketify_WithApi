@@ -1,0 +1,32 @@
+﻿@model List<ResultOfferViewModel>
+<div class="container">
+    <h2>Yapılan Teklifler</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Ürün</th>
+                <th>Fiyat</th>
+                <th>Teklif Veren</th>
+                <th>Meslek</th>
+                <th>#</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var item in Model)
+            {
+                
+            <tr>
+                <td>@item.OfferId</td>
+                <td>@item.Post.Title</td>
+                <td>@item.Price</td>
+                <td>@item.User.userName</td>
+                <td>@item.User.job</td>
+                <td><a href="/Admin/Offer/GetOffer/@item.OfferId" class="btn btn-info">Detay</a></td>
+            </tr>
+            }
+           
+        </tbody>
+    </table>
+</div>

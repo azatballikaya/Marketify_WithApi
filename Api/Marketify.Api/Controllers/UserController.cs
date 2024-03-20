@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Marketify.Business.DTOs.UserDTOs;
 using Marketify.Entity.Identity;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -10,6 +11,7 @@ namespace Marketify.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+   
     public class UserController : ControllerBase
     {
         private readonly UserManager<User> _userManager;

@@ -29,18 +29,24 @@
                     <p class="card-text">@item.Description</p>
                 </div>
                 <form>
+                        
 
-                    <div class="input-group col-md-6 mb-3">
+                            @if (User.Identity.IsAuthenticated && User.Identity.Name.ToLower() != item.User.userName.ToLower())
+                        {
+                            
+                        <div class="input-group col-md-6 mb-3">
                        
                         <input type="number" class="form-control" value=""> <button type="submit" class="btn btn-success ml-2">Teklif Yap</button>
                     </div>
+                        }
+                        
                 </form>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">
                         <span class="badge badge-primary badge-pill" id="span_like_@item.Id">@item.Likes.Count() Beğeni</span>
                         <span class="badge badge-primary badge-pill" id="span_comment_@item.Id">@item.Comments.Count() Yorum</span>
                         @if(isAuth){
-                        <button type="button" id="btn_like_@item.Id" onclick="IncrementLike(@item.Id)" class="btn btn-primary mr-2">Like</button>
+                        <button type="button" id="btn_like_@item.Id" onclick="IncrementLike(@item.Id)" class="btn btn-info mr-2">Like</button>
                         }
                             
                     </li>

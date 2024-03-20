@@ -1,6 +1,7 @@
 ﻿
 @{
     Layout = null;
+    bool isAdmin = User.IsInRole("Admin");
 }
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
@@ -38,6 +39,9 @@
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <!-- Add icons to the links using the .nav-icon class
                      with font-awesome or any other icon font library -->
+                @if (isAdmin)
+                {
+                    
                 <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="fa-solid fa-user"></i>
@@ -62,11 +66,12 @@
                         
                     </ul>
                 </li>
+                }
                 <li class="nav-item">
                     <a href="/Admin/Post/Index" class="nav-link">
                         <i class="nav-icon fas fa-edit"></i>
                         <p>
-                            Gönderiler
+                           @(isAdmin ? "Tüm Gönderiler" : "Gönderilerim")
                            
                         </p>
                     </a>
@@ -82,7 +87,7 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="/Admin/Post/Index" class="nav-link">
+                            <a href="/Admin/Offer/IncomingOffers" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Gelen Teklifler</p>
                             </a>
@@ -91,7 +96,7 @@
                     </ul>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="/Admin/Post/Index" class="nav-link">
+                            <a href="/Admin/Offer/MadeOffers" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Yapılan Teklifler</p>
                             </a>

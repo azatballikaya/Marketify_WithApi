@@ -3,20 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\azatb\\Documents\\GitHub\\Marketify_WithApi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C38241D4-2426-468C-BDF2-C708FD33319E}|Api\\Marketify.Business\\Marketify.Business.csproj|c:\\users\\azatb\\documents\\github\\marketify_withapi\\api\\marketify.business\\concrete\\offermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C38241D4-2426-468C-BDF2-C708FD33319E}|Api\\Marketify.Business\\Marketify.Business.csproj|solutionrelative:api\\marketify.business\\concrete\\offermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2109FAF2-296D-42B9-9832-D1D10A7FBDE2}|Marketify.UI\\Marketify.UI.csproj|c:\\users\\azatb\\documents\\github\\marketify_withapi\\marketify.ui\\areas\\admin\\controllers\\offercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2109FAF2-296D-42B9-9832-D1D10A7FBDE2}|Marketify.UI\\Marketify.UI.csproj|solutionrelative:marketify.ui\\areas\\admin\\controllers\\offercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{341BA11F-E4C4-45D8-AE04-B9C122EF7561}|Api\\Marketify.DataAccess\\Marketify.DataAccess.csproj|c:\\users\\azatb\\documents\\github\\marketify_withapi\\api\\marketify.dataaccess\\concrete\\entityframework\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{341BA11F-E4C4-45D8-AE04-B9C122EF7561}|Api\\Marketify.DataAccess\\Marketify.DataAccess.csproj|solutionrelative:api\\marketify.dataaccess\\concrete\\entityframework\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{68A96453-FF90-46DD-BFED-84702A914C22}|Api\\Marketify.Api\\Marketify.Api.csproj|c:\\users\\azatb\\documents\\github\\marketify_withapi\\api\\marketify.api\\controllers\\offercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{68A96453-FF90-46DD-BFED-84702A914C22}|Api\\Marketify.Api\\Marketify.Api.csproj|solutionrelative:api\\marketify.api\\controllers\\offercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{01B8B7D0-27B2-4324-9A72-A35382A12D2C}|Api\\Marketify.Entity\\Marketify.Entity.csproj|c:\\users\\azatb\\documents\\github\\marketify_withapi\\api\\marketify.entity\\offer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{01B8B7D0-27B2-4324-9A72-A35382A12D2C}|Api\\Marketify.Entity\\Marketify.Entity.csproj|solutionrelative:api\\marketify.entity\\offer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2109FAF2-296D-42B9-9832-D1D10A7FBDE2}|Marketify.UI\\Marketify.UI.csproj|c:\\users\\azatb\\documents\\github\\marketify_withapi\\marketify.ui\\areas\\admin\\views\\offer\\madeoffers.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2109FAF2-296D-42B9-9832-D1D10A7FBDE2}|Marketify.UI\\Marketify.UI.csproj|solutionrelative:marketify.ui\\areas\\admin\\views\\offer\\madeoffers.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,58 +18,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "OfferManager.cs",
-              "DocumentMoniker": "C:\\Users\\azatb\\Documents\\GitHub\\Marketify_WithApi\\Api\\Marketify.Business\\Concrete\\OfferManager.cs",
-              "RelativeDocumentMoniker": "Api\\Marketify.Business\\Concrete\\OfferManager.cs",
-              "ToolTip": "C:\\Users\\azatb\\Documents\\GitHub\\Marketify_WithApi\\Api\\Marketify.Business\\Concrete\\OfferManager.cs",
-              "RelativeToolTip": "Api\\Marketify.Business\\Concrete\\OfferManager.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAAAQwB8AAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-20T14:16:16.862Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "GenericRepository.cs",
-              "DocumentMoniker": "C:\\Users\\azatb\\Documents\\GitHub\\Marketify_WithApi\\Api\\Marketify.DataAccess\\Concrete\\EntityFramework\\GenericRepository.cs",
-              "RelativeDocumentMoniker": "Api\\Marketify.DataAccess\\Concrete\\EntityFramework\\GenericRepository.cs",
-              "ToolTip": "C:\\Users\\azatb\\Documents\\GitHub\\Marketify_WithApi\\Api\\Marketify.DataAccess\\Concrete\\EntityFramework\\GenericRepository.cs",
-              "RelativeToolTip": "Api\\Marketify.DataAccess\\Concrete\\EntityFramework\\GenericRepository.cs",
-              "ViewState": "AQIAADEAAAAAAAAAAAAkwD8AAAAwAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-20T13:10:38.985Z",
+              "Title": "MadeOffers.cshtml",
+              "DocumentMoniker": "C:\\Users\\azatb\\Documents\\GitHub\\Marketify_WithApi\\Marketify.UI\\Areas\\Admin\\Views\\Offer\\MadeOffers.cshtml",
+              "RelativeDocumentMoniker": "Marketify.UI\\Areas\\Admin\\Views\\Offer\\MadeOffers.cshtml",
+              "ToolTip": "C:\\Users\\azatb\\Documents\\GitHub\\Marketify_WithApi\\Marketify.UI\\Areas\\Admin\\Views\\Offer\\MadeOffers.cshtml",
+              "RelativeToolTip": "Marketify.UI\\Areas\\Admin\\Views\\Offer\\MadeOffers.cshtml",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAABkAAAA7AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-20T16:44:04.162Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Offer.cs",
-              "DocumentMoniker": "C:\\Users\\azatb\\Documents\\GitHub\\Marketify_WithApi\\Api\\Marketify.Entity\\Offer.cs",
-              "RelativeDocumentMoniker": "Api\\Marketify.Entity\\Offer.cs",
-              "ToolTip": "C:\\Users\\azatb\\Documents\\GitHub\\Marketify_WithApi\\Api\\Marketify.Entity\\Offer.cs",
-              "RelativeToolTip": "Api\\Marketify.Entity\\Offer.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAmAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-20T14:07:52.972Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "OfferController.cs",
-              "DocumentMoniker": "C:\\Users\\azatb\\Documents\\GitHub\\Marketify_WithApi\\Api\\Marketify.Api\\Controllers\\OfferController.cs",
-              "RelativeDocumentMoniker": "Api\\Marketify.Api\\Controllers\\OfferController.cs",
-              "ToolTip": "C:\\Users\\azatb\\Documents\\GitHub\\Marketify_WithApi\\Api\\Marketify.Api\\Controllers\\OfferController.cs",
-              "RelativeToolTip": "Api\\Marketify.Api\\Controllers\\OfferController.cs",
-              "ViewState": "AQIAABsAAAAAAAAAAAAYwCsAAABIAAAA",
+              "DocumentMoniker": "C:\\Users\\azatb\\Documents\\GitHub\\Marketify_WithApi\\Marketify.UI\\Areas\\Admin\\Controllers\\OfferController.cs",
+              "RelativeDocumentMoniker": "Marketify.UI\\Areas\\Admin\\Controllers\\OfferController.cs",
+              "ToolTip": "C:\\Users\\azatb\\Documents\\GitHub\\Marketify_WithApi\\Marketify.UI\\Areas\\Admin\\Controllers\\OfferController.cs",
+              "RelativeToolTip": "Marketify.UI\\Areas\\Admin\\Controllers\\OfferController.cs",
+              "ViewState": "AQIAABwAAAAAAAAAAAAAACMAAAAwAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-20T14:04:38.963Z",
+              "WhenOpened": "2024-03-20T16:41:44.122Z",
               "EditorCaption": ""
             }
           ]

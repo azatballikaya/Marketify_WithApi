@@ -2,6 +2,7 @@
 using Marketify.Business.Abstract;
 using Marketify.Business.DTOs;
 using Marketify.Entity;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,6 +10,7 @@ namespace Marketify.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    
     public class OfferController : ControllerBase
     {
         private readonly IOfferService _offerService;
@@ -43,6 +45,14 @@ namespace Marketify.Api.Controllers
             var response=await _offerService.CreateOfferAsync(offer);
             IActionResult result = response.IsSuccess ? Ok() : BadRequest();
             return result;
+        }
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetOffer(int id)
+        {
+            var response=await _offerService.GetOfferAsync(id);
+            IActionResult result = response.IsSuccess ? Ok(response.Data) : BadRequest();
+            return result;
+
         }
     }
 }

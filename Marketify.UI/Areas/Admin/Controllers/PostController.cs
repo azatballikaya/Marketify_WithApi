@@ -1,5 +1,6 @@
 ﻿using Marketify.UI.Models.Comment;
 using Marketify.UI.Models.Post;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Security.Claims;
@@ -7,6 +8,7 @@ using System.Security.Claims;
 namespace Marketify.UI.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize]
     public class PostController : Controller
     {
 
