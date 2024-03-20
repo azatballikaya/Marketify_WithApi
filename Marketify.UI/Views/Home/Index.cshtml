@@ -1,43 +1,114 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+    bool isAuth = User.Identity.IsAuthenticated;
 }
-<div class="card my-2">
-    <div class="card-body">
-        <h5 class="card-title">Post Title</h5>
-        <h6 class="card-subtitle mb-2 text-muted">Author: John Doe</h6>
-        <img src="~/img/test.jpg" style="max-width:100%; height:300px" class="post-image mb-3" alt="Sample Image">
+@model List<ResultPostViewModel>
 
-        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac odio mauris. Donec venenatis ligula in lorem accumsan, ut scelerisque turpis consectetur. Nam vitae turpis nec nisi interdum euismod.</p>
-    </div>
-    <ul class="list-group list-group-flush">
-        <li class="list-group-item">
-            <button type="button" class="btn btn-primary mr-2">Like</button>
-          
-            <span class="badge badge-primary badge-pill">10 Likes</span>
-            <span class="badge badge-primary badge-pill">5 Comments</span>
-        </li>
-    </ul>
-    <div class="card-body">
-        <form>
-            <div class="form-group">
-                <label for="commentInput">Write a comment:</label>
-                <textarea class="form-control" id="commentInput" rows="3"></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-    <div class="card-body">
-        <!-- Add buttons or actions here -->
-    </div>
-    <!-- Comments -->
-    <div class="card-body">
-        <h5 class="card-title">Comments</h5>
-        <ul class="list-group">
-            <li class="list-group-item">Comment 1</li>
-            <li class="list-group-item">Comment 2</li>
-            <!-- Add more comments as needed -->
-        </ul>
-    </div>
-    <!-- End of Comments -->
-</div>
+
+<div class="container mt-4">
+    <div class="row">
+      
+        @foreach (var item in Model)
+        {
+
+
+      
+        <div class="col-md-6">
                 
+              
+           
+            <div class="card my-2">
+                <div class="card-body">
+                        <a type="button" class="btn btn-primary float-right">Mesaj Gönder</a>
+
+                    <h5 class="card-title">@item.Title</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Post Yayınlayan: @item.User.userName</h6>
+                   
+                    <img src="~/img/@item.ImageUrl" style="max-width:100%; height:300px" class="post-image mb-3" alt="Sample Image">
+                   
+                    <p class="card-text">@item.Description</p>
+                </div>
+                <form>
+
+                    <div class="input-group col-md-6 mb-3">
+                       
+                        <input type="number" class="form-control" value=""> <button type="submit" class="btn btn-success ml-2">Teklif Yap</button>
+                    </div>
+                </form>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <span class="badge badge-primary badge-pill" id="span_like_@item.Id">@item.Likes.Count() Beğeni</span>
+                        <span class="badge badge-primary badge-pill" id="span_comment_@item.Id">@item.Comments.Count() Yorum</span>
+                        @if(isAuth){
+                        <button type="button" id="btn_like_@item.Id" onclick="IncrementLike(@item.Id)" class="btn btn-primary mr-2">Like</button>
+                        }
+                            
+                    </li>
+                </ul>
+                <div class="card-body">
+                  
+                </div>
+               
+                <div class="card-body">
+                    <h5 class="card-title">Yorumlar</h5>
+                        <ul class="list-group">
+                            @foreach (var comment in item.Comments)
+                            {
+                                
+                            <li class="list-group-item">
+                                <strong>@comment.User.userName</strong>
+                                <small class="text-muted">- @comment.CreatedDate</small>
+                                <p>@comment.Message</p>
+                            </li>
+                           
+                            }
+                           
+                        </ul>
+                </div>
+            
+                @if (isAuth)
+                {
+                    
+                <div class="card-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="commentInput">Bir Yorum Paylaş...</label>
+                            <textarea class="form-control" id="commentInput" ></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Gönder</button>
+                    </form>
+                </div>
+                }
+               
+            </div>
+           
+        </div>
+
+       
+       }
+    </div>
+</div>
+<script>
+   
+    function IncrementLike(id){
+
+    
+     
+
+        $.ajax({
+            url: `@Url.Action("AddLikeToPost","Post")/${id}`,
+            dataType:'json',
+            type:'GET',
+            
+            success: function (response) {
+                $(`#span_like_${id}`).html(`${response} Beğeni`);
+            },
+            error: function (err) {
+                console.log(err);
+            }
+        })
+        }
+    
+</script>
+        
 

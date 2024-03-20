@@ -1,63 +1,52 @@
-﻿
+﻿@{
+    bool isAuth = User.Identity.IsAuthenticated;
+}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Facebook-like Template</title>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <!-- Custom CSS -->
-    <style>
-        /* Add custom CSS here */
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marketify</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+
 </head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <a class="navbar-brand" href="#">Facebook</a>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
+  
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="#">MARKETIFY</a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+                @if (User.Identity.IsAuthenticated)
+                {
+                    
                 <li class="nav-item">
-                    <button type="button" class="btn btn-outline-light mr-2">Login</button>
-                </li>
-                <li class="nav-item">
-                    <button type="button" class="btn btn-outline-light">Logout</button>
-                </li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- Main Content -->
-    <div class="container mt-4">
-        <div class="row">
-            <!-- Left Sidebar -->
-            <div class="col-md-3">
-                <!-- Add left sidebar content here -->
-            </div>
-
-            <!-- Main Feed -->
-            <div class="col-md-6">
-                <!-- Post -->
-                @RenderBody()
-                <!-- End of Post -->
-            </div>
-
-            <!-- Right Sidebar -->
-            <div class="col-md-3">
-                <!-- Add right sidebar content here -->
-            </div>
-        </div>
+          <a type="button" href="/Admin/Post/Index" target="_blank" class="btn btn-outline-light mr-2">Yönetim Paneli</a>
+        </li>
+        <li class="nav-item">
+          <a href="/Login/Logout" type="button" class="btn btn-outline-light">Çıkış Yap</a>
+        </li>
+                }
+                else
+                {
+                     <li class="nav-item">
+          <a href="/Login/Login" type="button" class="btn btn-outline-light">Giriş Yap</a>
+        </li>
+                }
+      </ul>
     </div>
+  </nav>
+@RenderBody()
 
-    <!-- Footer -->
-    <footer class="bg-dark text-light text-center py-3 mt-4">
-        <!-- Add footer content here -->
-    </footer>
+  <footer class="bg-dark text-light text-center py-3 mt-4">
 
-    <!-- Bootstrap JS (Optional) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </footer>
+
+
+
 </body>
 </html>

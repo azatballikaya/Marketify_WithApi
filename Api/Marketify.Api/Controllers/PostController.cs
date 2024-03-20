@@ -89,8 +89,16 @@ namespace Marketify.Api.Controllers
         {
             var like = _mapper.Map<Like>(addLikeDTO);
              var response=  await _postService.AddLikeToPostAsync(like);
-            IActionResult result = response.IsSuccess ? Ok() : NotFound();
+            var post = await _postService.GetPostByIdAsync(addLikeDTO.PostId);
+            IActionResult result = response.IsSuccess ? Ok(post.Data.Likes.Count()) : NotFound();
             return result;
+        }
+        [HttpPost("IsLiked")]
+        public async Task<IActionResult> IsLiked(AddLikeDTO addLikeDTO)
+        {
+            var post=await _postService.GetPostByIdAsync(addLikeDTO.PostId);
+            bool isLiked=post.Data.Likes.Any(x=>x.UserId==addLikeDTO.UserId);
+            return Ok(isLiked);
         }
     }
 }
