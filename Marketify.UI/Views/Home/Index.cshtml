@@ -1,8 +1,43 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+<div class="card my-2">
+    <div class="card-body">
+        <h5 class="card-title">Post Title</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Author: John Doe</h6>
+        <img src="~/img/test.jpg" style="max-width:100%; height:300px" class="post-image mb-3" alt="Sample Image">
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac odio mauris. Donec venenatis ligula in lorem accumsan, ut scelerisque turpis consectetur. Nam vitae turpis nec nisi interdum euismod.</p>
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+            <button type="button" class="btn btn-primary mr-2">Like</button>
+          
+            <span class="badge badge-primary badge-pill">10 Likes</span>
+            <span class="badge badge-primary badge-pill">5 Comments</span>
+        </li>
+    </ul>
+    <div class="card-body">
+        <form>
+            <div class="form-group">
+                <label for="commentInput">Write a comment:</label>
+                <textarea class="form-control" id="commentInput" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    <div class="card-body">
+        <!-- Add buttons or actions here -->
+    </div>
+    <!-- Comments -->
+    <div class="card-body">
+        <h5 class="card-title">Comments</h5>
+        <ul class="list-group">
+            <li class="list-group-item">Comment 1</li>
+            <li class="list-group-item">Comment 2</li>
+            <!-- Add more comments as needed -->
+        </ul>
+    </div>
+    <!-- End of Comments -->
 </div>
+                
+

@@ -51,6 +51,16 @@ namespace Marketify.Api.Controllers
             }
             return BadRequest();
         }
+        [HttpGet("GetPostsByUserId/{id}")]
+        public async Task<IActionResult> GetPostsByUserId(string id)
+        {
+            var response=await _postService.GetPostsByUserIdAsync(id);
+            var jsonData = JsonConvert.SerializeObject(response.Data, new JsonSerializerSettings
+            {
+                ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
+            });
+            return Ok(jsonData);
+        }
         [HttpPost]
         public async Task<IActionResult> CreatePost(CreatePostDTO createPostDTO)
         {

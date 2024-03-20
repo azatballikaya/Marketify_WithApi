@@ -47,8 +47,13 @@ namespace Marketify.UI.Controllers
                 var userIdentity=new ClaimsIdentity(claims,"Login");
                 ClaimsPrincipal principal=new ClaimsPrincipal(userIdentity);
                 await HttpContext.SignInAsync(principal);
-                
+                return Redirect("~/");
             }
+            return View(loginViewModel);
+        }
+        public async Task<IActionResult> Logout()
+        {
+            await HttpContext.SignOutAsync();
             return Redirect("~/");
         }
     }

@@ -2,6 +2,7 @@
 using Marketify.UI.Models.Post;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using System.Security.Claims;
 
 namespace Marketify.UI.Areas.Admin.Controllers
 {
@@ -22,7 +23,16 @@ namespace Marketify.UI.Areas.Admin.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            var responseMessage = await client.GetAsync(apiUrl + "Post");
+            HttpResponseMessage responseMessage;
+            if (User.IsInRole("Admin"))
+            {
+                responseMessage=await client.GetAsync(apiUrl+"Post");
+            }
+            else
+            {
+                var userId=User.FindFirstValue(ClaimTypes.NameIdentifier);
+                responseMessage = await client.GetAsync(apiUrl + $"Post/GetPostsByUserId/{userId}");
+            }
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();

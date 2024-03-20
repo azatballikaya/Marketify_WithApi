@@ -48,9 +48,10 @@ namespace Marketify.DataAccess.Concrete.EntityFramework
             }
             if (filter != null)
             {
-                query.Where(filter);
+               query= query.Where(filter);
             }
-            return await query.ToListAsync();
+            
+            return await  query.ToListAsync();
         }
 
        
