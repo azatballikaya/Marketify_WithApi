@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7gjO5zPtRQUYfmyXxpALC3h09p5x82OFXPkQNSbEf5I7k7oLD4TRA8C1FtC3E64T2lJhJ1zxoNqSguoHVqwpyw==",
+  "dgSpecHash": "4kxt8g8NlQyr3xX6i9FXHcnQSAE3RW9Jx40MP+zRqcB8gi/EjLSk6vEtANFoTQ7AZfXP7wPYZjkYW/LGWiRdPA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Azat\\Desktop\\Marketify_WithApi\\Api\\Marketify.DataAccess\\Marketify.DataAccess.csproj",
+  "projectFilePath": "C:\\Users\\Azat\\Documents\\GitHub\\AspNetCore_Works\\Marketify_WithApi\\Api\\Marketify.DataAccess\\Marketify.DataAccess.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Azat\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Azat\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

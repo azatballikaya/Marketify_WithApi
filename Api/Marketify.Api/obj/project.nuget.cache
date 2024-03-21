@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "q/b8hSicPC+FFUzeiPO1QHcdJrt4vK9by7uSvrZsFMt7krBtqjAlYvLG2XH8hSw2PFvS4IrqY9xV+uC4dPrK7A==",
+  "dgSpecHash": "O/j5r9/QZfIBmA/VWQqC9qMPQszBaVgBWVUAWw6qB2f93tenTZx/IkQsZxs73qJwn7DrJMdzfl/h+iO1DT8uiQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Azat\\Desktop\\Marketify_WithApi\\Api\\Marketify.Api\\Marketify.Api.csproj",
+  "projectFilePath": "C:\\Users\\Azat\\Documents\\GitHub\\AspNetCore_Works\\Marketify_WithApi\\Api\\Marketify.Api\\Marketify.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Azat\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\Azat\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",

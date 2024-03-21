@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PC0XrlfduSI5j4VFAjg/O0JWoN0EaSg/C1Wf8jtlxAuTKUB3sU4CiAvFdh69rN1Gor3e52u4VRnZN0VN3Ap9Xw==",
+  "dgSpecHash": "WA571TGW4gn6VVvwrkogJEcN45WuypxHa3QovPFI5MfR4FirM5q74yfUX3Mlie0ayR+JcCcMBgtE2+zWOPQc1Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Azat\\Desktop\\Marketify_WithApi\\Marketify.UI\\Marketify.UI.csproj",
+  "projectFilePath": "C:\\Users\\Azat\\Documents\\GitHub\\AspNetCore_Works\\Marketify_WithApi\\Marketify.UI\\Marketify.UI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Azat\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\Azat\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

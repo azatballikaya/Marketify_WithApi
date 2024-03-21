@@ -3518,11 +3518,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Azat\\Desktop\\Marketify_WithApi\\Api\\Marketify.Business\\Marketify.Business.csproj",
+      "projectUniqueName": "C:\\Users\\Azat\\Documents\\GitHub\\AspNetCore_Works\\Marketify_WithApi\\Api\\Marketify.Business\\Marketify.Business.csproj",
       "projectName": "Marketify.Business",
-      "projectPath": "C:\\Users\\Azat\\Desktop\\Marketify_WithApi\\Api\\Marketify.Business\\Marketify.Business.csproj",
+      "projectPath": "C:\\Users\\Azat\\Documents\\GitHub\\AspNetCore_Works\\Marketify_WithApi\\Api\\Marketify.Business\\Marketify.Business.csproj",
       "packagesPath": "C:\\Users\\Azat\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Azat\\Desktop\\Marketify_WithApi\\Api\\Marketify.Business\\obj\\",
+      "outputPath": "C:\\Users\\Azat\\Documents\\GitHub\\AspNetCore_Works\\Marketify_WithApi\\Api\\Marketify.Business\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Azat\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3539,8 +3539,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\Azat\\Desktop\\Marketify_WithApi\\Api\\Marketify.DataAccess\\Marketify.DataAccess.csproj": {
-              "projectPath": "C:\\Users\\Azat\\Desktop\\Marketify_WithApi\\Api\\Marketify.DataAccess\\Marketify.DataAccess.csproj"
+            "C:\\Users\\Azat\\Documents\\GitHub\\AspNetCore_Works\\Marketify_WithApi\\Api\\Marketify.DataAccess\\Marketify.DataAccess.csproj": {
+              "projectPath": "C:\\Users\\Azat\\Documents\\GitHub\\AspNetCore_Works\\Marketify_WithApi\\Api\\Marketify.DataAccess\\Marketify.DataAccess.csproj"
             }
           }
         }

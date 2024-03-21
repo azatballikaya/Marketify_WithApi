@@ -21,7 +21,7 @@ namespace Marketify.Business.Concrete
         }
         public async Task<Response<List<Chat>>> GetUserChatsAsync(string userId)
         {
-          var chats=  await _chatDal.GetAllAsync(x=>x.UserId1 == userId || x.UserId2==userId, x=>x.Include(y=>y.Messages));
+          var chats=  await _chatDal.GetAllAsync(x=>x.UserId1 == userId || x.UserId2==userId, x=>x.Include(y=>y.Messages).ThenInclude(k=>k.Sender).Include(k=>k.Messages).ThenInclude(c=>c.Recipient));
             if (chats != null)
             {
                 return Response<List<Chat>>.Success(chats);

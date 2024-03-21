@@ -9664,11 +9664,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Azat\\Desktop\\Marketify_WithApi\\Marketify.UI\\Marketify.UI.csproj",
+      "projectUniqueName": "C:\\Users\\Azat\\Documents\\GitHub\\AspNetCore_Works\\Marketify_WithApi\\Marketify.UI\\Marketify.UI.csproj",
       "projectName": "Marketify.UI",
-      "projectPath": "C:\\Users\\Azat\\Desktop\\Marketify_WithApi\\Marketify.UI\\Marketify.UI.csproj",
+      "projectPath": "C:\\Users\\Azat\\Documents\\GitHub\\AspNetCore_Works\\Marketify_WithApi\\Marketify.UI\\Marketify.UI.csproj",
       "packagesPath": "C:\\Users\\Azat\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Azat\\Desktop\\Marketify_WithApi\\Marketify.UI\\obj\\",
+      "outputPath": "C:\\Users\\Azat\\Documents\\GitHub\\AspNetCore_Works\\Marketify_WithApi\\Marketify.UI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Azat\\AppData\\Roaming\\NuGet\\NuGet.Config",

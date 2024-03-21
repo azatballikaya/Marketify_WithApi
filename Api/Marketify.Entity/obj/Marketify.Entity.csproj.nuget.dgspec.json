@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Azat\\Desktop\\Marketify_WithApi\\Api\\Marketify.Entity\\Marketify.Entity.csproj": {}
+    "C:\\Users\\Azat\\Documents\\GitHub\\AspNetCore_Works\\Marketify_WithApi\\Api\\Marketify.Entity\\Marketify.Entity.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Azat\\Desktop\\Marketify_WithApi\\Api\\Marketify.Entity\\Marketify.Entity.csproj": {
+    "C:\\Users\\Azat\\Documents\\GitHub\\AspNetCore_Works\\Marketify_WithApi\\Api\\Marketify.Entity\\Marketify.Entity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Azat\\Desktop\\Marketify_WithApi\\Api\\Marketify.Entity\\Marketify.Entity.csproj",
+        "projectUniqueName": "C:\\Users\\Azat\\Documents\\GitHub\\AspNetCore_Works\\Marketify_WithApi\\Api\\Marketify.Entity\\Marketify.Entity.csproj",
         "projectName": "Marketify.Entity",
-        "projectPath": "C:\\Users\\Azat\\Desktop\\Marketify_WithApi\\Api\\Marketify.Entity\\Marketify.Entity.csproj",
+        "projectPath": "C:\\Users\\Azat\\Documents\\GitHub\\AspNetCore_Works\\Marketify_WithApi\\Api\\Marketify.Entity\\Marketify.Entity.csproj",
         "packagesPath": "C:\\Users\\Azat\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Azat\\Desktop\\Marketify_WithApi\\Api\\Marketify.Entity\\obj\\",
+        "outputPath": "C:\\Users\\Azat\\Documents\\GitHub\\AspNetCore_Works\\Marketify_WithApi\\Api\\Marketify.Entity\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Azat\\AppData\\Roaming\\NuGet\\NuGet.Config",

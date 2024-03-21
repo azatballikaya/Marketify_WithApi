@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fIjjVLkxTEd/hNKcd/urWTUUlxUDNljf1Y6EoKnmihcwR/gU5+UdnVuHvwo1M5Amjg37Tk6/fL4OrZR5simfoQ==",
+  "dgSpecHash": "hmpjdf4Flb3qJh3TYbrlSUHcevu2uBY1LRkV1yMU7UwNbpWDGGwsNOkysKiriI0eunxjlNXdWrygVSUfSKe7Sg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Azat\\Desktop\\Marketify_WithApi\\Api\\Marketify.Business\\Marketify.Business.csproj",
+  "projectFilePath": "C:\\Users\\Azat\\Documents\\GitHub\\AspNetCore_Works\\Marketify_WithApi\\Api\\Marketify.Business\\Marketify.Business.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Azat\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Azat\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

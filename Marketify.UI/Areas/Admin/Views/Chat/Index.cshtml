@@ -1,0 +1,23 @@
+﻿@model List<ResultChatViewModel>
+@{
+    
+}
+<div class="container">
+    <h1 class="text-center mt-4 mb-4"><b>Mesaj Kutusu</b></h1>
+    <!-- Chat List -->
+    @foreach (var item in Model)
+    {
+        
+    <div class="list-group">
+        <!-- Chat Item -->
+        <a href="#" class="list-group-item list-group-item-action" style="background-color: #fff; border-color: #dee2e6; cursor: pointer;">
+            <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">@(item.UserId1!=ViewBag.UserId ? item.User1.userName : item.User2.userName)</h5>
+                <small>Last Message Time</small>
+            </div>
+            <p class="mb-1">@item.Messages[item.Messages.Count-1].MessageContent</p>
+        </a>
+        <!-- Add more chat items as needed -->
+    </div>
+    }
+</div>

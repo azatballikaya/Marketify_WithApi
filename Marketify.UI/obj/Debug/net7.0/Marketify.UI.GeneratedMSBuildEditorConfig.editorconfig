@@ -9,107 +9,111 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Marketify.UI
 build_property.RootNamespace = Marketify.UI
-build_property.ProjectDir = C:\Users\Azat\Desktop\Marketify_WithApi\Marketify.UI\
+build_property.ProjectDir = C:\Users\Azat\Documents\GitHub\AspNetCore_Works\Marketify_WithApi\Marketify.UI\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Azat\Desktop\Marketify_WithApi\Marketify.UI
+build_property.MSBuildProjectDirectory = C:\Users\Azat\Documents\GitHub\AspNetCore_Works\Marketify_WithApi\Marketify.UI
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Azat/Desktop/Marketify_WithApi/Marketify.UI/Areas/Admin/Views/Offer/GetOffer.cshtml]
+[C:/Users/Azat/Documents/GitHub/AspNetCore_Works/Marketify_WithApi/Marketify.UI/Areas/Admin/Views/Chat/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2hhdFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Azat/Documents/GitHub/AspNetCore_Works/Marketify_WithApi/Marketify.UI/Areas/Admin/Views/Offer/GetOffer.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcT2ZmZXJcR2V0T2ZmZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Azat/Desktop/Marketify_WithApi/Marketify.UI/Areas/Admin/Views/Offer/IncomingOffers.cshtml]
+[C:/Users/Azat/Documents/GitHub/AspNetCore_Works/Marketify_WithApi/Marketify.UI/Areas/Admin/Views/Offer/IncomingOffers.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcT2ZmZXJcSW5jb21pbmdPZmZlcnMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Azat/Desktop/Marketify_WithApi/Marketify.UI/Areas/Admin/Views/Offer/MadeOffers.cshtml]
+[C:/Users/Azat/Documents/GitHub/AspNetCore_Works/Marketify_WithApi/Marketify.UI/Areas/Admin/Views/Offer/MadeOffers.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcT2ZmZXJcTWFkZU9mZmVycy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Azat/Desktop/Marketify_WithApi/Marketify.UI/Areas/Admin/Views/Post/GetPost.cshtml]
+[C:/Users/Azat/Documents/GitHub/AspNetCore_Works/Marketify_WithApi/Marketify.UI/Areas/Admin/Views/Post/GetPost.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUG9zdFxHZXRQb3N0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Azat/Desktop/Marketify_WithApi/Marketify.UI/Areas/Admin/Views/Post/Index.cshtml]
+[C:/Users/Azat/Documents/GitHub/AspNetCore_Works/Marketify_WithApi/Marketify.UI/Areas/Admin/Views/Post/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUG9zdFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Azat/Desktop/Marketify_WithApi/Marketify.UI/Areas/Admin/Views/Shared/_AdminLayout.cshtml]
+[C:/Users/Azat/Documents/GitHub/AspNetCore_Works/Marketify_WithApi/Marketify.UI/Areas/Admin/Views/Shared/_AdminLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9BZG1pbkxheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Azat/Desktop/Marketify_WithApi/Marketify.UI/Areas/Admin/Views/Shared/_FooterPartialView.cshtml]
+[C:/Users/Azat/Documents/GitHub/AspNetCore_Works/Marketify_WithApi/Marketify.UI/Areas/Admin/Views/Shared/_FooterPartialView.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9Gb290ZXJQYXJ0aWFsVmlldy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Azat/Desktop/Marketify_WithApi/Marketify.UI/Areas/Admin/Views/Shared/_LinksPartialView.cshtml]
+[C:/Users/Azat/Documents/GitHub/AspNetCore_Works/Marketify_WithApi/Marketify.UI/Areas/Admin/Views/Shared/_LinksPartialView.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9MaW5rc1BhcnRpYWxWaWV3LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Azat/Desktop/Marketify_WithApi/Marketify.UI/Areas/Admin/Views/Shared/_NavbarPartialView.cshtml]
+[C:/Users/Azat/Documents/GitHub/AspNetCore_Works/Marketify_WithApi/Marketify.UI/Areas/Admin/Views/Shared/_NavbarPartialView.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9OYXZiYXJQYXJ0aWFsVmlldy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Azat/Desktop/Marketify_WithApi/Marketify.UI/Areas/Admin/Views/Shared/_ScriptsPartialView.cshtml]
+[C:/Users/Azat/Documents/GitHub/AspNetCore_Works/Marketify_WithApi/Marketify.UI/Areas/Admin/Views/Shared/_ScriptsPartialView.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9TY3JpcHRzUGFydGlhbFZpZXcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Azat/Desktop/Marketify_WithApi/Marketify.UI/Areas/Admin/Views/Shared/_SidebarPartialView.cshtml]
+[C:/Users/Azat/Documents/GitHub/AspNetCore_Works/Marketify_WithApi/Marketify.UI/Areas/Admin/Views/Shared/_SidebarPartialView.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9TaWRlYmFyUGFydGlhbFZpZXcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Azat/Desktop/Marketify_WithApi/Marketify.UI/Areas/Admin/Views/Test/Index.cshtml]
+[C:/Users/Azat/Documents/GitHub/AspNetCore_Works/Marketify_WithApi/Marketify.UI/Areas/Admin/Views/Test/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVGVzdFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Azat/Desktop/Marketify_WithApi/Marketify.UI/Areas/Admin/Views/User/Index.cshtml]
+[C:/Users/Azat/Documents/GitHub/AspNetCore_Works/Marketify_WithApi/Marketify.UI/Areas/Admin/Views/User/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVXNlclxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Azat/Desktop/Marketify_WithApi/Marketify.UI/Areas/Admin/Views/User/IsntApproved.cshtml]
+[C:/Users/Azat/Documents/GitHub/AspNetCore_Works/Marketify_WithApi/Marketify.UI/Areas/Admin/Views/User/IsntApproved.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVXNlclxJc250QXBwcm92ZWQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Azat/Desktop/Marketify_WithApi/Marketify.UI/Areas/Admin/Views/_ViewImports.cshtml]
+[C:/Users/Azat/Documents/GitHub/AspNetCore_Works/Marketify_WithApi/Marketify.UI/Areas/Admin/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Azat/Desktop/Marketify_WithApi/Marketify.UI/Areas/Admin/Views/_ViewStart.cshtml]
+[C:/Users/Azat/Documents/GitHub/AspNetCore_Works/Marketify_WithApi/Marketify.UI/Areas/Admin/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Azat/Desktop/Marketify_WithApi/Marketify.UI/Views/Home/Index.cshtml]
+[C:/Users/Azat/Documents/GitHub/AspNetCore_Works/Marketify_WithApi/Marketify.UI/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Azat/Desktop/Marketify_WithApi/Marketify.UI/Views/Home/Privacy.cshtml]
+[C:/Users/Azat/Documents/GitHub/AspNetCore_Works/Marketify_WithApi/Marketify.UI/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Azat/Desktop/Marketify_WithApi/Marketify.UI/Views/Login/Login.cshtml]
+[C:/Users/Azat/Documents/GitHub/AspNetCore_Works/Marketify_WithApi/Marketify.UI/Views/Login/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Azat/Desktop/Marketify_WithApi/Marketify.UI/Views/Shared/Error.cshtml]
+[C:/Users/Azat/Documents/GitHub/AspNetCore_Works/Marketify_WithApi/Marketify.UI/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Azat/Desktop/Marketify_WithApi/Marketify.UI/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Azat/Documents/GitHub/AspNetCore_Works/Marketify_WithApi/Marketify.UI/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Azat/Desktop/Marketify_WithApi/Marketify.UI/Views/_ViewImports.cshtml]
+[C:/Users/Azat/Documents/GitHub/AspNetCore_Works/Marketify_WithApi/Marketify.UI/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Azat/Desktop/Marketify_WithApi/Marketify.UI/Views/_ViewStart.cshtml]
+[C:/Users/Azat/Documents/GitHub/AspNetCore_Works/Marketify_WithApi/Marketify.UI/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Azat/Desktop/Marketify_WithApi/Marketify.UI/Views/Shared/_Layout.cshtml]
+[C:/Users/Azat/Documents/GitHub/AspNetCore_Works/Marketify_WithApi/Marketify.UI/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-dbjzkyrbjy
