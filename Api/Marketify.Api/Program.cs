@@ -33,6 +33,12 @@ builder.Services.AddScoped<ICommentService,CommentManager>();
 builder.Services.AddScoped<IOfferDal,EfOfferRepository>();
 builder.Services.AddScoped<IOfferService,OfferManager>();
 
+builder.Services.AddScoped<IMessageDal, EfMessageRepository>();
+builder.Services.AddScoped<IMessageService, MessageManager>();
+
+builder.Services.AddScoped<IChatDal, EfChatRepository>();
+builder.Services.AddScoped<IChatService, ChatManager>();
+
 builder.Services.AddScoped<ILikeDal,EfLikeRepository>();
 
 var app = builder.Build();

@@ -1,6 +1,7 @@
 ﻿using Marketify.Entity.Identity;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,8 +12,13 @@ namespace Marketify.Entity
     {
         public int Id { get; set; }
         public string MessageContent { get; set; }
-        public string UserId { get; set; }
-        public User User { get; set; }
-        public int MyProperty { get; set; }
+        public int ChatId { get; set; }
+        public Chat Chat { get; set; }
+        [ForeignKey("Sender")]
+        public string SenderId { get; set; }
+        public User Sender { get; set; }
+        [ForeignKey("Recipient")]
+        public string RecipientId { get; set; }
+        public User Recipient { get; set; }
     }
 }

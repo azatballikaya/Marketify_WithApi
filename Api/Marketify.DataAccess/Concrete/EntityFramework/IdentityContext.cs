@@ -74,9 +74,12 @@ namespace Marketify.DataAccess.Concrete.EntityFramework
 
 
         //}
+       
         public DbSet<Post> Posts { get; set; }
         public DbSet<Comment> Comments { get; set; }
         public DbSet<Like> Likes { get; set; }
         public DbSet<Offer> Offers { get; set; }
+        public DbSet<Chat> Chats { get; set; }
+        public DbSet<Message> Messages { get; set; }
     }
 }
