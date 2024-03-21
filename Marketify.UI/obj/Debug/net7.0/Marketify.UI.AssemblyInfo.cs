@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Marketify.UI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e308387e66e3678b87e9bec7fdad2db9cb7ffec9")]
 [assembly: System.Reflection.AssemblyProductAttribute("Marketify.UI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Marketify.UI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

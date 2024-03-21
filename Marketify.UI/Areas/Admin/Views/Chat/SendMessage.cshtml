@@ -1,0 +1,20 @@
+﻿@model List<ResultUserViewModel>
+<h1 class="text-center mt-2 text-success"><b>Mesaj Gönder</b></h1>
+<hr />
+
+
+<div style="max-width: 600px; margin: 50px auto;">
+    <!-- Messages -->
+    
+    <!-- Message Input -->
+    <form action="/Admin/Chat/SendMessage" method="post">
+        <select class="mb-2">
+        @foreach (var item in Model)
+        {
+            <option value="@item.id" name="RecipientId">@item.userName</option>
+        }
+        </select>
+        <textarea style="width: 100%; border: 1px solid #ccc; border-radius: 5px; padding: 10px; resize: none;" name="MessageContent" rows="3" placeholder="Mesajınızı Giriniz..."></textarea>
+        <button type="submit" style="margin-top: 10px; width: 100%;" class="btn btn-primary">Gönder</button>
+    </form>
+</div>

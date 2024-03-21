@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Security.Claims;
+using System.Text;
 
 namespace Marketify.UI.Areas.Admin.Controllers
 {
@@ -60,6 +61,22 @@ namespace Marketify.UI.Areas.Admin.Controllers
             }
 
             return View();
+
+        }
+        [HttpPost]
+        public async Task<IActionResult> CreateOffer(CreateOfferViewModel createOfferViewModel)
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            createOfferViewModel.UserId = userId;
+            var jsonData=JsonConvert.SerializeObject(createOfferViewModel);
+            StringContent content=new StringContent(jsonData,Encoding.UTF8,"application/json");
+            var responseMessage = await client.PostAsync(apiUrl + "Offer",content);
+
+            if(responseMessage.IsSuccessStatusCode)
+            {
+                return RedirectToAction("MadeOffers");
+            }
+            return Redirect("~/");
 
         }
     }
