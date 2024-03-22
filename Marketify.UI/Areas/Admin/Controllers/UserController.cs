@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Runtime.ConstrainedExecution;
+using System.Security.Claims;
 using System.Text;
 
 namespace Marketify.UI.Areas.Admin.Controllers
@@ -37,6 +38,19 @@ namespace Marketify.UI.Areas.Admin.Controllers
                 return View(value);
             }
             return View();
+        }
+        [AllowAnonymous]
+        [Authorize]
+        public async Task<IActionResult> GetProfile()
+        {
+            var responseMessage = await client.GetAsync(apiUrl + $"User/{User.FindFirstValue(ClaimTypes.NameIdentifier)}");
+            if(responseMessage.IsSuccessStatusCode)
+            {
+                var jsonData= await responseMessage.Content.ReadAsStringAsync();
+                var value=JsonConvert.DeserializeObject<UpdateUserViewModel>(jsonData);
+                return View(value);
+            }
+            return NotFound();
         }
         public async Task<IActionResult> Delete(string id)
         {

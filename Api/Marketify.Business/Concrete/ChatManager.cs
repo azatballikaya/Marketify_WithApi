@@ -3,6 +3,7 @@ using Marketify.Business.DTOs.Response;
 using Marketify.DataAccess.Abstract;
 using Marketify.Entity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Identity.Client;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +28,13 @@ namespace Marketify.Business.Concrete
                 return Response<List<Chat>>.Success(chats);
             }
             return Response<List<Chat>>.Fail();
+        }
+        public async Task<Response<Chat>> GetChatAsync(int id)
+        {
+            var chat=await _chatDal.GetAsync(x=>x.ChatId == id,x=>x.Include(y=>y.User1).Include(z=>z.User2).Include(k=>k.Messages));
+            Response<Chat> response= chat!= null ? Response<Chat>.Success(chat) : Response<Chat>.Fail();
+            return response;
+            
         }
         public async Task<Response> CreateChatAsync(string userId1, string userId2)
         {

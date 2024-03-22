@@ -16,7 +16,7 @@
         public string phoneNumber { get; set; }
         public bool phoneNumberConfirmed { get; set; }
         public bool twoFactorEnabled { get; set; }
-        public DateTime lockoutEnd { get; set; }
+        public DateTime? lockoutEnd { get; set; }
         public bool lockoutEnabled { get; set; }
         public int accessFailedCount { get; set; }
     }

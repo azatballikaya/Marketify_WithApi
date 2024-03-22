@@ -22,8 +22,9 @@ namespace Marketify.UI.Controllers
             client = httpClientFactory.CreateClient();
         }
         [HttpGet]
-        public IActionResult Login()
+        public IActionResult Login(bool? id=null)
         {
+            ViewBag.Check=id;
             if (User.Identity.IsAuthenticated)
             {
                 return Redirect("~/");
@@ -37,6 +38,9 @@ namespace Marketify.UI.Controllers
             if (responseMessage.IsSuccessStatusCode) { 
                 var jsonData=await responseMessage.Content.ReadAsStringAsync();
                 var user=JsonConvert.DeserializeObject<LoginUserViewModel>(jsonData);
+                if (user.User.isApproved)
+                {
+
                 List<Claim> claims = new List<Claim>()
                 {
                     new Claim(ClaimTypes.NameIdentifier, user.User.id),
@@ -48,13 +52,47 @@ namespace Marketify.UI.Controllers
                 ClaimsPrincipal principal=new ClaimsPrincipal(userIdentity);
                 await HttpContext.SignInAsync(principal);
                 return Redirect("~/");
+                }
+                else
+                {
+                   return RedirectToAction("Login", new {id=true});
+
+                }
             }
-            return View(loginViewModel);
+            return RedirectToAction("Login", new {id=false});
         }
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync();
             return Redirect("~/");
+        }
+        [HttpGet]
+        public IActionResult Register()
+        {
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> Register(RegisterUserViewModel registerUserViewModel)
+        {
+            if (ModelState.IsValid) {
+                registerUserViewModel.IsApproved = false;
+                var jsonData=JsonConvert.SerializeObject(registerUserViewModel);
+                StringContent content=new StringContent(jsonData,Encoding.UTF8,"application/json");
+                var responseMessage = await client.PostAsync(apiUrl + "User", content);
+                if(responseMessage.IsSuccessStatusCode) {
+                   jsonData=JsonConvert.SerializeObject(new AddUserToRoleByEmailViewModel { Email=registerUserViewModel.Email,RoleName="Customer"});
+                   content=new StringContent(jsonData, Encoding.UTF8,"application/json");
+                   responseMessage = await client.PostAsync(apiUrl + "Role/AddUserToRoleByEmail", content);
+                    if(responseMessage.IsSuccessStatusCode)
+                    {
+                    return RedirectToAction("Login", new {id=true});
+                    }
+
+                
+                }
+                
+            }
+            return View(registerUserViewModel);  
         }
     }
 }

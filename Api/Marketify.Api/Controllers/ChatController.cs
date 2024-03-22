@@ -32,6 +32,18 @@ namespace Marketify.Api.Controllers
             IActionResult result = response.IsSuccess ? Ok(chatJson) : BadRequest();
             return result;
         }
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetChat(int id)
+        {
+            var response=await _chatService.GetChatAsync(id);
+            var chatJson = JsonConvert.SerializeObject(response.Data, Formatting.Indented, new JsonSerializerSettings
+            {
+                ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
+            });
+            IActionResult result = response.IsSuccess ? Ok(chatJson) : BadRequest();
+            return result;
+
+        }
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteChat(int id)
         {

@@ -153,6 +153,21 @@
     </div>
     <form asp-area="" asp-action="Login" asp-controller="Login" method="post">
         <h3>Login Here</h3>
+    
+        @if (ViewBag.Check == true)
+        {
+            
+        <div class="alert alert-success" role="alert">
+            <p class="text-success">Üyeliğiniz başarıyla oluşturuldu. Admin Onayı Bekleniyor...</p>
+        </div>
+        }
+        @if (ViewBag.Check == false)
+        {
+            <div class="alert alert-success" role="alert">
+                <p class="text-success">Hatalı Kullanıcı Adı veya Parola...</p>
+            </div>
+        }
+
 
         <label for="email">Email</label>
         <input type="text" name="Email" placeholder="Email" id="email">

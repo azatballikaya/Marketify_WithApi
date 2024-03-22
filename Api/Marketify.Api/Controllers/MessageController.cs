@@ -18,6 +18,10 @@ namespace Marketify.Api.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateMessage(CreateMessageDTO createMessageDTO)
         {
+            if(createMessageDTO.SenderId==createMessageDTO.RecipientId)
+            {
+                return BadRequest();
+            }
             var response=await _messageService.CreateMessageAsync(createMessageDTO);
             IActionResult result = response.IsSuccess ? Ok() : BadRequest();
             return result;

@@ -1,0 +1,51 @@
+﻿@model ResultChatViewModel
+@{
+    string myUserId = Model.User1.userName == User.Identity.Name ? Model.UserId1 : Model.UserId2;
+    string recipientId = Model.User1.userName == User.Identity.Name ? Model.UserId2 : Model.UserId1;
+  
+
+}
+
+<div class="chat-container mt-5">
+    <div class="chat-header" style="background-color: #666; color: #fff; padding: 10px 15px; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+        @(Model.User1.userName!=User.Identity.Name ? Model.User1.userName : Model.User2.userName  )
+    </div>
+    <div class="chat-body" id="chat-body" style="height: 300px; overflow-y: scroll; padding: 10px;">
+    @foreach (var item in Model.Messages)
+    {
+
+        bool isMyUser = User.Identity.Name == item.Sender.userName;
+        if (isMyUser)
+        {
+            <div class="message message-sent" style="background-color: #d5e8f9; align-self: flex-end; margin-left: auto; padding: 10px; margin-bottom: 10px; border-radius: 10px; max-width: 70%;">
+                <div class="message-text">@item.MessageContent</div>
+
+            </div>
+        }
+        else
+        {
+            <div class="message message-received" style="background-color: #fff; align-self: flex-start; margin-right: auto; padding: 10px; margin-bottom: 10px; border-radius: 10px; max-width: 70%;">
+                <div class="message-text">@item.MessageContent</div>
+
+            </div>
+        }
+
+    }
+    </div>
+   <form action="/Admin/Chat/SendMessage2" method="post">
+
+    <div class="input-group mt-3">
+       
+        <input type="hidden" name="SenderId" value="@myUserId"/>
+        <input type="hidden" name="RecipientId" value="@recipientId"/>
+        <input type="hidden" name="chatId" value="@Model.ChatId"/>
+
+
+        <input type="text" class="form-control" name="MessageContent" placeholder="Mesaj Giriniz...">
+        <div class="input-group-append">
+            <button class="input-group-text" type="submit" style="background-color: #075e54; border: none; color: #fff; cursor: pointer;">Gönder</button>
+        </div>
+       
+    </div>
+   </form>
+</div>

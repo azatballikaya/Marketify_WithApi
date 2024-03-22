@@ -11,7 +11,7 @@
         
     <div class="list-group">
         <!-- Chat Item -->
-        <a href="#" class="list-group-item list-group-item-action" style="background-color: #fff; border-color: #dee2e6; cursor: pointer;">
+        <a href="/Admin/Chat/GetChat/@item.ChatId" class="list-group-item list-group-item-action" style="background-color: #fff; border-color: #dee2e6; cursor: pointer;">
             <div class="d-flex w-100 justify-content-between">
                 <h5 class="mb-1">@(item.UserId1!=ViewBag.UserId ? item.User1.userName : item.User2.userName)</h5>
                 <small>Last Message Time</small>

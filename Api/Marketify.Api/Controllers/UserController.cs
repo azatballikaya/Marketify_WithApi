@@ -50,8 +50,8 @@ namespace Marketify.Api.Controllers
         public async Task<IActionResult> CreateUser(CreateUserDTO createUserDTO)
         {
             User user=_mapper.Map<User>(createUserDTO);
-              var result= await _userManager.CreateAsync(user,createUserDTO.Password);
-         
+            var result= await _userManager.CreateAsync(user,createUserDTO.Password);
+
             if(result.Succeeded)
             {
                 return Ok();

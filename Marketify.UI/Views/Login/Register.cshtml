@@ -1,0 +1,46 @@
+﻿@model RegisterUserViewModel
+<div class="container" style="max-width: 600px; margin: auto; margin-top: 100px; background-color: #e9ecef; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+    <h2 class="text-center mb-4">Kayıt Ol</h2>
+    <div asp-validation-summary="All"></div>
+    <form action="/Login/Register" method="post">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group" style="margin-bottom: 20px;">
+                    <label asp-for="UserName">Kullanıcı Adı:</label>
+                    <input type="text" class="form-control" asp-for="UserName" required>
+                </div>
+     </div>
+            <div class="col-md-6">
+                <div class="form-group" style="margin-bottom: 20px;">
+                    <label asp-for="Email">Email:</label>
+                    <input type="text" class="form-control" asp-for="Email" required>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group" style="margin-bottom: 20px;">
+                    <label asp-for="PhoneNumber">Telefon Numarası:</label>
+                    <input type="text" class="form-control" asp-for="PhoneNumber" required>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group" style="margin-bottom: 20px;">
+                    <label asp-for="Job">Meslek:</label>
+                    <input type="text" class="form-control" asp-for="Job" required>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group" style="margin-bottom: 20px;">
+                    <label asp-for="Password">Parola:</label>
+                    <input type="text" class="form-control" type="password" asp-for="Password" required>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group" style="margin-bottom: 20px;">
+                    <label asp-for="PasswordCheck">Parola Tekrar:</label>
+                    <input type="text" class="form-control" type="password" asp-for="PasswordCheck" required>
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-success" style="width: 100%;">Kayıt Ol</button>
+    </form>
+</div>

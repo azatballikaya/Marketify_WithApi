@@ -53,5 +53,19 @@ namespace Marketify.Api.Controllers
             IActionResult value = result.Succeeded ? Ok() : BadRequest();
             return value;
         }
+        [HttpPost("AddUserToRoleByEmail")]
+        public async Task<IActionResult> AddUserToRole(AddUserToRoleByEmailDTO addUserToRoleByEmailDTO)
+        {
+            var user=await _userManager.FindByEmailAsync(addUserToRoleByEmailDTO.Email);
+            if(user != null)
+            {
+             var result= await _userManager.AddToRoleAsync(user,addUserToRoleByEmailDTO.RoleName);
+             if(result.Succeeded)
+                {
+                    return Ok();
+                }
+            }
+            return BadRequest();
+        }
     }
 }

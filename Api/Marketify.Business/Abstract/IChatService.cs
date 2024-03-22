@@ -13,6 +13,6 @@ namespace Marketify.Business.Abstract
         Task<Response> CreateChatAsync(string userId1,string userId2);
         Task<Response> DeleteChatAsync(int chatId);
         Task<Response<List<Chat>>> GetUserChatsAsync(string userId);
-
+       Task<Response<Chat>> GetChatAsync(int id);
     }
 }

@@ -38,6 +38,32 @@ namespace Marketify.UI.Areas.Admin.Controllers
             }
             return View();
         }
+        public async Task<IActionResult> GetChat(int id)
+        {
+            var responseMessage = await client.GetAsync(apiUrl + $"Chat/{id}");
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                var jsonData = await responseMessage.Content.ReadAsStringAsync();
+                var values = JsonConvert.DeserializeObject<ResultChatViewModel>(jsonData);
+              
+                return View(values);
+            }
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> SendMessage2(CreateMessageViewModel createMessageViewModel,int chatId)
+        {
+            createMessageViewModel.SenderId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var jsonData = JsonConvert.SerializeObject(createMessageViewModel);
+            StringContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
+            var responseMessage = await client.PostAsync(apiUrl + "Message", content);
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                return RedirectToAction("GetChat", new {id=$"{chatId}"});
+
+            }
+            return NotFound();
+        }
         [HttpGet]
         public async Task<IActionResult> SendMessage(string userId=null)
         {
@@ -64,7 +90,7 @@ namespace Marketify.UI.Areas.Admin.Controllers
                 return RedirectToAction("Index");
 
             }
-            return View(createMessageViewModel);
+            return View();
         }
     }
 }
