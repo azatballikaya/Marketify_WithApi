@@ -446,7 +446,7 @@ namespace Marketify.DataAccess.Migrations
             modelBuilder.Entity("Marketify.Entity.Message", b =>
                 {
                     b.HasOne("Marketify.Entity.Chat", "Chat")
-                        .WithMany()
+                        .WithMany("Messages")
                         .HasForeignKey("ChatId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -473,7 +473,7 @@ namespace Marketify.DataAccess.Migrations
             modelBuilder.Entity("Marketify.Entity.Offer", b =>
                 {
                     b.HasOne("Marketify.Entity.Post", "Post")
-                        .WithMany()
+                        .WithMany("Offers")
                         .HasForeignKey("PostId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -551,11 +551,18 @@ namespace Marketify.DataAccess.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("Marketify.Entity.Chat", b =>
+                {
+                    b.Navigation("Messages");
+                });
+
             modelBuilder.Entity("Marketify.Entity.Post", b =>
                 {
                     b.Navigation("Comments");
 
                     b.Navigation("Likes");
+
+                    b.Navigation("Offers");
                 });
 #pragma warning restore 612, 618
         }

@@ -1,5 +1,6 @@
 ﻿using Marketify.UI.Models.Comment;
 using Marketify.UI.Models.Like;
+using Marketify.UI.Models.Offer;
 using Marketify.UI.Models.User;
 
 namespace Marketify.UI.Models.Post
@@ -17,5 +18,6 @@ namespace Marketify.UI.Models.Post
         public ResultUserViewModel User { get; set; }
         public List<ResultCommentViewModel> Comments { get; set; }
         public List<ResultLikeViewModel> Likes { get; set; }
+        public List<ResultOfferViewModel> Offers { get; set; }
     }
 }

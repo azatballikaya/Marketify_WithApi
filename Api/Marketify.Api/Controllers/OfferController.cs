@@ -5,6 +5,7 @@ using Marketify.Entity;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 namespace Marketify.Api.Controllers
 {
@@ -26,7 +27,11 @@ namespace Marketify.Api.Controllers
         public async Task<IActionResult> GetIncomingOffers(string id)
         {
             var response=await _offerService.GetIncomingOffersAsync(id);
-            IActionResult result = response.IsSuccess ? Ok(response.Data) : BadRequest();
+            var jsonData = response.IsSuccess ? JsonConvert.SerializeObject(response.Data, Formatting.Indented, new JsonSerializerSettings
+            {
+                ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
+            }) : null;
+            IActionResult result = jsonData!=null ? Ok(jsonData) : BadRequest();
             return result;
         }
         [HttpGet("GetMadeOffers/{id}")]
@@ -34,7 +39,11 @@ namespace Marketify.Api.Controllers
         public async Task<IActionResult> GetMadeOffers(string id)
         {
             var response = await _offerService.GetMadeOffersAsync(id);
-            IActionResult result = response.IsSuccess ? Ok(response.Data) : BadRequest();
+            var jsonData = response.IsSuccess ? JsonConvert.SerializeObject(response.Data, Formatting.Indented, new JsonSerializerSettings
+            {
+                ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
+            }) : null;
+            IActionResult result = jsonData != null ? Ok(jsonData) : BadRequest();
             return result;
         }
         [HttpPost]

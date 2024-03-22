@@ -56,7 +56,7 @@ namespace Marketify.Business.Concrete
 
         public async Task<Response<List<Post>>> GetAllPostsAsync()
         {
-            var posts=await _postDal.GetAllAsync(include:x=>x.Include(y=>y.User).Include(z=>z.Comments).Include(k=>k.Likes));
+            var posts=await _postDal.GetAllAsync(include:x=>x.Include(y=>y.User).Include(z=>z.Comments).Include(k=>k.Likes).Include(a=>a.Offers));
             if (posts != null)
             {
                 return Response<List<Post>>.Success(posts);
@@ -66,7 +66,7 @@ namespace Marketify.Business.Concrete
 
         public async Task<Response<Post>> GetPostByIdAsync(int id)
         {
-            var post=await _postDal.GetAsync(x=>x.Id == id,x=>x.Include(y=>y.User).Include(z=>z.Comments).Include(k=>k.Likes));
+            var post=await _postDal.GetAsync(x=>x.Id == id,x=>x.Include(y=>y.User).Include(z=>z.Comments).Include(k=>k.Likes).Include(a=>a.Offers));
             if(post != null)
             {
                 return Response<Post>.Success(post);
@@ -76,7 +76,7 @@ namespace Marketify.Business.Concrete
 
         public async Task<Response<List<Post>>> GetPostsByUserIdAsync(string userId)
         {
-           var posts=await _postDal.GetAllAsync(x=>x.UserId.Equals(userId),x=>x.Include(y=>y.Comments).Include(z=>z.Likes).Include(k=>k.User));
+           var posts=await _postDal.GetAllAsync(x=>x.UserId.Equals(userId),x=>x.Include(y=>y.Comments).Include(z=>z.Likes).Include(k=>k.User).Include(a=>a.Offers));
             if(posts != null)
             {
                 return Response<List<Post>>.Success(posts);

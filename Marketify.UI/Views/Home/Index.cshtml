@@ -4,16 +4,22 @@
 }
 @model List<ResultPostViewModel>
 
-
+   
 <div class="container mt-4">
     <div class="row">
       <div class="col-12">
-          <a class="btn btn-primary" href="/Admin/Post/CreatePost" style="width:100%">Yeni Gönderi Paylaş...</a>
+            @if (isAuth)
+            {
+            <a class="btn btn-primary" href="/Admin/Post/CreatePost" style="width:100%">Yeni Gönderi Paylaş...</a>
+            }
+                
       </div>
         @foreach (var item in Model)
         {
+
             
 
+           
 
             <div class="col-md-6">
 
@@ -21,10 +27,20 @@
 
                 <div class="card my-2">
                     <div class="card-body">
+                        @if (!Model.Any(x => x.Offers.Count() >= item.Offers.Count() && x != item))
+                        {
+
+                        <span class="badge badge-danger badge-pill" style="position: absolute; top: 0; right: 0; ">En Çok Teklif Alan Ürün</span>
+                        }
                         @if (User.Identity.IsAuthenticated && User.Identity.Name.ToLower() != item.User.userName.ToLower())
                         {
                             <a href="/Admin/Chat/SendMessage/@item.UserId" type="button" class="btn btn-primary float-right">Mesaj Gönder</a>
                         }
+                        @if (!Model.Any(x => x.Offers.Count() >= item.Offers.Count() && x != item))
+                        {
+                            
+                        }
+                    
                         <h5 class="card-title">@item.Title</h5>
                     <h6 class="card-subtitle mb-2 text-muted">Post Yayınlayan: @item.User.userName</h6>
                    
@@ -51,6 +67,7 @@
                     <li class="list-group-item">
                         <span class="badge badge-primary badge-pill" id="span_like_@item.Id">@item.Likes.Count() Beğeni</span>
                         <span class="badge badge-primary badge-pill" id="span_comment_@item.Id">@item.Comments.Count() Yorum</span>
+                        <span class="badge badge-primary badge-pill" id="span_comment_@item.Id">@item.Offers.Count() Teklif</span>
                         @if(isAuth){
                         <button type="button" id="btn_like_@item.Id" onclick="IncrementLike(@item.Id)" class="btn btn-info mr-2">Like</button>
                         }
