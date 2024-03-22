@@ -21,7 +21,7 @@
                     <div class="card-body">
                         @if (User.Identity.IsAuthenticated && User.Identity.Name.ToLower() != item.User.userName.ToLower())
                         {
-                            <a type="button" class="btn btn-primary float-right">Mesaj Gönder</a>
+                            <a href="/Admin/Chat/SendMessage/@item.UserId" type="button" class="btn btn-primary float-right">Mesaj Gönder</a>
                         }
                         <h5 class="card-title">@item.Title</h5>
                     <h6 class="card-subtitle mb-2 text-muted">Post Yayınlayan: @item.User.userName</h6>

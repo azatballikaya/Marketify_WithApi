@@ -41,7 +41,8 @@ namespace Marketify.UI.Areas.Admin.Controllers
         }
         [AllowAnonymous]
         [Authorize]
-        public async Task<IActionResult> GetProfile()
+        [HttpGet]
+        public async Task<IActionResult> EditProfile()
         {
             var responseMessage = await client.GetAsync(apiUrl + $"User/{User.FindFirstValue(ClaimTypes.NameIdentifier)}");
             if(responseMessage.IsSuccessStatusCode)
@@ -51,6 +52,20 @@ namespace Marketify.UI.Areas.Admin.Controllers
                 return View(value);
             }
             return NotFound();
+        }
+        [AllowAnonymous]
+        [Authorize]
+        
+        [HttpPost]
+        public async Task<IActionResult> EditProfile(UpdateUserViewModel updateUserViewModel)
+        {
+            updateUserViewModel.IsApproved = true;
+            var jsonData=JsonConvert.SerializeObject(updateUserViewModel);
+            StringContent content = new StringContent(jsonData,Encoding.UTF8,"application/json");
+            var responseMessage = await client.PutAsync(apiUrl + "User", content);
+          
+                return RedirectToAction("Index", "Post", new {area="Admin"});
+           
         }
         public async Task<IActionResult> Delete(string id)
         {

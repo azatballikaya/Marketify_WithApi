@@ -11,7 +11,9 @@
         <select class="mb-2" name="RecipientId">
         @foreach (var item in Model)
         {
-            <option value="@item.id" >@item.userName</option>
+          
+               
+                <option value="@item.id" selected>@item.userName</option>
         }
         </select>
         <textarea style="width: 100%; border: 1px solid #ccc; border-radius: 5px; padding: 10px; resize: none;" name="MessageContent" rows="3" placeholder="Mesajınızı Giriniz..."></textarea>

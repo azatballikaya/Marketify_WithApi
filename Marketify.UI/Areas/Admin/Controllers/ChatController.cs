@@ -51,7 +51,7 @@ namespace Marketify.UI.Areas.Admin.Controllers
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> SendMessage2(CreateMessageViewModel createMessageViewModel,int chatId)
+        public async Task<IActionResult> GetChat(CreateMessageViewModel createMessageViewModel,int chatId)
         {
             createMessageViewModel.SenderId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             var jsonData = JsonConvert.SerializeObject(createMessageViewModel);
@@ -65,13 +65,35 @@ namespace Marketify.UI.Areas.Admin.Controllers
             return NotFound();
         }
         [HttpGet]
-        public async Task<IActionResult> SendMessage(string userId=null)
+        public async Task<IActionResult> SendMessage(string id=null)
         {
-            var responseMessage = await client.GetAsync(apiUrl + "User/GetAllUsers/true");
+            HttpResponseMessage responseMessage;
+            string jsonData;
+            var myUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            if (id!=null)
+            {
+                responseMessage = await client.GetAsync(apiUrl + $"Chat/GetChatByUserId/{myUserId}");
+                if (responseMessage.IsSuccessStatusCode)
+                {
+                    jsonData=await responseMessage.Content.ReadAsStringAsync();
+                    var values=JsonConvert.DeserializeObject<List<ResultChatViewModel>>(jsonData);
+                    var chat= values.FirstOrDefault(x => x.UserId1 == id || x.UserId2 == id);
+                   if (chat!=null )
+                    {
+                        return RedirectToAction("GetChat", new {id=chat.ChatId});
+                    }
+                    
+                }
+            }
+
+
+             responseMessage = await client.GetAsync(apiUrl + "User/GetAllUsers/true");
             if (responseMessage.IsSuccessStatusCode)
             {
-                var jsonData= await responseMessage.Content.ReadAsStringAsync();
+                jsonData= await responseMessage.Content.ReadAsStringAsync();
                 var values=JsonConvert.DeserializeObject<List<ResultUserViewModel>>(jsonData);
+                
                 var myUser = values.FirstOrDefault(x => x.id == User.FindFirstValue(ClaimTypes.NameIdentifier));
                 values.Remove(myUser);
                 return View(values);

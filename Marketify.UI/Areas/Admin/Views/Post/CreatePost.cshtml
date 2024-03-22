@@ -1,0 +1,63 @@
+﻿@model CreatePostViewModel
+<div class="container mt-5">
+    
+    
+    <div class="card">
+        <div class="card-body">
+           
+            <form action="#" method="post" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label asp-for="Title" class="form-label">Başlık</label>
+                    <input type="text" class="form-control" asp-for="Title" required>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Description" class="form-label">Açıklama</label>
+                    <input type="text" class="form-control" asp-for="Description" required>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Category" class="form-label">Kategori</label>
+                    <input type="text" class="form-control" asp-for="Category" required>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Price" class="form-label">Fiyat</label>
+                    <input type="text" class="form-control" asp-for="Price" required>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Image" class="form-label">Resim Seçiniz:</label>
+                    <input  class="form-control" id="input_img" name="Image" type="file" required>
+                </div>
+                <div class="mb-3" >
+                  <img src="" id="img_img"/>
+                  <p id="p_img"></p>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Create</button>
+            </form>
+        </div>
+    </div>
+  
+</div>
+<script>
+
+
+    $("#input_img").change(function (e) {
+
+        for (var i = 0; i < e.originalEvent.srcElement.files.length; i++) {
+
+            var file = e.originalEvent.srcElement.files[i];
+
+            var img = document.createElement("img");
+            var reader = new FileReader();
+            reader.onloadend = function () {
+                img.src = reader.result;
+            }
+            reader.readAsDataURL(file);
+            img.width=450;
+            img.height = 200;
+            img.classList.add("mt-3")
+            $("#input_img").after(img);
+        }
+    });
+ 
+        
+ 
+</script>

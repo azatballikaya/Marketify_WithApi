@@ -42,6 +42,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcT2ZmZXJcTWFkZU9mZmVycy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Azat/Documents/GitHub/AspNetCore_Works/Marketify_WithApi/Marketify.UI/Areas/Admin/Views/Post/CreatePost.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUG9zdFxDcmVhdGVQb3N0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Azat/Documents/GitHub/AspNetCore_Works/Marketify_WithApi/Marketify.UI/Areas/Admin/Views/Post/GetPost.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUG9zdFxHZXRQb3N0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -78,8 +82,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVGVzdFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Azat/Documents/GitHub/AspNetCore_Works/Marketify_WithApi/Marketify.UI/Areas/Admin/Views/User/GetProfile.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVXNlclxHZXRQcm9maWxlLmNzaHRtbA==
+[C:/Users/Azat/Documents/GitHub/AspNetCore_Works/Marketify_WithApi/Marketify.UI/Areas/Admin/Views/User/EditProfile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcVXNlclxFZGl0UHJvZmlsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Azat/Documents/GitHub/AspNetCore_Works/Marketify_WithApi/Marketify.UI/Areas/Admin/Views/User/Index.cshtml]

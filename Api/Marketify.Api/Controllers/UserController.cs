@@ -114,6 +114,33 @@ namespace Marketify.Api.Controllers
             }
             return BadRequest();
         }
+        [HttpPut]
+        public async Task<IActionResult> EditUser(EditUserDTO editUserDTO)
+        {
+            var user=await _userManager.FindByIdAsync(editUserDTO.Id);
+            if (user != null)
+            {
+                var result=await _userManager.ChangePasswordAsync(user, editUserDTO.CurrentPassword, editUserDTO.Password);
+                if (result.Succeeded)
+                {
+
+                user.Job = editUserDTO.job;
+                user.IsApproved = editUserDTO.isApproved;
+                user.UserName = editUserDTO.userName;
+
+                user.Email = editUserDTO.email;
+                user.PhoneNumber = editUserDTO.phoneNumber;
+                result=await _userManager.UpdateAsync(user);
+                    if (result.Succeeded)
+                    {
+                        return Ok();
+                    }
+                }
+
+                
+            }
+            return BadRequest();
+        }
         
     }
 }

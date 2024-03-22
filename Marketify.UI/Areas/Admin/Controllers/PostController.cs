@@ -54,6 +54,11 @@ namespace Marketify.UI.Areas.Admin.Controllers
             }
             return NotFound();
         }
+        [HttpGet]
+        public async Task<IActionResult> CreatePost()
+        {
+            return View();
+        }
         public async Task<IActionResult> Delete(int id)
         {
             var responseMessage = await client.DeleteAsync(apiUrl + $"Post/{id}");
