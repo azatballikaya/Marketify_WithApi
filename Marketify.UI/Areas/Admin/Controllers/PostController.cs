@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Security.Claims;
+using System.Text;
 
 namespace Marketify.UI.Areas.Admin.Controllers
 {
@@ -28,11 +29,11 @@ namespace Marketify.UI.Areas.Admin.Controllers
             HttpResponseMessage responseMessage;
             if (User.IsInRole("Admin"))
             {
-                responseMessage=await client.GetAsync(apiUrl+"Post");
+                responseMessage = await client.GetAsync(apiUrl + "Post");
             }
             else
             {
-                var userId=User.FindFirstValue(ClaimTypes.NameIdentifier);
+                var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
                 responseMessage = await client.GetAsync(apiUrl + $"Post/GetPostsByUserId/{userId}");
             }
             if (responseMessage.IsSuccessStatusCode)
@@ -59,10 +60,55 @@ namespace Marketify.UI.Areas.Admin.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public async Task<IActionResult> CreatePost(CreatePostViewModel createPostViewModel)
+        {
+            if (ModelState.IsValid)
+            {
+                var extension = Path.GetExtension(createPostViewModel.Image.FileName);
+                var imageName = $"{Guid.NewGuid()}{extension}";
+                var path = Path.Combine(Directory.GetCurrentDirectory(), $"wwwroot/img/{imageName}");
+                using (var stream = new FileStream(path, FileMode.Create))
+                {
+                    await createPostViewModel.Image.CopyToAsync(stream);
+                }
+                createPostViewModel.UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                createPostViewModel.ImageUrl = imageName;
+                var jsonData = JsonConvert.SerializeObject(createPostViewModel);
+                StringContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
+                var responseMessage = await client.PostAsync(apiUrl + "Post", content);
+                if (responseMessage.IsSuccessStatusCode)
+                {
+                    return RedirectToAction("Index");
+                }
+
+
+            }
+            return View(createPostViewModel);
+        }
+        [HttpGet]
         public async Task<IActionResult> Delete(int id)
         {
-            var responseMessage = await client.DeleteAsync(apiUrl + $"Post/{id}");
-            return RedirectToAction("Index");
+            var responseMessage = await client.GetAsync(apiUrl + $"Post/{id}");
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                var jsonData = await responseMessage.Content.ReadAsStringAsync();
+                var value = JsonConvert.DeserializeObject<ResultPostViewModel>(jsonData);
+                return View(value);
+            }
+            return NotFound();
+
+        }
+        [HttpPost]
+        public async Task<IActionResult> Delete(ResultPostViewModel resultPostViewModel)
+        {
+            var responseMessage = await client.DeleteAsync(apiUrl + $"Post/{resultPostViewModel.Id}");
+            if (responseMessage.IsSuccessStatusCode)
+            {
+
+                return RedirectToAction("Index");
+            }
+            return RedirectToAction("Delete", new { id = resultPostViewModel.Id });
         }
     }
 }

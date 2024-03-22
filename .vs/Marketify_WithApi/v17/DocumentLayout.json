@@ -3,28 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\azatb\\Documents\\GitHub\\Marketify_WithApi\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{2109FAF2-296D-42B9-9832-D1D10A7FBDE2}|Marketify.UI\\Marketify.UI.csproj|c:\\users\\azatb\\documents\\github\\marketify_withapi\\marketify.ui\\areas\\admin\\views\\post\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2109FAF2-296D-42B9-9832-D1D10A7FBDE2}|Marketify.UI\\Marketify.UI.csproj|solutionrelative:marketify.ui\\areas\\admin\\views\\post\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2109FAF2-296D-42B9-9832-D1D10A7FBDE2}|Marketify.UI\\Marketify.UI.csproj|c:\\users\\azatb\\documents\\github\\marketify_withapi\\marketify.ui\\areas\\admin\\controllers\\postcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2109FAF2-296D-42B9-9832-D1D10A7FBDE2}|Marketify.UI\\Marketify.UI.csproj|solutionrelative:marketify.ui\\areas\\admin\\controllers\\postcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2109FAF2-296D-42B9-9832-D1D10A7FBDE2}|Marketify.UI\\Marketify.UI.csproj|c:\\users\\azatb\\documents\\github\\marketify_withapi\\marketify.ui\\areas\\admin\\views\\post\\createpost.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2109FAF2-296D-42B9-9832-D1D10A7FBDE2}|Marketify.UI\\Marketify.UI.csproj|solutionrelative:marketify.ui\\areas\\admin\\views\\post\\createpost.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{2109FAF2-296D-42B9-9832-D1D10A7FBDE2}|Marketify.UI\\Marketify.UI.csproj|c:\\users\\azatb\\documents\\github\\marketify_withapi\\marketify.ui\\areas\\admin\\controllers\\chatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2109FAF2-296D-42B9-9832-D1D10A7FBDE2}|Marketify.UI\\Marketify.UI.csproj|solutionrelative:marketify.ui\\areas\\admin\\controllers\\chatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2109FAF2-296D-42B9-9832-D1D10A7FBDE2}|Marketify.UI\\Marketify.UI.csproj|c:\\users\\azatb\\documents\\github\\marketify_withapi\\marketify.ui\\areas\\admin\\views\\chat\\sendmessage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2109FAF2-296D-42B9-9832-D1D10A7FBDE2}|Marketify.UI\\Marketify.UI.csproj|solutionrelative:marketify.ui\\areas\\admin\\views\\chat\\sendmessage.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2109FAF2-296D-42B9-9832-D1D10A7FBDE2}|Marketify.UI\\Marketify.UI.csproj|c:\\users\\azatb\\documents\\github\\marketify_withapi\\marketify.ui\\models\\message\\createmessageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2109FAF2-296D-42B9-9832-D1D10A7FBDE2}|Marketify.UI\\Marketify.UI.csproj|solutionrelative:marketify.ui\\models\\message\\createmessageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2109FAF2-296D-42B9-9832-D1D10A7FBDE2}|Marketify.UI\\Marketify.UI.csproj|c:\\users\\azatb\\documents\\github\\marketify_withapi\\marketify.ui\\areas\\admin\\views\\chat\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2109FAF2-296D-42B9-9832-D1D10A7FBDE2}|Marketify.UI\\Marketify.UI.csproj|solutionrelative:marketify.ui\\areas\\admin\\views\\chat\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2109FAF2-296D-42B9-9832-D1D10A7FBDE2}|Marketify.UI\\Marketify.UI.csproj|c:\\users\\azatb\\documents\\github\\marketify_withapi\\marketify.ui\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2109FAF2-296D-42B9-9832-D1D10A7FBDE2}|Marketify.UI\\Marketify.UI.csproj|solutionrelative:marketify.ui\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2109FAF2-296D-42B9-9832-D1D10A7FBDE2}|Marketify.UI\\Marketify.UI.csproj|c:\\users\\azatb\\documents\\github\\marketify_withapi\\marketify.ui\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2109FAF2-296D-42B9-9832-D1D10A7FBDE2}|Marketify.UI\\Marketify.UI.csproj|solutionrelative:marketify.ui\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,50 +30,50 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "CreateMessageViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\azatb\\Documents\\GitHub\\Marketify_WithApi\\Marketify.UI\\Models\\Message\\CreateMessageViewModel.cs",
-              "RelativeDocumentMoniker": "Marketify.UI\\Models\\Message\\CreateMessageViewModel.cs",
-              "ToolTip": "C:\\Users\\azatb\\Documents\\GitHub\\Marketify_WithApi\\Marketify.UI\\Models\\Message\\CreateMessageViewModel.cs",
-              "RelativeToolTip": "Marketify.UI\\Models\\Message\\CreateMessageViewModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAmAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-21T13:27:53.253Z",
+              "DocumentIndex": 0,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\azatb\\Documents\\GitHub\\Marketify_WithApi\\Marketify.UI\\Areas\\Admin\\Views\\Post\\Delete.cshtml",
+              "RelativeDocumentMoniker": "Marketify.UI\\Areas\\Admin\\Views\\Post\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\azatb\\Documents\\GitHub\\Marketify_WithApi\\Marketify.UI\\Areas\\Admin\\Views\\Post\\Delete.cshtml",
+              "RelativeToolTip": "Marketify.UI\\Areas\\Admin\\Views\\Post\\Delete.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAA8AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-22T18:49:24.1Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "SendMessage.cshtml",
-              "DocumentMoniker": "C:\\Users\\azatb\\Documents\\GitHub\\Marketify_WithApi\\Marketify.UI\\Areas\\Admin\\Views\\Chat\\SendMessage.cshtml",
-              "RelativeDocumentMoniker": "Marketify.UI\\Areas\\Admin\\Views\\Chat\\SendMessage.cshtml",
-              "ToolTip": "C:\\Users\\azatb\\Documents\\GitHub\\Marketify_WithApi\\Marketify.UI\\Areas\\Admin\\Views\\Chat\\SendMessage.cshtml",
-              "RelativeToolTip": "Marketify.UI\\Areas\\Admin\\Views\\Chat\\SendMessage.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAA2AAAA",
+              "Title": "PostController.cs",
+              "DocumentMoniker": "C:\\Users\\azatb\\Documents\\GitHub\\Marketify_WithApi\\Marketify.UI\\Areas\\Admin\\Controllers\\PostController.cs",
+              "RelativeDocumentMoniker": "Marketify.UI\\Areas\\Admin\\Controllers\\PostController.cs",
+              "ToolTip": "C:\\Users\\azatb\\Documents\\GitHub\\Marketify_WithApi\\Marketify.UI\\Areas\\Admin\\Controllers\\PostController.cs",
+              "RelativeToolTip": "Marketify.UI\\Areas\\Admin\\Controllers\\PostController.cs",
+              "ViewState": "AQIAAFkAAAAAAAAAAAAawHEAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-22T17:58:06.767Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CreatePost.cshtml",
+              "DocumentMoniker": "C:\\Users\\azatb\\Documents\\GitHub\\Marketify_WithApi\\Marketify.UI\\Areas\\Admin\\Views\\Post\\CreatePost.cshtml",
+              "RelativeDocumentMoniker": "Marketify.UI\\Areas\\Admin\\Views\\Post\\CreatePost.cshtml",
+              "ToolTip": "C:\\Users\\azatb\\Documents\\GitHub\\Marketify_WithApi\\Marketify.UI\\Areas\\Admin\\Views\\Post\\CreatePost.cshtml",
+              "RelativeToolTip": "Marketify.UI\\Areas\\Admin\\Views\\Post\\CreatePost.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAABqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-03-21T12:37:05.29Z",
+              "WhenOpened": "2024-03-22T18:06:19.427Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\azatb\\Documents\\GitHub\\Marketify_WithApi\\Marketify.UI\\Areas\\Admin\\Views\\Chat\\Index.cshtml",
-              "RelativeDocumentMoniker": "Marketify.UI\\Areas\\Admin\\Views\\Chat\\Index.cshtml",
-              "ToolTip": "C:\\Users\\azatb\\Documents\\GitHub\\Marketify_WithApi\\Marketify.UI\\Areas\\Admin\\Views\\Chat\\Index.cshtml",
-              "RelativeToolTip": "Marketify.UI\\Areas\\Admin\\Views\\Chat\\Index.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAiAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-03-21T12:29:59.388Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
               "Title": "ChatController.cs",
               "DocumentMoniker": "C:\\Users\\azatb\\Documents\\GitHub\\Marketify_WithApi\\Marketify.UI\\Areas\\Admin\\Controllers\\ChatController.cs",
               "RelativeDocumentMoniker": "Marketify.UI\\Areas\\Admin\\Controllers\\ChatController.cs",
@@ -87,18 +83,6 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-21T12:02:04.412Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\azatb\\Documents\\GitHub\\Marketify_WithApi\\Marketify.UI\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "Marketify.UI\\Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\Users\\azatb\\Documents\\GitHub\\Marketify_WithApi\\Marketify.UI\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "Marketify.UI\\Views\\Home\\Index.cshtml",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABgAAAAZAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-03-21T11:44:45.971Z"
             },
             {
               "$type": "Document",

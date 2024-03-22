@@ -4,8 +4,9 @@
     
     <div class="card">
         <div class="card-body">
-           
+           <div asp-validation-summary="All"></div>
             <form action="#" method="post" enctype="multipart/form-data">
+                <input type="hidden" asp-for="UserId" value="User.FindFirstValue(ClaimTypes.NameIdentifier)"/>
                 <div class="mb-3">
                     <label asp-for="Title" class="form-label">Başlık</label>
                     <input type="text" class="form-control" asp-for="Title" required>
@@ -28,7 +29,7 @@
                 </div>
                 <div class="mb-3" >
                   <img src="" id="img_img"/>
-                  <p id="p_img"></p>
+                 
                 </div>
                 <button type="submit" class="btn btn-primary" style="width: 100%;">Create</button>
             </form>

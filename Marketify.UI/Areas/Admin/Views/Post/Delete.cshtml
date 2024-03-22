@@ -1,0 +1,27 @@
+﻿@model ResultPostViewModel
+<div class="container" style="margin-top: 100px;">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="confirm-box" style="background-color: #fff; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); padding: 30px; text-align: center;">
+                <div class="product-info" style="margin-bottom: 20px;">
+                    <p><strong>Ürün İsmi:</strong> @Model.Title</p>
+                    <p><strong>Kategori:</strong> @Model.Category</p>
+                    <p><strong>Fiyat:</strong> @Model.Price.ToString("N") ₺</p>
+                </div>
+                <h2>Silmek istediğinizden emin misiniz?</h2>
+                <p>Bu işlem geri alınamaz...</p>
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <form action="/Admin/Post/Delete" method="post">
+                            <input type="hidden" asp-for="Id" value="@Model.Id" />
+                            <button class="btn btn-danger btn-block" type="submit" style="margin-bottom: 10px;">Sil</button>
+                        </form>
+                    </div>
+                    <div class="col-md-6">
+                        <a href="/Admin/Post/Index" class="btn btn-secondary btn-block">Vazgeç</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
