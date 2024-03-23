@@ -87,7 +87,7 @@ namespace Marketify.UI.Areas.Admin.Controllers
                 }
             }
 
-
+            ViewBag.UserId = id;
              responseMessage = await client.GetAsync(apiUrl + "User/GetAllUsers/true");
             if (responseMessage.IsSuccessStatusCode)
             {

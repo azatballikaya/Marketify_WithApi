@@ -18,13 +18,24 @@
     </div>
 </div>
 
+
+ 
 @foreach (var item in Model)
 {
-    
+    <div class="container">
+    <div class="row">
+        <div class="col-12">
 <main style="padding: 20px;">
 
     <section class="product" style="margin-bottom: 20px;">
-        <div class="product-box" style="border: 1px solid #ccc; border-radius: 5px; padding: 20px; display: flex;">
+                        @if (!Model.Any(x => x.Offers.Count() >= item.Offers.Count() && item != x))
+                        {
+                            
+                        <span class="badge badge-danger badge-pill" style="position: absolute; top: 0; right: 0; ">En Çok Teklif Alan Ürün</span>
+                        }
+
+                        <div class="product-box" style="border: 1px solid #ccc; border-radius: 5px; padding: 20px; display: flex;">
+
             <div class="product-image">
                 <img src="~/img/@item.ImageUrl" alt="LuxoTech Akıllı Telefon X7" style="max-width: 200px; height: auto; margin-right: 20px;">
             </div>
@@ -58,4 +69,7 @@
         </div>
     </section>
  </main>
+            </div>
+        </div>
+    </div>
 }

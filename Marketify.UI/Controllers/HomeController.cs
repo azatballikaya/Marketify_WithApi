@@ -26,7 +26,8 @@ namespace Marketify.UI.Controllers
             if(responseMessage.IsSuccessStatusCode)
             {
                 var jsonData=await responseMessage.Content.ReadAsStringAsync();
-                var values=JsonConvert.DeserializeObject<List<ResultPostViewModel>>(jsonData);
+                var values=JsonConvert.DeserializeObject<IEnumerable<ResultPostViewModel>>(jsonData);
+                values=values.OrderByDescending(x=>x.Offers.Count);
                 return View(values);
             }
             return View();
@@ -38,6 +39,7 @@ namespace Marketify.UI.Controllers
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
                 var values = JsonConvert.DeserializeObject<List<ResultPostViewModel>>(jsonData);
+                values=values.OrderByDescending(x=>x.Offers.Count).ToList();
                 return View(values);
             }
             return NotFound();

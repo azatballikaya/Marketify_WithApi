@@ -38,6 +38,14 @@ namespace Marketify.DataAccess.Migrations
                     b.HasIndex("UserId2");
 
                     b.ToTable("Chats");
+
+                    b.HasData(
+                        new
+                        {
+                            ChatId = 1,
+                            UserId1 = "3f54996c-086f-4ca1-ac2b-71ae14021ac1",
+                            UserId2 = "e2806b22-5c42-4a0e-95db-c06f47c9c415"
+                        });
                 });
 
             modelBuilder.Entity("Marketify.Entity.Comment", b =>
@@ -67,6 +75,40 @@ namespace Marketify.DataAccess.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Comments");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedDate = new DateTime(2024, 3, 23, 16, 40, 32, 290, DateTimeKind.Local).AddTicks(2866),
+                            Message = "Ürün tam aradığım gibi.",
+                            PostId = 1,
+                            UserId = "e2806b22-5c42-4a0e-95db-c06f47c9c415"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreatedDate = new DateTime(2024, 3, 23, 16, 40, 32, 290, DateTimeKind.Local).AddTicks(2870),
+                            Message = "DM yoluyla iletişime geçtim.",
+                            PostId = 1,
+                            UserId = "e2806b22-5c42-4a0e-95db-c06f47c9c415"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CreatedDate = new DateTime(2024, 3, 23, 16, 40, 32, 290, DateTimeKind.Local).AddTicks(2872),
+                            Message = "En fazla kaç gün kiralayabiliyoruz?",
+                            PostId = 2,
+                            UserId = "3f54996c-086f-4ca1-ac2b-71ae14021ac1"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CreatedDate = new DateTime(2024, 3, 23, 16, 40, 32, 290, DateTimeKind.Local).AddTicks(2874),
+                            Message = "Kaskoları var mı?",
+                            PostId = 2,
+                            UserId = "e2806b22-5c42-4a0e-95db-c06f47c9c415"
+                        });
                 });
 
             modelBuilder.Entity("Marketify.Entity.Identity.Role", b =>
@@ -93,6 +135,20 @@ namespace Marketify.DataAccess.Migrations
                         .HasDatabaseName("RoleNameIndex");
 
                     b.ToTable("AspNetRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "a2ae933f-e3fd-43f4-acac-bbd8e030b71c",
+                            Name = "Admin",
+                            NormalizedName = "ADMIN"
+                        },
+                        new
+                        {
+                            Id = "4ed025ec-f3dc-4505-bff0-918300a2fca2",
+                            Name = "Customer",
+                            NormalizedName = "CUSTOMER"
+                        });
                 });
 
             modelBuilder.Entity("Marketify.Entity.Identity.User", b =>
@@ -164,6 +220,46 @@ namespace Marketify.DataAccess.Migrations
                         .HasDatabaseName("UserNameIndex");
 
                     b.ToTable("AspNetUsers", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "3f54996c-086f-4ca1-ac2b-71ae14021ac1",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "23e2fd16-b478-46a3-b536-4e0945b7225f",
+                            Email = "admin@info.com",
+                            EmailConfirmed = true,
+                            IsApproved = true,
+                            Job = "Admin",
+                            LockoutEnabled = false,
+                            NormalizedEmail = "ADMIN@INFO.COM",
+                            NormalizedUserName = "ADMIN",
+                            PasswordHash = "AQAAAAIAAYagAAAAEAsFqdyUkfdq2J3RaFqRQ1A7AdOyTUNhByjnWc6o+N787iA6mxDkhVLhURuYu+PPBQ==",
+                            PhoneNumber = "5555555555",
+                            PhoneNumberConfirmed = true,
+                            SecurityStamp = "dd85ebcb-33dd-420b-b349-7721a0910d21",
+                            TwoFactorEnabled = false,
+                            UserName = "admin"
+                        },
+                        new
+                        {
+                            Id = "e2806b22-5c42-4a0e-95db-c06f47c9c415",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "3d96557c-98a1-4060-82c4-feaf38414893",
+                            Email = "customer@info.com",
+                            EmailConfirmed = true,
+                            IsApproved = true,
+                            Job = "Customer",
+                            LockoutEnabled = false,
+                            NormalizedEmail = "CUSTOMER@INFO.COM",
+                            NormalizedUserName = "CUSTOMER",
+                            PasswordHash = "AQAAAAIAAYagAAAAEJRNBu4Mu9lHQ1Vd/6BKJ4PwVszGnXGedehQ1pOwhK8u6D6FU8WLldwUxVdSAWBypw==",
+                            PhoneNumber = "5555555555",
+                            PhoneNumberConfirmed = true,
+                            SecurityStamp = "d0c966c6-99d1-421a-9e8a-cbe789d14542",
+                            TwoFactorEnabled = false,
+                            UserName = "customer"
+                        });
                 });
 
             modelBuilder.Entity("Marketify.Entity.Like", b =>
@@ -186,6 +282,56 @@ namespace Marketify.DataAccess.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Likes");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            PostId = 1,
+                            UserId = "e2806b22-5c42-4a0e-95db-c06f47c9c415"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            PostId = 1,
+                            UserId = "3f54996c-086f-4ca1-ac2b-71ae14021ac1"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            PostId = 2,
+                            UserId = "e2806b22-5c42-4a0e-95db-c06f47c9c415"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            PostId = 2,
+                            UserId = "3f54996c-086f-4ca1-ac2b-71ae14021ac1"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            PostId = 3,
+                            UserId = "3f54996c-086f-4ca1-ac2b-71ae14021ac1"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            PostId = 3,
+                            UserId = "e2806b22-5c42-4a0e-95db-c06f47c9c415"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            PostId = 4,
+                            UserId = "3f54996c-086f-4ca1-ac2b-71ae14021ac1"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            PostId = 4,
+                            UserId = "e2806b22-5c42-4a0e-95db-c06f47c9c415"
+                        });
                 });
 
             modelBuilder.Entity("Marketify.Entity.Message", b =>
@@ -218,6 +364,40 @@ namespace Marketify.DataAccess.Migrations
                     b.HasIndex("SenderId");
 
                     b.ToTable("Messages");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            ChatId = 1,
+                            MessageContent = "Merhaba ürünlerinizi çok beğendim. Benim işletmeme uygun.",
+                            RecipientId = "3f54996c-086f-4ca1-ac2b-71ae14021ac1",
+                            SenderId = "e2806b22-5c42-4a0e-95db-c06f47c9c415"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            ChatId = 1,
+                            MessageContent = "Teşekkür ederim nasıl yardımcı olabilirim?",
+                            RecipientId = "e2806b22-5c42-4a0e-95db-c06f47c9c415",
+                            SenderId = "3f54996c-086f-4ca1-ac2b-71ae14021ac1"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            ChatId = 1,
+                            MessageContent = "Ürünleriniz tam aradığım gibi fakat fiyatı bütçemi aşıyor. Yardımcı olabilir misiniz?",
+                            RecipientId = "3f54996c-086f-4ca1-ac2b-71ae14021ac1",
+                            SenderId = "e2806b22-5c42-4a0e-95db-c06f47c9c415"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            ChatId = 1,
+                            MessageContent = "Peki. Profilimizdeki iletişim numarsından iletişime geçerseniz yardımcı olmak isteriz. Teşekkürler...",
+                            RecipientId = "e2806b22-5c42-4a0e-95db-c06f47c9c415",
+                            SenderId = "3f54996c-086f-4ca1-ac2b-71ae14021ac1"
+                        });
                 });
 
             modelBuilder.Entity("Marketify.Entity.Offer", b =>
@@ -243,6 +423,22 @@ namespace Marketify.DataAccess.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Offers");
+
+                    b.HasData(
+                        new
+                        {
+                            OfferId = 1,
+                            PostId = 1,
+                            Price = 8000.0,
+                            UserId = "e2806b22-5c42-4a0e-95db-c06f47c9c415"
+                        },
+                        new
+                        {
+                            OfferId = 2,
+                            PostId = 2,
+                            Price = 9500.0,
+                            UserId = "3f54996c-086f-4ca1-ac2b-71ae14021ac1"
+                        });
                 });
 
             modelBuilder.Entity("Marketify.Entity.Post", b =>
@@ -282,6 +478,52 @@ namespace Marketify.DataAccess.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Posts");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Category = "Mobilya",
+                            CreatedDate = new DateTime(2024, 3, 23, 16, 40, 32, 290, DateTimeKind.Local).AddTicks(2816),
+                            Description = "Modern ofis mobilyaları, işyerlerinizdeki yaşamı kolaylaştıran ve çalışma verimliliğini artıran pratik ve şık çözümler sunar. Zarif tasarımlarıyla dikkat çeken bu mobilyalar, işlevselliği estetikle birleştirirken, ergonomik yapılarıyla da çalışanların konforunu sağlar. Esnek modüler sistemleri ve akıllı depolama çözümleri sayesinde, ofis alanınızı verimli bir şekilde düzenleyebilir ve değişen ihtiyaçlara kolayca uyum sağlayabilirsiniz.",
+                            ImageUrl = "mobilya.jpg",
+                            Price = 10000.0,
+                            Title = "Modern Ofis Mobilyaları",
+                            UserId = "3f54996c-086f-4ca1-ac2b-71ae14021ac1"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Category = "Beyaz Eşya",
+                            CreatedDate = new DateTime(2024, 3, 23, 16, 40, 32, 290, DateTimeKind.Local).AddTicks(2836),
+                            Description = "Ev yaşamınızı kolaylaştıran beyaz eşyalarımızla hayatınızı daha konforlu hale getirin! Yüksek kaliteli ve güvenilir ürünlerimiz, modern tasarımıyla evinizin estetiğine katkı sağlarken, enerji verimliliğiyle de bütçenize dost. Pratik kullanımıyla zamanınızı verimli kullanmanıza yardımcı olurken, günlük yaşamınızı daha keyifli hale getirin.",
+                            ImageUrl = "beyaz-esya.jpg",
+                            Price = 15000.0,
+                            Title = "Son Teknoloji Beyaz Eşyalar",
+                            UserId = "3f54996c-086f-4ca1-ac2b-71ae14021ac1"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Category = "Araba",
+                            CreatedDate = new DateTime(2024, 3, 23, 16, 40, 32, 290, DateTimeKind.Local).AddTicks(2838),
+                            Description = "Hayalinizdeki yolculuğa adım atın! Araç kiralama firmamız, seyahatlerinizi daha keyifli ve konforlu hale getirmek için burada. Geniş araç filomuzla her türlü ihtiyaca uygun seçenekler sunuyoruz. Güvenilir ve bakımlı araçlarımız, yolculuklarınızı güvenle tamamlamanızı sağlarken, uygun fiyatlarımızla da bütçenizi zorlamıyoruz. Hemen rezervasyon yapın ve unutulmaz bir sürüş deneyimi yaşayın!",
+                            ImageUrl = "araba.jpg",
+                            Price = 25000.0,
+                            Title = "Kiralık Araçlar",
+                            UserId = "e2806b22-5c42-4a0e-95db-c06f47c9c415"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Category = "Güvenlik Teknolojileri",
+                            CreatedDate = new DateTime(2024, 3, 23, 16, 40, 32, 290, DateTimeKind.Local).AddTicks(2840),
+                            Description = "Güvenlik Aletleri İle Huzurunuz Bizimle! Geniş ürün yelpazemiz arasında kamera sistemleri, alarm sistemleri, kapı ve pencere sensörleri, güvenlik kameraları ve daha fazlası bulunmaktadır. Güvenlik ihtiyaçlarınıza ve bütçenize uygun çözümler sunuyoruz.",
+                            ImageUrl = "guvenlik.jpg",
+                            Price = 10000.0,
+                            Title = "Güvenlik Aletleri",
+                            UserId = "e2806b22-5c42-4a0e-95db-c06f47c9c415"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -365,6 +607,18 @@ namespace Marketify.DataAccess.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = "3f54996c-086f-4ca1-ac2b-71ae14021ac1",
+                            RoleId = "a2ae933f-e3fd-43f4-acac-bbd8e030b71c"
+                        },
+                        new
+                        {
+                            UserId = "e2806b22-5c42-4a0e-95db-c06f47c9c415",
+                            RoleId = "4ed025ec-f3dc-4505-bff0-918300a2fca2"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
