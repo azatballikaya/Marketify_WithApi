@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Marketify.Entity")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2c238b9c9e4540fd53774b3f5875a1be75a2cb9a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("Marketify.Entity")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Marketify.Entity")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

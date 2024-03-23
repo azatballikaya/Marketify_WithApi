@@ -59,7 +59,11 @@ namespace Marketify.Api.Controllers
         public async Task<IActionResult> GetOffer(int id)
         {
             var response=await _offerService.GetOfferAsync(id);
-            IActionResult result = response.IsSuccess ? Ok(response.Data) : BadRequest();
+            var jsonData = response.IsSuccess ? JsonConvert.SerializeObject(response.Data, Formatting.Indented, new JsonSerializerSettings
+            {
+                ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
+            }) : null;
+            IActionResult result = response.IsSuccess ? Ok(jsonData) : BadRequest();
             return result;
 
         }

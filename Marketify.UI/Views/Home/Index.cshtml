@@ -36,13 +36,10 @@
                         {
                             <a href="/Admin/Chat/SendMessage/@item.UserId" type="button" class="btn btn-primary float-right">Mesaj Gönder</a>
                         }
-                        @if (!Model.Any(x => x.Offers.Count() >= item.Offers.Count() && x != item))
-                        {
-                            
-                        }
+                     
                     
                         <h5 class="card-title">@item.Title</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Post Yayınlayan: @item.User.userName</h6>
+                        <h6 class="card-subtitle mb-2 text-muted">Post Yayınlayan:<a href="/Home/GetUser/@item.UserId"> @item.User.userName</a></h6>
                    
                     <img src="~/img/@item.ImageUrl" style="max-width:100%; height:300px" class="post-image mb-3" alt="Sample Image">
                    
