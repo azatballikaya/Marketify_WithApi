@@ -56,7 +56,7 @@ namespace Marketify.Business.Concrete
 
         public async Task<Response<List<Post>>> GetAllPostsAsync()
         {
-            var posts=await _postDal.GetAllAsync(include:x=>x.Include(y=>y.User).Include(z=>z.Comments).Include(k=>k.Likes).Include(a=>a.Offers));
+            var posts=await _postDal.GetAllAsync(include:x=>x.Include(y=>y.User).Include(z=>z.Comments).ThenInclude(a=>a.User).Include(k=>k.Likes).Include(a=>a.Offers));
             if (posts != null)
             {
                 return Response<List<Post>>.Success(posts);

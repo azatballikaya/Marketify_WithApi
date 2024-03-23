@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Marketify.DataAccess")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e712516cab22a7ab4b432353c03d73e427ec9560")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0b5fd8881fe788ed35cddefa2a2065a517a55118")]
 [assembly: System.Reflection.AssemblyProductAttribute("Marketify.DataAccess")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Marketify.DataAccess")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

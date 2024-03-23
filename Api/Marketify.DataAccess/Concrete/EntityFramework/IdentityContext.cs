@@ -22,11 +22,13 @@ namespace Marketify.DataAccess.Concrete.EntityFramework
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
+            
             builder.Seed();
 
 
 
         }
+       
 
         public DbSet<Post> Posts { get; set; }
         public DbSet<Comment> Comments { get; set; }

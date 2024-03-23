@@ -119,8 +119,8 @@ namespace Marketify.DataAccess.SeedData
             modelBuilder.Entity<Offer>().HasData(new List<Offer>
             {
                 new Offer{OfferId=1,Price=8000,PostId=1,UserId=customerId},
-                new Offer{OfferId=1,Price=9000,PostId=1,UserId=customerId},
-                new Offer{OfferId=2,Price=9500,PostId=3,UserId=adminId}
+                new Offer{OfferId=2,Price=9000,PostId=1,UserId=customerId},
+                new Offer{OfferId=3,Price=9500,PostId=3,UserId=adminId}
                
             });
             #endregion

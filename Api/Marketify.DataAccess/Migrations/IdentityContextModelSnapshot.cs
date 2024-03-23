@@ -3,6 +3,7 @@ using System;
 using Marketify.DataAccess.Concrete.EntityFramework;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -15,21 +16,27 @@ namespace Marketify.DataAccess.Migrations
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
-            modelBuilder.HasAnnotation("ProductVersion", "7.0.17");
+            modelBuilder
+                .HasAnnotation("ProductVersion", "7.0.17")
+                .HasAnnotation("Relational:MaxIdentifierLength", 128);
+
+            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
             modelBuilder.Entity("Marketify.Entity.Chat", b =>
                 {
                     b.Property<int>("ChatId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ChatId"));
 
                     b.Property<string>("UserId1")
                         .IsRequired()
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("UserId2")
                         .IsRequired()
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("ChatId");
 
@@ -43,8 +50,8 @@ namespace Marketify.DataAccess.Migrations
                         new
                         {
                             ChatId = 1,
-                            UserId1 = "3f54996c-086f-4ca1-ac2b-71ae14021ac1",
-                            UserId2 = "e2806b22-5c42-4a0e-95db-c06f47c9c415"
+                            UserId1 = "a80af41d-c168-4f76-9d8a-0441b7e0bcd2",
+                            UserId2 = "0b071c63-f704-474f-b4e3-384499cdec11"
                         });
                 });
 
@@ -52,21 +59,23 @@ namespace Marketify.DataAccess.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("TEXT");
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Message")
                         .IsRequired()
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("PostId")
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("int");
 
                     b.Property<string>("UserId")
                         .IsRequired()
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
@@ -80,72 +89,73 @@ namespace Marketify.DataAccess.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2024, 3, 23, 16, 40, 32, 290, DateTimeKind.Local).AddTicks(2866),
+                            CreatedDate = new DateTime(2024, 3, 23, 18, 44, 42, 689, DateTimeKind.Local).AddTicks(4390),
                             Message = "Ürün tam aradığım gibi.",
                             PostId = 1,
-                            UserId = "e2806b22-5c42-4a0e-95db-c06f47c9c415"
+                            UserId = "0b071c63-f704-474f-b4e3-384499cdec11"
                         },
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2024, 3, 23, 16, 40, 32, 290, DateTimeKind.Local).AddTicks(2870),
+                            CreatedDate = new DateTime(2024, 3, 23, 18, 44, 42, 689, DateTimeKind.Local).AddTicks(4397),
                             Message = "DM yoluyla iletişime geçtim.",
                             PostId = 1,
-                            UserId = "e2806b22-5c42-4a0e-95db-c06f47c9c415"
+                            UserId = "0b071c63-f704-474f-b4e3-384499cdec11"
                         },
                         new
                         {
                             Id = 3,
-                            CreatedDate = new DateTime(2024, 3, 23, 16, 40, 32, 290, DateTimeKind.Local).AddTicks(2872),
+                            CreatedDate = new DateTime(2024, 3, 23, 18, 44, 42, 689, DateTimeKind.Local).AddTicks(4399),
                             Message = "En fazla kaç gün kiralayabiliyoruz?",
                             PostId = 2,
-                            UserId = "3f54996c-086f-4ca1-ac2b-71ae14021ac1"
+                            UserId = "a80af41d-c168-4f76-9d8a-0441b7e0bcd2"
                         },
                         new
                         {
                             Id = 4,
-                            CreatedDate = new DateTime(2024, 3, 23, 16, 40, 32, 290, DateTimeKind.Local).AddTicks(2874),
+                            CreatedDate = new DateTime(2024, 3, 23, 18, 44, 42, 689, DateTimeKind.Local).AddTicks(4400),
                             Message = "Kaskoları var mı?",
                             PostId = 2,
-                            UserId = "e2806b22-5c42-4a0e-95db-c06f47c9c415"
+                            UserId = "0b071c63-f704-474f-b4e3-384499cdec11"
                         });
                 });
 
             modelBuilder.Entity("Marketify.Entity.Identity.Role", b =>
                 {
                     b.Property<string>("Id")
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .HasMaxLength(256)
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(256)");
 
                     b.Property<string>("NormalizedName")
                         .HasMaxLength(256)
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(256)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("NormalizedName")
                         .IsUnique()
-                        .HasDatabaseName("RoleNameIndex");
+                        .HasDatabaseName("RoleNameIndex")
+                        .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles", (string)null);
 
                     b.HasData(
                         new
                         {
-                            Id = "a2ae933f-e3fd-43f4-acac-bbd8e030b71c",
+                            Id = "fc09c7b2-ec28-44e6-8d91-632c4e802bea",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "4ed025ec-f3dc-4505-bff0-918300a2fca2",
+                            Id = "6fa4a4bc-88f2-441a-8d91-2f56591d63fa",
                             Name = "Customer",
                             NormalizedName = "CUSTOMER"
                         });
@@ -154,61 +164,61 @@ namespace Marketify.DataAccess.Migrations
             modelBuilder.Entity("Marketify.Entity.Identity.User", b =>
                 {
                     b.Property<string>("Id")
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("AccessFailedCount")
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("int");
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
                         .HasMaxLength(256)
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(256)");
 
                     b.Property<bool>("EmailConfirmed")
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("bit");
 
                     b.Property<bool>("IsApproved")
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("bit");
 
                     b.Property<string>("Job")
                         .IsRequired()
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("LockoutEnabled")
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("bit");
 
                     b.Property<DateTimeOffset?>("LockoutEnd")
-                        .HasColumnType("TEXT");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<string>("NormalizedEmail")
                         .HasMaxLength(256)
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(256)");
 
                     b.Property<string>("NormalizedUserName")
                         .HasMaxLength(256)
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(256)");
 
                     b.Property<string>("PasswordHash")
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PhoneNumber")
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("PhoneNumberConfirmed")
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("bit");
 
                     b.Property<string>("SecurityStamp")
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("TwoFactorEnabled")
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("bit");
 
                     b.Property<string>("UserName")
                         .HasMaxLength(256)
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(256)");
 
                     b.HasKey("Id");
 
@@ -217,16 +227,17 @@ namespace Marketify.DataAccess.Migrations
 
                     b.HasIndex("NormalizedUserName")
                         .IsUnique()
-                        .HasDatabaseName("UserNameIndex");
+                        .HasDatabaseName("UserNameIndex")
+                        .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
 
                     b.HasData(
                         new
                         {
-                            Id = "3f54996c-086f-4ca1-ac2b-71ae14021ac1",
+                            Id = "a80af41d-c168-4f76-9d8a-0441b7e0bcd2",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "23e2fd16-b478-46a3-b536-4e0945b7225f",
+                            ConcurrencyStamp = "6a49bf32-7291-44ba-81cf-8a577cc0c61a",
                             Email = "admin@info.com",
                             EmailConfirmed = true,
                             IsApproved = true,
@@ -234,29 +245,29 @@ namespace Marketify.DataAccess.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@INFO.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAEAsFqdyUkfdq2J3RaFqRQ1A7AdOyTUNhByjnWc6o+N787iA6mxDkhVLhURuYu+PPBQ==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEKt1hRA5gAVLFZDdDBKHJto1usj+MFiaLy5vD/fsgZel6I1+Rlv3VP/ictic0jbyBw==",
                             PhoneNumber = "5555555555",
                             PhoneNumberConfirmed = true,
-                            SecurityStamp = "dd85ebcb-33dd-420b-b349-7721a0910d21",
+                            SecurityStamp = "6f14f27e-4ccc-4eb6-9f96-963a1cb0b01f",
                             TwoFactorEnabled = false,
                             UserName = "admin"
                         },
                         new
                         {
-                            Id = "e2806b22-5c42-4a0e-95db-c06f47c9c415",
+                            Id = "0b071c63-f704-474f-b4e3-384499cdec11",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "3d96557c-98a1-4060-82c4-feaf38414893",
+                            ConcurrencyStamp = "a249a8ab-2fde-4f27-a594-e7cb4484331a",
                             Email = "customer@info.com",
                             EmailConfirmed = true,
                             IsApproved = true,
-                            Job = "Customer",
+                            Job = "Rent a Car and Security",
                             LockoutEnabled = false,
                             NormalizedEmail = "CUSTOMER@INFO.COM",
                             NormalizedUserName = "CUSTOMER",
-                            PasswordHash = "AQAAAAIAAYagAAAAEJRNBu4Mu9lHQ1Vd/6BKJ4PwVszGnXGedehQ1pOwhK8u6D6FU8WLldwUxVdSAWBypw==",
+                            PasswordHash = "AQAAAAIAAYagAAAAENimHnIt3M33m9ndBXdpvFc1vXKQ6Mq2IwJOmvowntI3wiyML+UjyInF103ctWlJsg==",
                             PhoneNumber = "5555555555",
                             PhoneNumberConfirmed = true,
-                            SecurityStamp = "d0c966c6-99d1-421a-9e8a-cbe789d14542",
+                            SecurityStamp = "51c17e86-223a-45ca-9516-fc58eb052a29",
                             TwoFactorEnabled = false,
                             UserName = "customer"
                         });
@@ -266,14 +277,16 @@ namespace Marketify.DataAccess.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int>("PostId")
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("int");
 
                     b.Property<string>("UserId")
                         .IsRequired()
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
@@ -288,49 +301,49 @@ namespace Marketify.DataAccess.Migrations
                         {
                             Id = 1,
                             PostId = 1,
-                            UserId = "e2806b22-5c42-4a0e-95db-c06f47c9c415"
+                            UserId = "0b071c63-f704-474f-b4e3-384499cdec11"
                         },
                         new
                         {
                             Id = 2,
                             PostId = 1,
-                            UserId = "3f54996c-086f-4ca1-ac2b-71ae14021ac1"
+                            UserId = "a80af41d-c168-4f76-9d8a-0441b7e0bcd2"
                         },
                         new
                         {
                             Id = 3,
                             PostId = 2,
-                            UserId = "e2806b22-5c42-4a0e-95db-c06f47c9c415"
+                            UserId = "0b071c63-f704-474f-b4e3-384499cdec11"
                         },
                         new
                         {
                             Id = 4,
                             PostId = 2,
-                            UserId = "3f54996c-086f-4ca1-ac2b-71ae14021ac1"
+                            UserId = "a80af41d-c168-4f76-9d8a-0441b7e0bcd2"
                         },
                         new
                         {
                             Id = 5,
                             PostId = 3,
-                            UserId = "3f54996c-086f-4ca1-ac2b-71ae14021ac1"
+                            UserId = "a80af41d-c168-4f76-9d8a-0441b7e0bcd2"
                         },
                         new
                         {
                             Id = 6,
                             PostId = 3,
-                            UserId = "e2806b22-5c42-4a0e-95db-c06f47c9c415"
+                            UserId = "0b071c63-f704-474f-b4e3-384499cdec11"
                         },
                         new
                         {
                             Id = 7,
                             PostId = 4,
-                            UserId = "3f54996c-086f-4ca1-ac2b-71ae14021ac1"
+                            UserId = "a80af41d-c168-4f76-9d8a-0441b7e0bcd2"
                         },
                         new
                         {
                             Id = 8,
                             PostId = 4,
-                            UserId = "e2806b22-5c42-4a0e-95db-c06f47c9c415"
+                            UserId = "0b071c63-f704-474f-b4e3-384499cdec11"
                         });
                 });
 
@@ -338,22 +351,24 @@ namespace Marketify.DataAccess.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int>("ChatId")
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("int");
 
                     b.Property<string>("MessageContent")
                         .IsRequired()
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("RecipientId")
                         .IsRequired()
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("SenderId")
                         .IsRequired()
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
@@ -371,32 +386,32 @@ namespace Marketify.DataAccess.Migrations
                             Id = 1,
                             ChatId = 1,
                             MessageContent = "Merhaba ürünlerinizi çok beğendim. Benim işletmeme uygun.",
-                            RecipientId = "3f54996c-086f-4ca1-ac2b-71ae14021ac1",
-                            SenderId = "e2806b22-5c42-4a0e-95db-c06f47c9c415"
+                            RecipientId = "a80af41d-c168-4f76-9d8a-0441b7e0bcd2",
+                            SenderId = "0b071c63-f704-474f-b4e3-384499cdec11"
                         },
                         new
                         {
                             Id = 2,
                             ChatId = 1,
                             MessageContent = "Teşekkür ederim nasıl yardımcı olabilirim?",
-                            RecipientId = "e2806b22-5c42-4a0e-95db-c06f47c9c415",
-                            SenderId = "3f54996c-086f-4ca1-ac2b-71ae14021ac1"
+                            RecipientId = "0b071c63-f704-474f-b4e3-384499cdec11",
+                            SenderId = "a80af41d-c168-4f76-9d8a-0441b7e0bcd2"
                         },
                         new
                         {
                             Id = 3,
                             ChatId = 1,
                             MessageContent = "Ürünleriniz tam aradığım gibi fakat fiyatı bütçemi aşıyor. Yardımcı olabilir misiniz?",
-                            RecipientId = "3f54996c-086f-4ca1-ac2b-71ae14021ac1",
-                            SenderId = "e2806b22-5c42-4a0e-95db-c06f47c9c415"
+                            RecipientId = "a80af41d-c168-4f76-9d8a-0441b7e0bcd2",
+                            SenderId = "0b071c63-f704-474f-b4e3-384499cdec11"
                         },
                         new
                         {
                             Id = 4,
                             ChatId = 1,
                             MessageContent = "Peki. Profilimizdeki iletişim numarsından iletişime geçerseniz yardımcı olmak isteriz. Teşekkürler...",
-                            RecipientId = "e2806b22-5c42-4a0e-95db-c06f47c9c415",
-                            SenderId = "3f54996c-086f-4ca1-ac2b-71ae14021ac1"
+                            RecipientId = "0b071c63-f704-474f-b4e3-384499cdec11",
+                            SenderId = "a80af41d-c168-4f76-9d8a-0441b7e0bcd2"
                         });
                 });
 
@@ -404,17 +419,19 @@ namespace Marketify.DataAccess.Migrations
                 {
                     b.Property<int>("OfferId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("OfferId"));
 
                     b.Property<int>("PostId")
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("int");
 
                     b.Property<double>("Price")
-                        .HasColumnType("REAL");
+                        .HasColumnType("float");
 
                     b.Property<string>("UserId")
                         .IsRequired()
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("OfferId");
 
@@ -430,14 +447,21 @@ namespace Marketify.DataAccess.Migrations
                             OfferId = 1,
                             PostId = 1,
                             Price = 8000.0,
-                            UserId = "e2806b22-5c42-4a0e-95db-c06f47c9c415"
+                            UserId = "0b071c63-f704-474f-b4e3-384499cdec11"
                         },
                         new
                         {
                             OfferId = 2,
-                            PostId = 2,
+                            PostId = 1,
+                            Price = 9000.0,
+                            UserId = "0b071c63-f704-474f-b4e3-384499cdec11"
+                        },
+                        new
+                        {
+                            OfferId = 3,
+                            PostId = 3,
                             Price = 9500.0,
-                            UserId = "3f54996c-086f-4ca1-ac2b-71ae14021ac1"
+                            UserId = "a80af41d-c168-4f76-9d8a-0441b7e0bcd2"
                         });
                 });
 
@@ -445,33 +469,35 @@ namespace Marketify.DataAccess.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Category")
                         .IsRequired()
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("TEXT");
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Description")
                         .IsRequired()
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ImageUrl")
                         .IsRequired()
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<double>("Price")
-                        .HasColumnType("REAL");
+                        .HasColumnType("float");
 
                     b.Property<string>("Title")
                         .IsRequired()
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UserId")
                         .IsRequired()
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
@@ -484,45 +510,45 @@ namespace Marketify.DataAccess.Migrations
                         {
                             Id = 1,
                             Category = "Mobilya",
-                            CreatedDate = new DateTime(2024, 3, 23, 16, 40, 32, 290, DateTimeKind.Local).AddTicks(2816),
+                            CreatedDate = new DateTime(2024, 3, 23, 18, 44, 42, 689, DateTimeKind.Local).AddTicks(4304),
                             Description = "Modern ofis mobilyaları, işyerlerinizdeki yaşamı kolaylaştıran ve çalışma verimliliğini artıran pratik ve şık çözümler sunar. Zarif tasarımlarıyla dikkat çeken bu mobilyalar, işlevselliği estetikle birleştirirken, ergonomik yapılarıyla da çalışanların konforunu sağlar. Esnek modüler sistemleri ve akıllı depolama çözümleri sayesinde, ofis alanınızı verimli bir şekilde düzenleyebilir ve değişen ihtiyaçlara kolayca uyum sağlayabilirsiniz.",
                             ImageUrl = "mobilya.jpg",
                             Price = 10000.0,
                             Title = "Modern Ofis Mobilyaları",
-                            UserId = "3f54996c-086f-4ca1-ac2b-71ae14021ac1"
+                            UserId = "a80af41d-c168-4f76-9d8a-0441b7e0bcd2"
                         },
                         new
                         {
                             Id = 2,
                             Category = "Beyaz Eşya",
-                            CreatedDate = new DateTime(2024, 3, 23, 16, 40, 32, 290, DateTimeKind.Local).AddTicks(2836),
+                            CreatedDate = new DateTime(2024, 3, 23, 18, 44, 42, 689, DateTimeKind.Local).AddTicks(4339),
                             Description = "Ev yaşamınızı kolaylaştıran beyaz eşyalarımızla hayatınızı daha konforlu hale getirin! Yüksek kaliteli ve güvenilir ürünlerimiz, modern tasarımıyla evinizin estetiğine katkı sağlarken, enerji verimliliğiyle de bütçenize dost. Pratik kullanımıyla zamanınızı verimli kullanmanıza yardımcı olurken, günlük yaşamınızı daha keyifli hale getirin.",
                             ImageUrl = "beyaz-esya.jpg",
                             Price = 15000.0,
                             Title = "Son Teknoloji Beyaz Eşyalar",
-                            UserId = "3f54996c-086f-4ca1-ac2b-71ae14021ac1"
+                            UserId = "a80af41d-c168-4f76-9d8a-0441b7e0bcd2"
                         },
                         new
                         {
                             Id = 3,
                             Category = "Araba",
-                            CreatedDate = new DateTime(2024, 3, 23, 16, 40, 32, 290, DateTimeKind.Local).AddTicks(2838),
+                            CreatedDate = new DateTime(2024, 3, 23, 18, 44, 42, 689, DateTimeKind.Local).AddTicks(4341),
                             Description = "Hayalinizdeki yolculuğa adım atın! Araç kiralama firmamız, seyahatlerinizi daha keyifli ve konforlu hale getirmek için burada. Geniş araç filomuzla her türlü ihtiyaca uygun seçenekler sunuyoruz. Güvenilir ve bakımlı araçlarımız, yolculuklarınızı güvenle tamamlamanızı sağlarken, uygun fiyatlarımızla da bütçenizi zorlamıyoruz. Hemen rezervasyon yapın ve unutulmaz bir sürüş deneyimi yaşayın!",
                             ImageUrl = "araba.jpg",
                             Price = 25000.0,
                             Title = "Kiralık Araçlar",
-                            UserId = "e2806b22-5c42-4a0e-95db-c06f47c9c415"
+                            UserId = "0b071c63-f704-474f-b4e3-384499cdec11"
                         },
                         new
                         {
                             Id = 4,
                             Category = "Güvenlik Teknolojileri",
-                            CreatedDate = new DateTime(2024, 3, 23, 16, 40, 32, 290, DateTimeKind.Local).AddTicks(2840),
+                            CreatedDate = new DateTime(2024, 3, 23, 18, 44, 42, 689, DateTimeKind.Local).AddTicks(4343),
                             Description = "Güvenlik Aletleri İle Huzurunuz Bizimle! Geniş ürün yelpazemiz arasında kamera sistemleri, alarm sistemleri, kapı ve pencere sensörleri, güvenlik kameraları ve daha fazlası bulunmaktadır. Güvenlik ihtiyaçlarınıza ve bütçenize uygun çözümler sunuyoruz.",
                             ImageUrl = "guvenlik.jpg",
                             Price = 10000.0,
                             Title = "Güvenlik Aletleri",
-                            UserId = "e2806b22-5c42-4a0e-95db-c06f47c9c415"
+                            UserId = "0b071c63-f704-474f-b4e3-384499cdec11"
                         });
                 });
 
@@ -530,17 +556,19 @@ namespace Marketify.DataAccess.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("ClaimType")
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ClaimValue")
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("RoleId")
                         .IsRequired()
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
@@ -553,17 +581,19 @@ namespace Marketify.DataAccess.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("ClaimType")
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ClaimValue")
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UserId")
                         .IsRequired()
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
@@ -575,17 +605,17 @@ namespace Marketify.DataAccess.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
                     b.Property<string>("LoginProvider")
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ProviderKey")
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ProviderDisplayName")
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UserId")
                         .IsRequired()
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("LoginProvider", "ProviderKey");
 
@@ -597,10 +627,10 @@ namespace Marketify.DataAccess.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
                 {
                     b.Property<string>("UserId")
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("RoleId")
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("UserId", "RoleId");
 
@@ -611,29 +641,29 @@ namespace Marketify.DataAccess.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "3f54996c-086f-4ca1-ac2b-71ae14021ac1",
-                            RoleId = "a2ae933f-e3fd-43f4-acac-bbd8e030b71c"
+                            UserId = "a80af41d-c168-4f76-9d8a-0441b7e0bcd2",
+                            RoleId = "fc09c7b2-ec28-44e6-8d91-632c4e802bea"
                         },
                         new
                         {
-                            UserId = "e2806b22-5c42-4a0e-95db-c06f47c9c415",
-                            RoleId = "4ed025ec-f3dc-4505-bff0-918300a2fca2"
+                            UserId = "0b071c63-f704-474f-b4e3-384499cdec11",
+                            RoleId = "6fa4a4bc-88f2-441a-8d91-2f56591d63fa"
                         });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
                     b.Property<string>("UserId")
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("LoginProvider")
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Name")
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Value")
-                        .HasColumnType("TEXT");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("UserId", "LoginProvider", "Name");
 
