@@ -6,6 +6,7 @@ using Newtonsoft.Json;
 using System.Security.Claims;
 using System.Text;
 
+
 namespace Marketify.UI.Areas.Admin.Controllers
 {
     [Area("Admin")]
@@ -89,6 +90,53 @@ namespace Marketify.UI.Areas.Admin.Controllers
             return View(createPostViewModel);
         }
         [HttpGet]
+        public async Task<IActionResult> Edit(int id)
+        {
+            var responseMessage = await client.GetAsync(apiUrl + $"Post/{id}");
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                var jsonData=await responseMessage.Content.ReadAsStringAsync();
+                var value = JsonConvert.DeserializeObject<UpdatePostViewModel>(jsonData);
+                return View(value);
+            }
+            return NotFound();
+        }
+        [HttpPost]
+        public async Task<IActionResult> Edit(UpdatePostViewModel updatePostViewModel)
+        {
+            updatePostViewModel.UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (updatePostViewModel.Image != null)
+            {
+                
+                
+                if (System.IO.File.Exists(Directory.GetCurrentDirectory()+$"/wwwroot/img/{updatePostViewModel.ImageUrl}"))
+                {
+
+                System.IO.File.Delete(Directory.GetCurrentDirectory()+ $"/wwwroot/img/{updatePostViewModel.ImageUrl}");
+                }
+            
+
+
+                var extension = Path.GetExtension(updatePostViewModel.Image.FileName);
+                var imageName = $"{Guid.NewGuid()}{extension}";
+                updatePostViewModel.ImageUrl = imageName;
+                var path = Path.Combine(Directory.GetCurrentDirectory(), $"wwwroot/img/{imageName}");
+                using (var stream = new FileStream(path, FileMode.Create))
+                {
+                    await updatePostViewModel.Image.CopyToAsync(stream);
+                }
+            }
+
+            var jsonData=JsonConvert.SerializeObject(updatePostViewModel);
+            StringContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
+            var responseMessage = await client.PutAsync(apiUrl + "Post", content);
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                return RedirectToAction("Index");
+            }
+            return View(updatePostViewModel);
+        }
+        [HttpGet]
         public async Task<IActionResult> Delete(int id)
         {
             var responseMessage = await client.GetAsync(apiUrl + $"Post/{id}");
@@ -102,15 +150,15 @@ namespace Marketify.UI.Areas.Admin.Controllers
 
         }
         [HttpPost]
-        public async Task<IActionResult> Delete(ResultPostViewModel resultPostViewModel)
+        public async Task<IActionResult> Delete(string id)
         {
-            var responseMessage = await client.DeleteAsync(apiUrl + $"Post/{resultPostViewModel.Id}");
+            var responseMessage = await client.DeleteAsync(apiUrl + $"Post/{id}");
             if (responseMessage.IsSuccessStatusCode)
             {
 
                 return RedirectToAction("Index");
             }
-            return RedirectToAction("Delete", new { id = resultPostViewModel.Id });
+            return RedirectToAction("Delete", new { id = id });
         }
     }
 }

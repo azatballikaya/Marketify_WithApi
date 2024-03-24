@@ -32,6 +32,11 @@
                 <td width="200"><img src="~/img/@item.ImageUrl" style="height:125px;width:200px" /></td>
                 <td width="300">@item.CreatedDate</td>
                <td><a class="btn btn-info" href="/Admin/Post/GetPost/@item.Id">Detay</a>
+                    @if(User.Identity.Name == item.User.userName)
+                    {
+                    <a class="btn btn-warning" href="/Admin/Post/Edit/@item.Id">Düzenle</a>
+                        
+                    }
                    <a class="btn btn-danger" href="/Admin/Post/Delete/@item.Id">Sil</a></td>
 
             </tr>

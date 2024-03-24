@@ -48,7 +48,7 @@ namespace Marketify.Business.Concrete
         {
             var post =await _postDal.GetAsync(x => x.Id == id);
             if(post != null) { 
-            _postDal.DeleteAsync(post);
+              await  _postDal.DeleteAsync(post);
                 return Response.Success();
             }
             return Response.Fail();

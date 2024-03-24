@@ -1,0 +1,67 @@
+﻿@model UpdatePostViewModel
+<div class="container mt-5">
+
+
+    <div class="card">
+        <div class="card-body">
+            <div asp-validation-summary="All"></div>
+            <form action="/Admin/Post/Edit" method="post" enctype="multipart/form-data">
+                <input type="hidden" asp-for="Id"/>
+                <input type="hidden" asp-for="UserId" value="User.FindFirstValue(ClaimTypes.NameIdentifier)" />
+                <input type="hidden" asp-for="ImageUrl"/>
+                <div class="mb-3">
+                    <label asp-for="Title" class="form-label">Başlık</label>
+                    <input type="text" class="form-control" asp-for="Title" required>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Description" class="form-label">Açıklama</label>
+                    <textarea type="text" class="form-control" asp-for="Description" rows="4" required>
+                        </textarea>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Category" class="form-label">Kategori</label>
+                    <input type="text" class="form-control" asp-for="Category" required>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Price" class="form-label">Fiyat</label>
+                    <input type="text" class="form-control" asp-for="Price" required>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Image" class="form-label">Resim Seçiniz:</label>
+                    <input class="form-control" id="input_img" name="Image" type="file" >
+                </div>
+                <div class="mb-3">
+                    <img src="" id="img_img" />
+
+                </div>
+                <button type="submit" class="btn btn-warning" style="width: 100%;">Güncelle</button>
+            </form>
+        </div>
+    </div>
+
+</div>
+<script>
+
+
+    $("#input_img").change(function (e) {
+
+        for (var i = 0; i < e.originalEvent.srcElement.files.length; i++) {
+
+            var file = e.originalEvent.srcElement.files[i];
+
+            var img = document.createElement("img");
+            var reader = new FileReader();
+            reader.onloadend = function () {
+                img.src = reader.result;
+            }
+            reader.readAsDataURL(file);
+            img.width = 450;
+            img.height = 200;
+            img.classList.add("mt-3")
+            $("#input_img").after(img);
+        }
+    });
+
+
+
+</script>
