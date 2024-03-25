@@ -1,0 +1,83 @@
+﻿@model ResultPostViewModel
+<div class="container mt-5">
+    <div class="card">
+        <div class="row">
+            <div class="alert alert-primary col-4 ml-4 mt-2">
+                <!-- Author name -->
+                <h5 class="card-title">@Model.User.userName</h5>
+            </div>
+        </div>
+       <h2 class="text-primary ml-2">@Model.Title</h2>
+        <img src="~/img/@Model.ImageUrl" class="card-img-top ml-2" style="height:300px;width:400px;">
+        <div class="card-body">
+            <p class="card-text">@Model.Description</p>
+            <button id="btn_like" class="btn btn-primary">Like</button>
+            
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              
+        <span class="badge badge-primary badge-pill" id="span_like">@Model.Likes.Count() Beğeni</span>
+
+            </li>
+        </ul>
+        
+        <div class="card-footer">
+            <!-- Input field for writing comments -->
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" id="input_comment" placeholder="Bir yorum paylaş..."  aria-describedby="button-addon2">
+                <button class="btn btn-outline-secondary" id="btn_comment" type="button" >Gönder</button>
+            </div>
+            <!-- List of comments -->
+            <div class="comments">
+                <!-- Example comments -->
+                @foreach(var item in Model.Comments){
+                    <ul id="ul_comments">
+                        <li>
+
+                    <div class="comment"><b>@item.User.userName</b> :@item.Message</div>
+                        </li>
+                    
+                    </ul>
+                }
+                <!-- Add more comments here -->
+            </div>
+    </div>
+</div>
+<script>
+    $('#btn_like').on('click', function () {
+        $.ajax({
+            url: "@Url.Action("AddLikeToPost", "Post")/@Model.Id",
+            dataType: 'json',
+            type: 'GET',
+            success: function (response) {
+                $("#span_like").html(`${response} Beğeni`);
+            },
+            error: function (err) {
+                console.log(err);
+            }
+
+        });
+    });
+    $("#btn_comment").on('click', function () {
+        var comment = $("#input_comment").val();
+        $.ajax({
+            url: '@Url.Action("CreateComment","Post")',
+            dataType: 'json',
+            type: 'POST',
+            data: {
+                Message:`${comment}`,
+                CreateComment:Date.now(),
+                UserId:'1',
+                PostId:'@Model.Id'
+            },
+            success: function (response) {
+                    $(`#ul_comments`).append(`<li><div class="comment"><b>${response.userName}</b>: ${response.message}</div></li>`);
+                $('#input_comment').val('');
+            },
+            error: function (err) {
+                console.log(err);
+            }
+        });
+    });
+</script>

@@ -27,8 +27,8 @@ namespace Marketify.UI.Controllers
             StringContent content = new StringContent(JsonConvert.SerializeObject(addLikeToPost), Encoding.UTF8, "application/json");
             var responseMessage=await client.PostAsync(apiUrl+"Post/AddLikeToPost",content);
             var jsonData=await responseMessage.Content.ReadAsStringAsync();
-
-            return Json(jsonData);
+            var number=Convert.ToInt32(jsonData);
+            return Json(number);
         }
         public async Task<JsonResult> IsLiked(int id)
         {

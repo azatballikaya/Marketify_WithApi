@@ -22,5 +22,6 @@ namespace Marketify.Entity
         public List<Like> Likes { get; set; }
         public List<Offer> Offers { get; set; }
 
+       
     }
 }

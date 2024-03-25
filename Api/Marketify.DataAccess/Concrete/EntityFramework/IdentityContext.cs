@@ -22,7 +22,7 @@ namespace Marketify.DataAccess.Concrete.EntityFramework
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
-            
+
             builder.Seed();
 
 

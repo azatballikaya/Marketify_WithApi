@@ -32,6 +32,17 @@ namespace Marketify.UI.Controllers
             }
             return View();
         }
+        public async Task<IActionResult> GetPost(int id)
+        {
+            var responseMessage = await client.GetAsync(apiUrl + $"Post/{id}");
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                var jsonData=await responseMessage.Content.ReadAsStringAsync();
+                var values=JsonConvert.DeserializeObject<ResultPostViewModel>(jsonData);
+                return View(values);
+            }
+            return NotFound();
+        }
         public async Task<IActionResult> GetUser(string id)
         {
             var responseMessage = await client.GetAsync(apiUrl + $"Post/GetPostsByUserId/{id}");

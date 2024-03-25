@@ -36,15 +36,16 @@
                         {
                             <a href="/Admin/Chat/SendMessage/@item.UserId" type="button" class="btn btn-primary float-right">Mesaj Gönder</a>
                         }
-                     
-                    
-                        <h5 class="card-title">@item.Title</h5>
+
+
+                        <h5 class="card-title"><a href="/Home/GetPost/@item.Id">@item.Title</a></h5>
                         <h6 class="card-subtitle mb-2 text-muted">Post Yayınlayan:<a href="/Home/GetUser/@item.UserId"> @item.User.userName</a></h6>
                    
                     <img src="~/img/@item.ImageUrl" style="max-width:100%; height:300px" class="post-image mb-3" alt="Sample Image">
                    
                     <p class="card-text">@item.Description</p>
                 </div>
+                <span class="text-danger ml-3 mb-2">Fiyat :<b>@item.Price.ToString("N") ₺</b></span>
                 <form action="/Admin/Offer/CreateOffer" method="post">
                         
 
@@ -127,7 +128,8 @@
             type:'GET',
             
             success: function (response) {
-                $(`#span_like_${id}`).html(`${response} Beğeni`);
+                var count = JSON.parse(response);
+                $(`#span_like_${id}`).html(`${count} Beğeni`);
             },
             error: function (err) {
                 console.log(err);

@@ -42,6 +42,14 @@ builder.Services.AddScoped<IChatService, ChatManager>();
 builder.Services.AddScoped<ILikeDal,EfLikeRepository>();
 
 var app = builder.Build();
+//using (var scope = app.Services.CreateScope())
+//{
+//    var services = scope.ServiceProvider;
+
+//    var context = services.GetRequiredService<IdentityContext>();
+//    context.Database.Migrate();
+//}
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

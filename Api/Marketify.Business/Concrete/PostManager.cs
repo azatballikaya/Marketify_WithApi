@@ -66,7 +66,7 @@ namespace Marketify.Business.Concrete
 
         public async Task<Response<Post>> GetPostByIdAsync(int id)
         {
-            var post=await _postDal.GetAsync(x=>x.Id == id,x=>x.Include(y=>y.User).Include(z=>z.Comments).Include(k=>k.Likes).Include(a=>a.Offers));
+            var post=await _postDal.GetAsync(x=>x.Id == id,x=>x.Include(y=>y.User).Include(z=>z.Comments).ThenInclude(a=>a.User).Include(k=>k.Likes).Include(a=>a.Offers));
             if(post != null)
             {
                 return Response<Post>.Success(post);

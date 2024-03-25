@@ -67,14 +67,7 @@ namespace Marketify.UI.Areas.Admin.Controllers
                 return RedirectToAction("Index", "Post", new {area="Admin"});
            
         }
-        public async Task<IActionResult> Delete(string id)
-        {
-            var responseMessage =await client.DeleteAsync(apiUrl + "User/" + $"{id}");
-           
-                return RedirectToAction("Index");
-            
-
-        }
+       
         public async Task<IActionResult> AddUserToAdminRole(string id)
         {
             AddUserToRoleViewModel addUserToRoleViewModel = new AddUserToRoleViewModel()

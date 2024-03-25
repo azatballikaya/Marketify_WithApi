@@ -11,6 +11,6 @@ namespace Marketify.Entity.Identity
     {
         public string Job { get; set; }
         public bool IsApproved { get; set; } = false;
-     
+      
     }
 }
