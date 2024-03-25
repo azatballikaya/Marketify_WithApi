@@ -3,6 +3,7 @@ using Marketify.UI.Models.Post;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Diagnostics;
+using System.Security.Claims;
 
 namespace Marketify.UI.Controllers
 {
@@ -38,8 +39,17 @@ namespace Marketify.UI.Controllers
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData=await responseMessage.Content.ReadAsStringAsync();
-                var values=JsonConvert.DeserializeObject<ResultPostViewModel>(jsonData);
-                return View(values);
+                var value=JsonConvert.DeserializeObject<ResultPostViewModel>(jsonData);
+               
+                
+                responseMessage = User.FindFirstValue(ClaimTypes.NameIdentifier).ToLower() != value.UserId.ToLower() ?  await client.GetAsync(apiUrl + $"Post/IncrementClickCount/{id}") : responseMessage;
+               
+                if (responseMessage.IsSuccessStatusCode)
+                {
+
+                return View(value);
+                }
+                
             }
             return NotFound();
         }

@@ -40,6 +40,7 @@ namespace Marketify.Business.Concrete
 
         public async Task<Response> CreatePostAsync(Post post)
         {
+            post.ClickCount = 0;
          await _postDal.InsertAsync(post);
             return Response.Success();
         }
@@ -89,7 +90,17 @@ namespace Marketify.Business.Concrete
             await _postDal.UpdateAsync(post);
             return Response.Success();
         }
-
+        public async Task<Response> IncrementClickCountAsync(int postId)
+        {
+            var post = await _postDal.GetAsync(x => x.Id == postId);
+            if(post != null)
+            {
+                post.ClickCount++;
+                await _postDal.UpdateAsync(post);
+                return Response.Success();
+            }
+            return Response.Fail();
+        }
         
     }
 }

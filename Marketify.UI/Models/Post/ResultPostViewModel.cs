@@ -14,6 +14,7 @@ namespace Marketify.UI.Models.Post
         public double Price { get; set; }
         public string ImageUrl { get; set; }
         public DateTime CreatedDate { get; set; }
+        public int ClickCount { get; set; }
         public string UserId { get; set; }
         public ResultUserViewModel User { get; set; }
         public List<ResultCommentViewModel> Comments { get; set; }

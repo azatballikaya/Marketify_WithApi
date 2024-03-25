@@ -21,7 +21,8 @@ namespace Marketify.Entity
         public List<Comment> Comments { get; set; }
         public List<Like> Likes { get; set; }
         public List<Offer> Offers { get; set; }
+        public int ClickCount { get; set; }
 
-       
+
     }
 }

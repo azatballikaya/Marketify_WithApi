@@ -50,8 +50,8 @@ namespace Marketify.DataAccess.Migrations
                         new
                         {
                             ChatId = 1,
-                            UserId1 = "42ad8624-bd91-4bd6-b5a1-15938670cbad",
-                            UserId2 = "d1704288-43da-4ac2-a29a-65719437adfd"
+                            UserId1 = "9b6c3a15-2c5e-43fd-ace6-a060ac6c2741",
+                            UserId2 = "6504b1ca-d952-4efb-acea-b6abfd00fb49"
                         });
                 });
 
@@ -89,34 +89,34 @@ namespace Marketify.DataAccess.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2024, 3, 24, 14, 44, 26, 79, DateTimeKind.Local).AddTicks(8802),
+                            CreatedDate = new DateTime(2024, 3, 25, 18, 54, 6, 75, DateTimeKind.Local).AddTicks(1187),
                             Message = "Ürün tam aradığım gibi.",
                             PostId = 1,
-                            UserId = "d1704288-43da-4ac2-a29a-65719437adfd"
+                            UserId = "6504b1ca-d952-4efb-acea-b6abfd00fb49"
                         },
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2024, 3, 24, 14, 44, 26, 79, DateTimeKind.Local).AddTicks(8806),
+                            CreatedDate = new DateTime(2024, 3, 25, 18, 54, 6, 75, DateTimeKind.Local).AddTicks(1194),
                             Message = "DM yoluyla iletişime geçtim.",
                             PostId = 1,
-                            UserId = "d1704288-43da-4ac2-a29a-65719437adfd"
+                            UserId = "6504b1ca-d952-4efb-acea-b6abfd00fb49"
                         },
                         new
                         {
                             Id = 3,
-                            CreatedDate = new DateTime(2024, 3, 24, 14, 44, 26, 79, DateTimeKind.Local).AddTicks(8808),
+                            CreatedDate = new DateTime(2024, 3, 25, 18, 54, 6, 75, DateTimeKind.Local).AddTicks(1195),
                             Message = "En fazla kaç gün kiralayabiliyoruz?",
                             PostId = 2,
-                            UserId = "42ad8624-bd91-4bd6-b5a1-15938670cbad"
+                            UserId = "9b6c3a15-2c5e-43fd-ace6-a060ac6c2741"
                         },
                         new
                         {
                             Id = 4,
-                            CreatedDate = new DateTime(2024, 3, 24, 14, 44, 26, 79, DateTimeKind.Local).AddTicks(8809),
+                            CreatedDate = new DateTime(2024, 3, 25, 18, 54, 6, 75, DateTimeKind.Local).AddTicks(1196),
                             Message = "Kaskoları var mı?",
                             PostId = 2,
-                            UserId = "d1704288-43da-4ac2-a29a-65719437adfd"
+                            UserId = "6504b1ca-d952-4efb-acea-b6abfd00fb49"
                         });
                 });
 
@@ -149,13 +149,13 @@ namespace Marketify.DataAccess.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "c1c43196-d73f-4dc3-a88e-e386c8355f5d",
+                            Id = "443ed718-befe-48e9-8e34-7bec2d3c2c5d",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "2713630c-519f-4f4d-ab3e-3db6a4d8e2e8",
+                            Id = "5170e303-5a50-4474-bcec-4a33fc52221d",
                             Name = "Customer",
                             NormalizedName = "CUSTOMER"
                         });
@@ -235,9 +235,9 @@ namespace Marketify.DataAccess.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "42ad8624-bd91-4bd6-b5a1-15938670cbad",
+                            Id = "9b6c3a15-2c5e-43fd-ace6-a060ac6c2741",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "01addb6d-2c24-45ac-8b33-db66af16de01",
+                            ConcurrencyStamp = "826079c1-293a-4c19-b245-a0a559bf7e18",
                             Email = "admin@info.com",
                             EmailConfirmed = true,
                             IsApproved = true,
@@ -245,18 +245,18 @@ namespace Marketify.DataAccess.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@INFO.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAEHKeLCEo7yS3GGlw508dhwcHbv6qVEDEt1OuEgAHkIbfV3c7irN4tIZ5ZqPkBbl7Sg==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEHFJ7eO79zrQ/kNIFSuuykKoQFARrLBLfq1QBmhQu1LC9PPGgZdFSCTNGt+dgaW28A==",
                             PhoneNumber = "5555555555",
                             PhoneNumberConfirmed = true,
-                            SecurityStamp = "3cdb7787-137f-4bb1-8f6c-7407f387b72b",
+                            SecurityStamp = "bca5c4b7-90c3-4896-8c26-fef8e15a6775",
                             TwoFactorEnabled = false,
                             UserName = "admin"
                         },
                         new
                         {
-                            Id = "d1704288-43da-4ac2-a29a-65719437adfd",
+                            Id = "6504b1ca-d952-4efb-acea-b6abfd00fb49",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "d30b57fb-10fb-4ec8-a6ba-6375256d47e6",
+                            ConcurrencyStamp = "0606ec46-6d21-44d1-bd67-b4ddfbe5118c",
                             Email = "customer@info.com",
                             EmailConfirmed = true,
                             IsApproved = true,
@@ -264,10 +264,10 @@ namespace Marketify.DataAccess.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "CUSTOMER@INFO.COM",
                             NormalizedUserName = "CUSTOMER",
-                            PasswordHash = "AQAAAAIAAYagAAAAEJhdSoqQ19j0kMci+NHTRn5fe2AbXthdgsk7O6Wc+ZtzY7+x9jH4aF0k60e2Wo4x7Q==",
+                            PasswordHash = "AQAAAAIAAYagAAAAELe/cdHXiAXDPsbePF8rq4LfioOFLa5v51WXDlkO6gMTVcvvTmLpxAhGIMf29Ml4Pw==",
                             PhoneNumber = "5555555555",
                             PhoneNumberConfirmed = true,
-                            SecurityStamp = "63fc3bd6-61c0-4b29-8394-05d386d3db12",
+                            SecurityStamp = "0d6d7d23-60ac-4c91-b647-866743dd877a",
                             TwoFactorEnabled = false,
                             UserName = "customer"
                         });
@@ -301,49 +301,49 @@ namespace Marketify.DataAccess.Migrations
                         {
                             Id = 1,
                             PostId = 1,
-                            UserId = "d1704288-43da-4ac2-a29a-65719437adfd"
+                            UserId = "6504b1ca-d952-4efb-acea-b6abfd00fb49"
                         },
                         new
                         {
                             Id = 2,
                             PostId = 1,
-                            UserId = "42ad8624-bd91-4bd6-b5a1-15938670cbad"
+                            UserId = "9b6c3a15-2c5e-43fd-ace6-a060ac6c2741"
                         },
                         new
                         {
                             Id = 3,
                             PostId = 2,
-                            UserId = "d1704288-43da-4ac2-a29a-65719437adfd"
+                            UserId = "6504b1ca-d952-4efb-acea-b6abfd00fb49"
                         },
                         new
                         {
                             Id = 4,
                             PostId = 2,
-                            UserId = "42ad8624-bd91-4bd6-b5a1-15938670cbad"
+                            UserId = "9b6c3a15-2c5e-43fd-ace6-a060ac6c2741"
                         },
                         new
                         {
                             Id = 5,
                             PostId = 3,
-                            UserId = "42ad8624-bd91-4bd6-b5a1-15938670cbad"
+                            UserId = "9b6c3a15-2c5e-43fd-ace6-a060ac6c2741"
                         },
                         new
                         {
                             Id = 6,
                             PostId = 3,
-                            UserId = "d1704288-43da-4ac2-a29a-65719437adfd"
+                            UserId = "6504b1ca-d952-4efb-acea-b6abfd00fb49"
                         },
                         new
                         {
                             Id = 7,
                             PostId = 4,
-                            UserId = "42ad8624-bd91-4bd6-b5a1-15938670cbad"
+                            UserId = "9b6c3a15-2c5e-43fd-ace6-a060ac6c2741"
                         },
                         new
                         {
                             Id = 8,
                             PostId = 4,
-                            UserId = "d1704288-43da-4ac2-a29a-65719437adfd"
+                            UserId = "6504b1ca-d952-4efb-acea-b6abfd00fb49"
                         });
                 });
 
@@ -386,32 +386,32 @@ namespace Marketify.DataAccess.Migrations
                             Id = 1,
                             ChatId = 1,
                             MessageContent = "Merhaba ürünlerinizi çok beğendim. Benim işletmeme uygun.",
-                            RecipientId = "42ad8624-bd91-4bd6-b5a1-15938670cbad",
-                            SenderId = "d1704288-43da-4ac2-a29a-65719437adfd"
+                            RecipientId = "9b6c3a15-2c5e-43fd-ace6-a060ac6c2741",
+                            SenderId = "6504b1ca-d952-4efb-acea-b6abfd00fb49"
                         },
                         new
                         {
                             Id = 2,
                             ChatId = 1,
                             MessageContent = "Teşekkür ederim nasıl yardımcı olabilirim?",
-                            RecipientId = "d1704288-43da-4ac2-a29a-65719437adfd",
-                            SenderId = "42ad8624-bd91-4bd6-b5a1-15938670cbad"
+                            RecipientId = "6504b1ca-d952-4efb-acea-b6abfd00fb49",
+                            SenderId = "9b6c3a15-2c5e-43fd-ace6-a060ac6c2741"
                         },
                         new
                         {
                             Id = 3,
                             ChatId = 1,
                             MessageContent = "Ürünleriniz tam aradığım gibi fakat fiyatı bütçemi aşıyor. Yardımcı olabilir misiniz?",
-                            RecipientId = "42ad8624-bd91-4bd6-b5a1-15938670cbad",
-                            SenderId = "d1704288-43da-4ac2-a29a-65719437adfd"
+                            RecipientId = "9b6c3a15-2c5e-43fd-ace6-a060ac6c2741",
+                            SenderId = "6504b1ca-d952-4efb-acea-b6abfd00fb49"
                         },
                         new
                         {
                             Id = 4,
                             ChatId = 1,
                             MessageContent = "Peki. Profilimizdeki iletişim numarsından iletişime geçerseniz yardımcı olmak isteriz. Teşekkürler...",
-                            RecipientId = "d1704288-43da-4ac2-a29a-65719437adfd",
-                            SenderId = "42ad8624-bd91-4bd6-b5a1-15938670cbad"
+                            RecipientId = "6504b1ca-d952-4efb-acea-b6abfd00fb49",
+                            SenderId = "9b6c3a15-2c5e-43fd-ace6-a060ac6c2741"
                         });
                 });
 
@@ -447,21 +447,21 @@ namespace Marketify.DataAccess.Migrations
                             OfferId = 1,
                             PostId = 1,
                             Price = 8000.0,
-                            UserId = "d1704288-43da-4ac2-a29a-65719437adfd"
+                            UserId = "6504b1ca-d952-4efb-acea-b6abfd00fb49"
                         },
                         new
                         {
                             OfferId = 2,
                             PostId = 1,
                             Price = 9000.0,
-                            UserId = "d1704288-43da-4ac2-a29a-65719437adfd"
+                            UserId = "6504b1ca-d952-4efb-acea-b6abfd00fb49"
                         },
                         new
                         {
                             OfferId = 3,
                             PostId = 3,
                             Price = 9500.0,
-                            UserId = "42ad8624-bd91-4bd6-b5a1-15938670cbad"
+                            UserId = "9b6c3a15-2c5e-43fd-ace6-a060ac6c2741"
                         });
                 });
 
@@ -476,6 +476,9 @@ namespace Marketify.DataAccess.Migrations
                     b.Property<string>("Category")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ClickCount")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
@@ -510,45 +513,49 @@ namespace Marketify.DataAccess.Migrations
                         {
                             Id = 1,
                             Category = "Mobilya",
-                            CreatedDate = new DateTime(2024, 3, 24, 14, 44, 26, 79, DateTimeKind.Local).AddTicks(8759),
+                            ClickCount = 0,
+                            CreatedDate = new DateTime(2024, 3, 25, 18, 54, 6, 75, DateTimeKind.Local).AddTicks(1142),
                             Description = "Modern ofis mobilyaları, işyerlerinizdeki yaşamı kolaylaştıran ve çalışma verimliliğini artıran pratik ve şık çözümler sunar. Zarif tasarımlarıyla dikkat çeken bu mobilyalar, işlevselliği estetikle birleştirirken, ergonomik yapılarıyla da çalışanların konforunu sağlar. Esnek modüler sistemleri ve akıllı depolama çözümleri sayesinde, ofis alanınızı verimli bir şekilde düzenleyebilir ve değişen ihtiyaçlara kolayca uyum sağlayabilirsiniz.",
                             ImageUrl = "mobilya.jpg",
                             Price = 10000.0,
                             Title = "Modern Ofis Mobilyaları",
-                            UserId = "42ad8624-bd91-4bd6-b5a1-15938670cbad"
+                            UserId = "9b6c3a15-2c5e-43fd-ace6-a060ac6c2741"
                         },
                         new
                         {
                             Id = 2,
                             Category = "Beyaz Eşya",
-                            CreatedDate = new DateTime(2024, 3, 24, 14, 44, 26, 79, DateTimeKind.Local).AddTicks(8774),
+                            ClickCount = 0,
+                            CreatedDate = new DateTime(2024, 3, 25, 18, 54, 6, 75, DateTimeKind.Local).AddTicks(1160),
                             Description = "Ev yaşamınızı kolaylaştıran beyaz eşyalarımızla hayatınızı daha konforlu hale getirin! Yüksek kaliteli ve güvenilir ürünlerimiz, modern tasarımıyla evinizin estetiğine katkı sağlarken, enerji verimliliğiyle de bütçenize dost. Pratik kullanımıyla zamanınızı verimli kullanmanıza yardımcı olurken, günlük yaşamınızı daha keyifli hale getirin.",
                             ImageUrl = "beyaz-esya.jpg",
                             Price = 15000.0,
                             Title = "Son Teknoloji Beyaz Eşyalar",
-                            UserId = "42ad8624-bd91-4bd6-b5a1-15938670cbad"
+                            UserId = "9b6c3a15-2c5e-43fd-ace6-a060ac6c2741"
                         },
                         new
                         {
                             Id = 3,
                             Category = "Araba",
-                            CreatedDate = new DateTime(2024, 3, 24, 14, 44, 26, 79, DateTimeKind.Local).AddTicks(8776),
+                            ClickCount = 0,
+                            CreatedDate = new DateTime(2024, 3, 25, 18, 54, 6, 75, DateTimeKind.Local).AddTicks(1162),
                             Description = "Hayalinizdeki yolculuğa adım atın! Araç kiralama firmamız, seyahatlerinizi daha keyifli ve konforlu hale getirmek için burada. Geniş araç filomuzla her türlü ihtiyaca uygun seçenekler sunuyoruz. Güvenilir ve bakımlı araçlarımız, yolculuklarınızı güvenle tamamlamanızı sağlarken, uygun fiyatlarımızla da bütçenizi zorlamıyoruz. Hemen rezervasyon yapın ve unutulmaz bir sürüş deneyimi yaşayın!",
                             ImageUrl = "araba.jpg",
                             Price = 25000.0,
                             Title = "Kiralık Araçlar",
-                            UserId = "d1704288-43da-4ac2-a29a-65719437adfd"
+                            UserId = "6504b1ca-d952-4efb-acea-b6abfd00fb49"
                         },
                         new
                         {
                             Id = 4,
                             Category = "Güvenlik Teknolojileri",
-                            CreatedDate = new DateTime(2024, 3, 24, 14, 44, 26, 79, DateTimeKind.Local).AddTicks(8778),
+                            ClickCount = 0,
+                            CreatedDate = new DateTime(2024, 3, 25, 18, 54, 6, 75, DateTimeKind.Local).AddTicks(1164),
                             Description = "Güvenlik Aletleri İle Huzurunuz Bizimle! Geniş ürün yelpazemiz arasında kamera sistemleri, alarm sistemleri, kapı ve pencere sensörleri, güvenlik kameraları ve daha fazlası bulunmaktadır. Güvenlik ihtiyaçlarınıza ve bütçenize uygun çözümler sunuyoruz.",
                             ImageUrl = "guvenlik.jpg",
                             Price = 10000.0,
                             Title = "Güvenlik Aletleri",
-                            UserId = "d1704288-43da-4ac2-a29a-65719437adfd"
+                            UserId = "6504b1ca-d952-4efb-acea-b6abfd00fb49"
                         });
                 });
 
@@ -641,13 +648,13 @@ namespace Marketify.DataAccess.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "42ad8624-bd91-4bd6-b5a1-15938670cbad",
-                            RoleId = "c1c43196-d73f-4dc3-a88e-e386c8355f5d"
+                            UserId = "9b6c3a15-2c5e-43fd-ace6-a060ac6c2741",
+                            RoleId = "443ed718-befe-48e9-8e34-7bec2d3c2c5d"
                         },
                         new
                         {
-                            UserId = "d1704288-43da-4ac2-a29a-65719437adfd",
-                            RoleId = "2713630c-519f-4f4d-ab3e-3db6a4d8e2e8"
+                            UserId = "6504b1ca-d952-4efb-acea-b6abfd00fb49",
+                            RoleId = "5170e303-5a50-4474-bcec-4a33fc52221d"
                         });
                 });
 

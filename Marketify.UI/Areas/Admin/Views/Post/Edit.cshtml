@@ -9,6 +9,7 @@
                 <input type="hidden" asp-for="Id"/>
                 <input type="hidden" asp-for="UserId" value="User.FindFirstValue(ClaimTypes.NameIdentifier)" />
                 <input type="hidden" asp-for="ImageUrl"/>
+                <input type="hidden" asp-for="ClickCount"/>
                 <div class="mb-3">
                     <label asp-for="Title" class="form-label">Başlık</label>
                     <input type="text" class="form-control" asp-for="Title" required>

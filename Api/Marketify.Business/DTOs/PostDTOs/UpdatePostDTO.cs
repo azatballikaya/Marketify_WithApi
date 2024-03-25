@@ -17,6 +17,7 @@ namespace Marketify.Business.DTOs.PostDTOs
         public double Price { get; set; }
         public string ImageUrl { get; set; }
         public DateTime CreatedDate { get; set; }
+        public int ClickCount { get; set; }
         public string UserId { get; set; }
     
       

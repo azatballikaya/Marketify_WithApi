@@ -65,6 +65,7 @@
                     <li class="list-group-item">
                         <span class="badge badge-primary badge-pill" id="span_like_@item.Id">@item.Likes.Count() Beğeni</span>
                         <span class="badge badge-primary badge-pill" id="span_comment_@item.Id">@item.Comments.Count() Yorum</span>
+                        <span class="badge badge-primary badge-pill" id="span_comment_@item.Id">@item.ClickCount Görüntülenme</span>
                         <span class="badge badge-primary badge-pill" id="span_comment_@item.Id">@item.Offers.Count() Teklif</span>
                         @if(isAuth){
                         <button type="button" id="btn_like_@item.Id" onclick="IncrementLike(@item.Id)" class="btn btn-info mr-2">Like</button>

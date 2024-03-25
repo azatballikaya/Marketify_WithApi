@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Security.Claims;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 
 
@@ -44,6 +45,22 @@ namespace Marketify.UI.Areas.Admin.Controllers
                
                 values=values.OrderByDescending(x => x.Offers.Count());
                 return View(values);
+            }
+            return NotFound();
+        }
+        [Authorize(Roles ="Admin")]
+        public async Task<IActionResult> TheBests()
+        {
+            var responseMessage = await client.GetAsync(apiUrl + "Post");
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                var jsonData=await responseMessage.Content.ReadAsStringAsync();
+                var value=JsonConvert.DeserializeObject<List<ResultPostViewModel>>(jsonData);
+                var list = new List<ResultPostViewModel>();
+                list.Add(value.MaxBy(x=>x.Offers.Count()));
+                list.Add(value.MaxBy(x => x.ClickCount));
+                return View(list);
+               
             }
             return NotFound();
         }

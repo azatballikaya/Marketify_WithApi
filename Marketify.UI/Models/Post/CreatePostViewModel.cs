@@ -13,6 +13,7 @@ namespace Marketify.UI.Models.Post
         public string? ImageUrl { get; set; }
         public DateTime CreatedDate { get; set; }=DateTime.Now;
         public string UserId { get; set; }
-       
+        
+
     }
 }

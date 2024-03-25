@@ -102,5 +102,12 @@ namespace Marketify.Api.Controllers
             bool isLiked=post.Data.Likes.Any(x=>x.UserId==addLikeDTO.UserId);
             return Ok(isLiked);
         }
+        [HttpGet("IncrementClickCount/{id}")]
+        public async Task<IActionResult> IncrementClickCount(int id)
+        {
+            var response=await _postService.IncrementClickCountAsync(id);
+            IActionResult result = response.IsSuccess ? Ok() : BadRequest();
+            return result;
+        }
     }
 }

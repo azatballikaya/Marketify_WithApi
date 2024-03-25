@@ -19,7 +19,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<IdentityContext>(options =>
-options.UseSqlServer("Server=DESKTOP-4LLD460; Database=Marketify; Trusted_Connection=true; TrustServerCertificate=true;")
+options.UseSqlServer("Server=DESKTOP-NOPPPVL\\SQLEXPRESS; Database=Marketify; Trusted_Connection=true; TrustServerCertificate=true;")
 
 );
 builder.Services.AddAutoMapper(typeof(Program));
@@ -42,13 +42,13 @@ builder.Services.AddScoped<IChatService, ChatManager>();
 builder.Services.AddScoped<ILikeDal,EfLikeRepository>();
 
 var app = builder.Build();
-//using (var scope = app.Services.CreateScope())
-//{
-//    var services = scope.ServiceProvider;
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
 
-//    var context = services.GetRequiredService<IdentityContext>();
-//    context.Database.Migrate();
-//}
+    var context = services.GetRequiredService<IdentityContext>();
+    context.Database.Migrate();
+}
 
 
 // Configure the HTTP request pipeline.
